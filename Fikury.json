@@ -1,7 +1,8 @@
 {
-    "2753915549":{"name":"Blox Fruits Maintenance","Script":"https://raw.githubusercontent.com/QwertyzSZ/SAZAISBEST/main/GameSupport/mainloadbf.lua","Working":true},
-    "4442272183":{"name":"Blox Fruits Maintenance","Script":"https://raw.githubusercontent.com/QwertyzSZ/SAZAISBEST/main/GameSupport/mainloadbf.lua","Working":true},
-    "7449423635":{"name":"Blox Fruits Maintenance","Script":"https://raw.githubusercontent.com/QwertyzSZ/SAZAISBEST/main/GameSupport/mainloadbf.lua","Working":true},
-    "6284583030":{"name":"Pet Simulator X","Script":"https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Loader/PSX","Working":true}
+    "2753915549":{"name":"Blox Fruits Maintenance","Script":"","Working":true},
+    "4442272183":{"name":"Blox Fruits Maintenance","Script":"","Working":true},
+    "7449423635":{"name":"Blox Fruits Maintenance","Script":"","Working":true},
+    "6284583030":{"name":"Pet Simulator X","Script":"https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Loader/PSX","Working":true},
+    "537413528":{"name":"Build A Boat For Treasure":"https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Games/Boat-PC","Working":true}
     
 }
