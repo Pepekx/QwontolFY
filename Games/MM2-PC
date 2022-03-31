@@ -215,7 +215,7 @@ ESP.Overrides.GetColor = function(model)
     if game:GetService("Players")[model.Name].Backpack:FindFirstChild("Gun") or game:GetService("Players")[model.Name].Backpack:FindFirstChild("Revolver") or game.Workspace[model.Name]:FindFirstChild("Revolver") or game.Workspace[model.Name]:FindFirstChild("Gun") then return Color3.fromRGB(0,0,255) end
     return Color3.fromRGB(0, 255, 0)
 end
-local Button1 = Section1:CreateButton("GodMode", function()
+local Button1 = Section1:CreateButton("God Mode", function()
 GodModeFunc()
 end)
 local Toggle1 = Section1:CreateToggle("Esp", nil, function(State)
@@ -256,26 +256,8 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 end) end)
 
 
-local Toggle1 = Section2:CreateToggle("G Noclip", nil, function(State)
-sex = State
-noclip = false
-game:GetService('RunService').Stepped:connect(function()
-if noclip then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
-end)
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
 
-if key == "g" then
-if sex then
-noclip = not noclip
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end end 
-end) end)
-
-local Toggle1 = Section2:CreateToggle("B Fly", nil, function(State)
+local Toggle1 = Section2:CreateToggle("Press B to Fly", nil, function(State)
 sex2 = State
 local Max = 0
 local Players = game.Players
