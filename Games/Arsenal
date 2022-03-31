@@ -191,7 +191,7 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 15
 
 local Circle = Drawing.new("Circle")
-Circle.Color = Color3.fromRGB(22, 13, 56)
+Circle.Color = Color3.fromRGB(0,255,255)
 Circle.Thickness = 1
 Circle.Radius = 250
 Circle.Visible = false 
@@ -355,8 +355,9 @@ local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 local Tab1 = Window:CreateTab("Main")
 local Tab2 = Window:CreateTab("UI Settings")
 
-local Section1 = Tab1:CreateSection("")
-local Section2 = Tab1:CreateSection("")
+local Section1 = Tab1:CreateSection("AimBot Section")
+local Section2 = Tab1:CreateSection("ESP Section")
+local Section5 = Tab1:CreateSection("Misc Section")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
 
@@ -442,28 +443,28 @@ end)
 
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/Karrot-Esp"))()
 
-local Toggle1 = Section1:CreateToggle("Enable Esp", Settings.Esp, function(State)
+local Toggle1 = Section2:CreateToggle("Enable Esp", Settings.Esp, function(State)
     Settings.Esp = State
     ESP:Toggle(Settings.Esp)
     
 end)
 
-local Toggle1 = Section1:CreateToggle("PLayer Esp", Settings.PlayerEsp, function(State)
+local Toggle1 = Section2:CreateToggle("PLayer Esp", Settings.PlayerEsp, function(State)
     Settings.PlayerEsp = State
     ESP.Players = Settings.PlayerEsp
 end)
 
-local Toggle1 = Section1:CreateToggle("Tracers Esp", Settings.Tracers, function(State)
+local Toggle1 = Section2:CreateToggle("Tracers Esp", Settings.Tracers, function(State)
     Settings.Tracers = State
     ESP.Tracers = Settings.Tracers
 end)
 
-local Toggle1 = Section1:CreateToggle("Name Esp", Settings.EspNames, function(State)
+local Toggle1 = Section2:CreateToggle("Name Esp", Settings.EspNames, function(State)
     ESP.Names = Settings.EspNames
     Settings.EspNames = State
 end)
 
-local Toggle1 = Section1:CreateToggle("Boxes Esp", Settings.Boxes, function(State)
+local Toggle1 = Section2:CreateToggle("Boxes Esp", Settings.Boxes, function(State)
     Settings.Boxes = State
     ESP.Boxes = Settings.Boxes
 end)
@@ -477,7 +478,7 @@ end
 end)
 
 
-local Toggle1 = Section1:CreateToggle("InstantRespawn", Settings.InstantKill, function(State)
+local Toggle1 = Section5:CreateToggle("InstantRespawn", Settings.InstantKill, function(State)
 Settings.InstantKill = State
 spawn(function()
 while Settings.InstantKill do
@@ -497,7 +498,7 @@ end
 end)
 end)
 
-local Toggle1 = Section1:CreateToggle("RainBow Gun", Settings.RainBowGun, function(State)
+local Toggle1 = Section5:CreateToggle("RainBow Gun", Settings.RainBowGun, function(State)
 Settings.RainBowGun = State
 local x = 1
 function maths(X)
@@ -519,7 +520,7 @@ game:GetService("RunService").RenderStepped:Connect(
 )
 end)
 
-local Toggle1 = Section1:CreateToggle("Auto Heal", Settings.AutoHeal, function(State)
+local Toggle1 = Section5:CreateToggle("Auto Heal", Settings.AutoHeal, function(State)
 Settings.AutoHeal = State
 spawn(function()
 while Settings.AutoHeal do
@@ -537,7 +538,7 @@ end
 end)
 end)
 
-local Toggle1 = Section2:CreateToggle("Infinite Ammo", Settings.Infinite, function(State)
+local Toggle1 = Section5:CreateToggle("Infinite Ammo", Settings.Infinite, function(State)
 Settings.Infinite = State
 game:GetService("RunService").Stepped:connect(
     function()
@@ -573,7 +574,7 @@ game:GetService("RunService").RenderStepped:Connect(
 )
 end)
 
-local Toggle1 = Section2:CreateToggle("Always Auto", Settings.Automtatic, function(State)
+local Toggle1 = Section5:CreateToggle("Always Auto", Settings.Automtatic, function(State)
 Settings.Automtatic = State
 for _, v in pairs(game.ReplicatedStorage.Weapons:GetDescendants()) do
     if v.Name == "Auto" then
@@ -586,7 +587,7 @@ for _, v in pairs(game.ReplicatedStorage.Weapons:GetDescendants()) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("FastFire Rate", Settings.FireRate, function(State)
+local Toggle1 = Section5:CreateToggle("FastFire Rate", Settings.FireRate, function(State)
 Settings.FireRate = State
 for _, v in pairs(game.ReplicatedStorage.Weapons:GetDescendants()) do
     if v.Name == "FireRate" then
@@ -599,7 +600,7 @@ for _, v in pairs(game.ReplicatedStorage.Weapons:GetDescendants()) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("No Recoil", Settings.Recoil, function(State)
+local Toggle1 = Section1:CreateToggle("No Recoil", Settings.Recoil, function(State)
 Settings.Recoil = State
 for i, v in pairs(game:GetService("ReplicatedStorage").Weapons:GetDescendants()) do
     if v.Name == "MaxSpread" or v.Name == "Spread" or v.Name == "RecoilControl" then
@@ -668,7 +669,7 @@ end)
 end)
 
 
-local Button1 = Section2:CreateButton("Anti Lag", function()
+local Button1 = Section5:CreateButton("Anti Lag", function()
 for _, v in pairs(game:GetService("Workspace"):GetDescendants()) do
     if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") then
         v.Material = Enum.Material.SmoothPlastic
@@ -679,7 +680,7 @@ for _, v in pairs(game:GetService("Workspace"):GetDescendants()) do
 end
 end)
 
-local Button1 = Section2:CreateButton("ServerHop", function()
+local Button1 = Section5:CreateButton("ServerHop", function()
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
