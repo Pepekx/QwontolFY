@@ -1839,4 +1839,3 @@ _G.SectionColor = Color3.fromRGB(0,255,255)
 _G.SectionImageColor = Color3.fromRGB(0,255,255)
 _G.SectionTextColor = Color3.fromRGB(0,255,255)
 _G.SectionOn = Color3.fromRGB(0,255,255)
-
