@@ -2,26 +2,6 @@
 -- REALEASE DATE ON 17/02/2022 --
 -- MADE By WANZ --
 -- (WINDOWS AND MOBILE VERSION) --
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local userId = player.UserId
-local thumbType = Enum.ThumbnailType.HeadShot
-local thumbSize = Enum.ThumbnailSize.Size420x420
-local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-game:GetService("StarterGui"):SetCore("SendNotification",{  
-Title = "BLACKTRAP",     
-Text = "Wellcome to BlackTap",
-Icon = "rbxassetid://8666601749",
-Duration = 10,
-Color = Success
-})
-game:GetService("StarterGui"):SetCore("SendNotification",{  
-Title = "Hello",     
-Text = player.Name,
-Icon = content,
-Duration = 10,
-Color = Info
-})
 
 if game.CoreGui:FindFirstChild("BlackTrap") then
     game.CoreGui:FindFirstChild("BlackTrap"):Destroy()
@@ -42,6 +22,7 @@ end
 function Blacklib:Window(gametitle)
     local osfunc = {}
     local osfunc2 = {}
+    local osfunc3 = {}
     local titlefunc = {}    
     local mintoggle = false
     local Points = Instance.new("Frame")
@@ -103,7 +84,7 @@ function Blacklib:Window(gametitle)
     BlackImage.BackgroundTransparency = 1.000
     BlackImage.Position = UDim2.new(0, 5, 0, 7)
     BlackImage.Size = UDim2.new(0, 25, 0, 25)
-    BlackImage.Image = "rbxassetid://8666601749"
+    BlackImage.Image = "rbxassetid://9247714199"
     BlackImage.ImageColor3 = _G.ImageColor
     
     BlackTitle.Name = "BlackTitle"
@@ -126,7 +107,7 @@ function Blacklib:Window(gametitle)
     Space.Size = UDim2.new(0, 10, 0, 25)
     Space.Font = Enum.Font.GothamBold
     Space.Text = "|"
-    Space.TextColor3 = Color3.fromRGB(150, 0, 0)
+    Space.TextColor3 = Color3.fromRGB(0,255,255)
     Space.TextSize = 18.000
     
     GameTitle.Name = gametitle or "GameTitle"
@@ -164,17 +145,7 @@ function Blacklib:Window(gametitle)
     CloseButton.TextColor3 = Color3.fromRGB(150, 0, 0)
     CloseButton.Text = "×"
     CloseButton.TextSize = 30.000
-    
-    CloseImage.Name = "CloseImage"
-    CloseImage.Parent = Points
-    CloseImage.AnchorPoint = Vector2.new(0.5, 0.5)
-    CloseImage.AutoButtonColor = false
-    CloseImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    CloseImage.BackgroundTransparency = 1.000
-    CloseImage.Size = UDim2.new(0, 0, 0, 0)
-    CloseImage.Position = UDim2.new(0, -370, 0, 170)
-    CloseImage.Image = "rbxassetid://8666601749"
-    CloseImage.ImageColor3 = Color3.fromRGB(150, 30, 30)
+ 
     
     ServerTime.Name = "ServerTime"
     ServerTime.Parent = WindowFrame
@@ -186,7 +157,7 @@ function Blacklib:Window(gametitle)
     ServerTime.Font = Enum.Font.GothamSemibold
     ServerTime.Text = ""
     ServerTime.TextSize = 13.000
-    ServerTime.TextColor3 = Color3.fromRGB(0, 250, 0)
+    ServerTime.TextColor3 = Color3.fromRGB(0, 255, 255)
     ServerTime.TextXAlignment = Enum.TextXAlignment.Center
     
     ServerDate.Name = "ServerDate"
@@ -199,7 +170,7 @@ function Blacklib:Window(gametitle)
     ServerDate.Font = Enum.Font.GothamSemibold
     ServerDate.Text = ""
     ServerDate.TextSize = 13.000
-    ServerDate.TextColor3 = Color3.fromRGB(250, 0, 0)
+    ServerDate.TextColor3 = Color3.fromRGB(0,255, 255)
     ServerDate.TextXAlignment = Enum.TextXAlignment.Center
     
     local LocalizationService = game:GetService("LocalizationService")
@@ -209,22 +180,25 @@ function Blacklib:Window(gametitle)
     local result, code = pcall(function()
 	    return LocalizationService:GetCountryRegionForPlayerAsync(player)
     end)
-    local PlaLab = Instance.new("TextLabel")
+    local Stopwatch = Instance.new("TextLabel")
     
     -- prop --
-    PlaLab.Name = "PlaLab"
-    PlaLab.Parent = WindowFrame
-    PlaLab.BackgroundColor3 = _G.TabWindowColor
-    PlaLab.BackgroundTransparency = 1.000
-    PlaLab.Position = UDim2.new(0, 3, 0, 353)
-    PlaLab.Size = UDim2.new(0, 150, 0, 25)
-    PlaLab.Font = Enum.Font.GothamSemibold
-    PlaLab.Text = "User : " .. name
-    PlaLab.TextSize = 13.000
-    PlaLab.TextColor3 = Color3.fromRGB(250, 0, 0)
-    PlaLab.TextXAlignment = Enum.TextXAlignment.Center
-    PlaLab.TextScaled = true
-    PlaLab.TextWrapped = true
+    
+    
+
+    Stopwatch.Name = "Stopwatch"
+    Stopwatch.Parent = WindowFrame
+    Stopwatch.BackgroundColor3 = _G.TabWindowColor
+    Stopwatch.BackgroundTransparency = 1.000
+    Stopwatch.Position = UDim2.new(0, 3, 0, 353)
+    Stopwatch.Size = UDim2.new(0, 150, 0, 25)
+    Stopwatch.Font = Enum.Font.GothamSemibold
+    Stopwatch.Text = "" 
+    Stopwatch.TextSize = 1.000
+    Stopwatch.TextColor3 = Color3.fromRGB(0,255,255)
+    Stopwatch.TextXAlignment = Enum.TextXAlignment.Center
+    Stopwatch.TextScaled = true
+    Stopwatch.TextWrapped = true
     
     local LineWindow = Instance.new("Frame")
     local TabWindow = Instance.new("ScrollingFrame")
@@ -403,6 +377,9 @@ function Blacklib:Window(gametitle)
     function osfunc2:Refresh(textadd2)
         ServerDate.Text = textadd2
     end
+    function osfunc3:Refresh(textadd3)
+        Stopwatch.Text = textadd3
+    end
     function titlefunc:Refresh(text)
         BlackTitle.Text = text
     end
@@ -423,9 +400,26 @@ function Blacklib:Window(gametitle)
         end
     end)
     
+    
+    
+    local function UpdateTime()
+       local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+       local Hour = math.floor(GameTime/(60^2))%24
+       local Minute = math.floor(GameTime/(60^1))%60
+       local Second = math.floor(GameTime/(60^0))%60
+       osfunc3:Refresh("Server Time: "..Hour..":"..Minute..":"..Second)
+       end
+       spawn(function()
+             while true do
+                UpdateTime()
+                game:GetService("RunService").RenderStepped:Wait()
+             end
+       end)
+    
+    
     spawn(function()
         while task.wait() do
-            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTrap") wait(.9) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
+            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("T") wait(.2) titlefunc:Refresh("Th") wait(.2) titlefunc:Refresh("Thu") wait(.2) titlefunc:Refresh("Thun") wait(.2) titlefunc:Refresh("Thund") wait(.2) titlefunc:Refresh("Thunde") wait(.2) titlefunc:Refresh("Thunder") wait(.2) titlefunc:Refresh("ThunderZ")wait(.9) titlefunc:Refresh("Thunder ") wait(.2) titlefunc:Refresh("Thunder") wait(.2) titlefunc:Refresh("Thunde") wait(.2) titlefunc:Refresh("Thund") wait(.2) titlefunc:Refresh("Thun") wait(.2) titlefunc:Refresh("Thu") wait(.2) titlefunc:Refresh("Th") wait(.2) titlefunc:Refresh("T") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
         end
     end)
     
@@ -670,7 +664,7 @@ function Blacklib:Window(gametitle)
         NotificationFrame.Name = "NotificationFrame"
         NotificationFrame.Parent = NotificationHold
         NotificationFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-        NotificationFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+        NotificationFrame.BackgroundColor3 = Color3.fromRGB(12,12,12)
         NotificationFrame.BorderColor3 = _G.SectionColor
         NotificationFrame.BorderSizePixel = 0
         NotificationFrame.ClipsDescendants = true
@@ -729,7 +723,7 @@ function Blacklib:Window(gametitle)
         NotificationTitle.ZIndex = 3
         NotificationTitle.Font = Enum.Font.Code
         NotificationTitle.Text = "Notification"
-        NotificationTitle.TextColor3 = Color3.fromRGB(255, 0, 0)
+        NotificationTitle.TextColor3 = Color3.fromRGB(0,255,255)
         NotificationTitle.TextSize = 22.000
         
         Line.Name = "Line"
@@ -883,7 +877,7 @@ function Blacklib:Window(gametitle)
             Button.Name = "Button"
             Button.Parent = ButtonFrame
             Button.AutoButtonColor = false
-            Button.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+            Button.BackgroundColor3 = Color3.fromRGB(0,255,255)
             Button.BorderSizePixel = 0
             Button.Position = UDim2.new(0, 50, 0, 2)
             Button.Size = UDim2.new(0, 325, 0, 30)
@@ -919,7 +913,7 @@ function Blacklib:Window(gametitle)
             Button.MouseButton1Up:Connect(function()
                 TweenService:Create(Button, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(180, 180, 180)}):Play()
                 TweenService:Create(Button, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 325, 0, 30)}):Play()
-                TweenService:Create(ButtonTitle, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(0, 0, 0)}):Play()
+                TweenService:Create(ButtonTitle, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(0, 255,255)}):Play()
                 TweenService:Create(ButtonTitle, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Position = UDim2.new(0, 0, 0, 3)}):Play()
             end)
             
@@ -1774,7 +1768,7 @@ function Blacklib:Window(gametitle)
             Labels.Size = UDim2.new(0, 405, 0, 22)
             Labels.Font = Enum.Font.GothamSemibold
             Labels.Text = textlabel
-            Labels.TextColor3 = Color3.fromRGB(255, 0, 0)
+            Labels.TextColor3 = Color3.fromRGB(0, 255, 255)
             Labels.TextSize = 14.000
             Labels.TextXAlignment = Enum.TextXAlignment.Center
             
@@ -1835,42 +1829,14 @@ end
 _G.WindowBackgroundColor = Color3.fromRGB(12, 12, 12)
 _G.TabWindowColor = Color3.fromRGB(30, 30, 30)
 _G.ContainerColor = Color3.fromRGB(23, 23, 23)
-_G.TitleTextColor = Color3.fromRGB(150, 150, 150)
-_G.ImageColor = Color3.fromRGB(150, 150, 150)
-_G.LineThemeColor = Color3.fromRGB(150, 150, 150)
-_G.TabTextColor = Color3.fromRGB(150, 150, 150)
-_G.TabImageColor = Color3.fromRGB(150, 150, 150)
-_G.TabThemeColor = Color3.fromRGB(250, 0, 0)
-_G.SectionColor = Color3.fromRGB(150, 150, 150)
-_G.SectionImageColor = Color3.fromRGB(150, 150, 150)
-_G.SectionTextColor = Color3.fromRGB(150, 150, 150)
-_G.SectionOn = Color3.fromRGB(0, 250, 0)
+_G.TitleTextColor = Color3.fromRGB(0,255,255)
+_G.ImageColor = Color3.fromRGB(0,255,255)
+_G.LineThemeColor = Color3.fromRGB(0,255,255)
+_G.TabTextColor = Color3.fromRGB(0,255,255)
+_G.TabImageColor = Color3.fromRGB(0,255,255)
+_G.TabThemeColor = Color3.fromRGB(0,255,255)
+_G.SectionColor = Color3.fromRGB(0,255,255)
+_G.SectionImageColor = Color3.fromRGB(0,255,255)
+_G.SectionTextColor = Color3.fromRGB(0,255,255)
+_G.SectionOn = Color3.fromRGB(0,255,255)
 
-
--- Window --
-local Win = Blacklib:Window("Testing Gui")
--- Tab --
-local Tabes = Win:Tab("• Testing", img)
-
-Tabes:Label("Label")
-
-Tabes:Line()
-Tabes:Note("Note")
-Tabes:TextBox("TextBox", "Enter Value", function()
-end)
-
-Tabes:Slider("Slider", 0, 500, 50, function()
-end)
-
-local Lizet = {"1", "2", "3", "4", "5"}
-Tabes:Dropdown("Testing", Lizet, function()
-end)
-
-Tabes:Toggle("CheckBox", function()
-end)
-Tabes:Button("Board", function()
-    Blacklib:Board("Title", "Text1", "Text2", "Text3", "Text4", "Text5")
-end)
-Tabes:Button("Notification", function()
-    Blacklib:Notification("Text")
-end)
