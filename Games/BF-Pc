@@ -2984,7 +2984,8 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
        end)
    end)
    
-   Main:Toggle("Magnet Mob",function(value)
+   Main:Toggle("Magnet Mob", function(value)
+       
        _G.BringMonster = value
    end)
    
