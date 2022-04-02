@@ -2952,19 +2952,6 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
    ScreenGui.Name = "ScreenGui"
    ScreenGui.Parent = game.CoreGui
    
-   Toggle.Name = "Toggle"
-   Toggle.Parent = ScreenGui
-   Toggle.BackgroundColor3 = Color3.fromRGB(0,255,255)
-   Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-   Toggle.Size = UDim2.new(0, 50, 0, 50)
-   Toggle.Font = Enum.Font.Code
-   Toggle.Text = "FY"
-   Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
-   Toggle.TextScaled = true
-   Toggle.MouseButton1Down:connect(function()
-       game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-       game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-   end)
    --------------------------------------------------------------------
    local RenUi = Blacklib:Window("Blox Fruit",Enum.KeyCode.RightShift)
    --------------------------------------------------------------------
@@ -5375,7 +5362,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
    Teleport:Note("If cant move after Island TP , \nCHECKLIST Teleport then UNCHECKLIST IT")
    Teleport:Line()
    if World1 then
-       Teleport:AddDropdown("Select Island",{
+       Teleport:Dropdown("Select Island",{
            "WindMill",
            "Marine",
            "Middle Town",
