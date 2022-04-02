@@ -2399,31 +2399,9 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(PlayerName ,v.Name)
 end
 
-Misc:Line()
-Misc:Label("== Player Section ==")
-Misc:Line()
-Misc:Home("Walkspeed", 16, 500, 20, function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-print(Value)
-end)
-Home:Slider("JumpPower", 35, 500 ,40 , function(Value)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-print(Value)
-end)
-
-local InfiniteJumpEnabled;
-Misc:Toggle("Infinite Jump", function(State)
-InfiniteJumpEnabled = State
-end)
-
-local Player = game:GetService("Players").LocalPlayer
-game:GetService("UserInputService").JumpRequest:Connect(function()
-if InfiniteJumpEnabled then
- Player.Character:WaitForChild("Humanoid"):ChangeState("Jumping")
-end
-end)
-
-
+Home:Line()
+Home:Label("== Player Section ==")
+Home:Line()
 
 Player = ""
 local SelectPlayer = Home:Dropdown("Selected Player", PlayerName, function(vu)
