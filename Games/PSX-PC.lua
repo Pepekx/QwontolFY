@@ -2422,14 +2422,14 @@ elseif merchant2 == false then
 _G.BuyMerchant2 = false
 end
 
-while task.wait(0.1) and _G.BuyMerchant3 do
-local merchant3 = {
+while task.wait(0.1) and _G.BuyMerchant2 do
+local merchant2 = {
     [1] = {
         [1] = 2
     }
 }
-workspace.__THINGS.__REMOTES:FindFirstChild("buy merchant item"):InvokeServer(unpack(merchant3))
-workspace.__THINGS.__REMOTES:FindFirstChild("get merchant items"):InvokeServer(unpack(merchant3))
+workspace.__THINGS.__REMOTES:FindFirstChild("buy merchant item"):InvokeServer(unpack(merchant2))
+workspace.__THINGS.__REMOTES:FindFirstChild("get merchant items"):InvokeServer(unpack(merchant2))
 end
 
 end)
