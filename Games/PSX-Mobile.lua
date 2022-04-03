@@ -2394,6 +2394,66 @@ end
 end)
 
 Collect:Line()
+Collect:Label("== Auto Buy Merchant Section ==")
+Collect:Line()
+Collect:Toggle("Auto Buy Merchant [ Tier 1 ]" , function(merchant1)
+if merchant1 == true then
+_G.BuyMerchant1 = true
+elseif merchant1 == false then
+_G.BuyMerchant1 = false
+end
+
+while task.wait(0.1) and _G.BuyMerchant1 do
+local merchant1 = {
+    [1] = {
+        [1] = 1
+    }
+}
+workspace.__THINGS.__REMOTES:FindFirstChild("buy merchant item"):InvokeServer(unpack(merchant1))
+workspace.__THINGS.__REMOTES:FindFirstChild("get merchant items"):InvokeServer(unpack(merchant1))
+end
+
+end)
+
+Collect:Toggle("Auto Buy Merchant [ Tier 2 ]" , function(merchant2)
+if merchant2 == true then
+_G.BuyMerchant2 = true
+elseif merchant2 == false then
+_G.BuyMerchant2 = false
+end
+
+while task.wait(0.1) and _G.BuyMerchant3 do
+local merchant3 = {
+    [1] = {
+        [1] = 2
+    }
+}
+workspace.__THINGS.__REMOTES:FindFirstChild("buy merchant item"):InvokeServer(unpack(merchant3))
+workspace.__THINGS.__REMOTES:FindFirstChild("get merchant items"):InvokeServer(unpack(merchant3))
+end
+
+end)
+
+Collect:Toggle("Auto Buy Merchant [ Tier 3 ]" , function(merchant3)
+if merchant3 == true then
+_G.BuyMerchant3 = true
+elseif merchant3 == false then
+_G.BuyMerchant3 = false
+end
+
+while task.wait(0.1) and _G.BuyMerchant3 do
+local merchant3 = {
+    [1] = {
+        [1] = 3
+    }
+}
+workspace.__THINGS.__REMOTES:FindFirstChild("buy merchant item"):InvokeServer(unpack(merchant3))
+workspace.__THINGS.__REMOTES:FindFirstChild("get merchant items"):InvokeServer(unpack(merchant3))
+end
+
+end)
+
+Collect:Line()
 Collect:Label("== Auto Potion Section ==")
 Collect:Line()
 
@@ -2945,4 +3005,68 @@ Setting:Button("Copy link discord")
 setclipboard("https://discord.gg/EAasK6nBMr")
 Setting:Button("Credit", function()
 Blacklib:Notification("/ = /Fikury#7140 / = / \nThunder Z")
+end)
+
+Setting:Button("Server Hop",function()
+		local PlaceID = game.PlaceId
+		local AllIDs = {}
+		local foundAnything = ""
+		local actualHour = os.date("!*t").hour
+		local Deleted = false
+		function TPReturner()
+			local Site;
+			if foundAnything == "" then
+				Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+			else
+				Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+			end
+			local ID = ""
+			if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+				foundAnything = Site.nextPageCursor
+			end
+			local num = 0;
+			for i,v in pairs(Site.data) do
+				local Possible = true
+				ID = tostring(v.id)
+				if tonumber(v.maxPlayers) > tonumber(v.playing) then
+					for _,Existing in pairs(AllIDs) do
+						if num ~= 0 then
+							if ID == tostring(Existing) then
+								Possible = false
+							end
+						else
+							if tonumber(actualHour) ~= tonumber(Existing) then
+								local delFile = pcall(function()
+									-- delfile("NotSameServers.json")
+									AllIDs = {}
+									table.insert(AllIDs, actualHour)
+								end)
+							end
+						end
+						num = num + 1
+					end
+					if Possible == true then
+						table.insert(AllIDs, ID)
+						wait()
+						pcall(function()
+							-- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+							wait()
+							game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+						end)
+						wait()
+					end
+				end
+			end
+		end
+		function Teleport() 
+			while wait(4) do
+				pcall(function()
+					TPReturner()
+					if foundAnything ~= "" then
+						TPReturner()
+					end
+				end)
+			end
+		end
+		Teleport()
 end)
