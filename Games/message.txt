@@ -2966,6 +2966,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
    --------------------------------------------------------------------
    Main:Line()
    Main:Label("Main")
+Main:Label("Turn on first Magnet Mob before use Auto Farm"
    Main:Line()
 
    Main:Toggle("Auto Set Spawn Points",function(value)
