@@ -18,6 +18,41 @@ end
 
 local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
 
+-- Start
+if not RequestFunction then
+    return print("Your executor does not support http requests.")
+end
+
+for i = 6453, 6464 do
+    local DiscordInviteRequest = function()
+        local Request = RequestFunction({
+            Url = string.format(DiscordApiUrl, tostring(i)),
+            Method = "POST",
+            Body = HttpService:JSONEncode({
+                nonce = HttpService:GenerateGUID(false),
+                args = {
+                    invite = {code = Settings.InviteCode},
+                    code = Settings.InviteCode
+                },
+                cmd = "INVITE_BROWSER"
+            }),
+            Headers = {
+                ["Origin"] = "https://discord.com",
+                ["Content-Type"] = "application/json"
+            }
+        })
+    end
+    spawn(DiscordInviteRequest)
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "THUNDER Z",     
+Text = "Welcome to Thunder Z",
+Icon = "rbxassetid://9254918057",
+Duration = 10,
+Color = Success
+})
+
 if game.CoreGui:FindFirstChild("Ripple") then
     game.CoreGui:FindFirstChild("Ripple"):Destroy()
 end
@@ -3302,6 +3337,16 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
     local Shop = RenUi:Channel("Shop","http://www.roblox.com/asset/?id=6031265976")
     local Misc = RenUi:Channel("Misc","http://www.roblox.com/asset/?id=6034509993")
    
+   DiscordLib:Notification("Thunder Z" , "Discord Link Copied to Clipboard" , "Okay")
+   Main:AddLabel("Credit")
+   Main:AddButton("Credit",function()
+   DiscordLib:Notification("Thunder Z","Fikury#7140", "Okay")
+   end)
+   Main:AddButton("Discord",function()
+   DiscordLib:Notification("Thunder Z", "Discord Link Copied to Clipboard" , "Okay")
+   setclipboard("https://discord.gg/EAasK6nBMr")
+   end)
+   Main:AddLine()
    Time = Main:AddLabel("Server Time")
 
 function UpdateTime()
@@ -7806,3 +7851,5 @@ WeaponList = {}
     
    
 return DiscordLib
+
+
