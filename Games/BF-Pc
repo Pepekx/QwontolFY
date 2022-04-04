@@ -1,3 +1,23 @@
+local Settings = {
+    InviteCode = "EAasK6nBMr" -- the code at the end of the invite here
+}
+
+-- Objects
+local HttpService = game:GetService("HttpService")
+local RequestFunction
+
+if syn and syn.request then
+    RequestFunction = syn.request
+elseif request then
+    RequestFunction = request
+elseif http and http.request then
+    RequestFunction = http.request
+elseif http_request then
+    RequestFunction = http_request
+end
+
+local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
+
 if game.CoreGui:FindFirstChild("Ripple") then
     game.CoreGui:FindFirstChild("Ripple"):Destroy()
 end
