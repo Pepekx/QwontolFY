@@ -3263,68 +3263,6 @@ end
 
 local RadientPaid = RadientPaid:Window("Blox Fruit")
    local RenUi = RadientPaid:Server("Thunder Z HUB" ,"")
-    
-    --------------------------------------------------------------------
-    local Main = RenUi:Channel("Auto Farm","http://www.roblox.com/asset/?id=6026568198")
-    local Combat = RenUi:Channel("Combat","http://www.roblox.com/asset/?id=7251993295")
-    local Stats = RenUi:Channel("Stats","http://www.roblox.com/asset/?id=7040410130")
-    local Teleport = RenUi:Channel("Teleport","http://www.roblox.com/asset/?id=6035190846")
-    local Dungeon = RenUi:Channel("Dungeon","http://www.roblox.com/asset/?id=9279821162")
-    local DevilFruit = RenUi:Channel("Devil Fruit","http://www.roblox.com/asset/?id=9279796096")
-    local Shop = RenUi:Channel("Shop","http://www.roblox.com/asset/?id=6031265976")
-    local Misc = RenUi:Channel("Misc","http://www.roblox.com/asset/?id=6034509993")
-   
-   
-   Main:AddLabel("Credit")
-   Main:AddButton("Credit",function()
-   game:GetService("StarterGui"):SetCore("SendNotification",{  
-Title = "THUNDER Z",     
-Text = "Fikury#7140",
-Icon = "rbxassetid://9254918057",
-Duration = 10,
-Color = Success
-})
-   end)
-   Main:AddButton("Discord",function()
-   game:GetService("StarterGui"):SetCore("SendNotification",{  
-Title = "THUNDER Z",     
-Text = "Discord Server Already Copied to Clipboard",
-Icon = "rbxassetid://9254918057",
-Duration = 10,
-Color = Success
-})
-   setclipboard("https://discord.gg/EAasK6nBMr")
-   end)
-   Main:AddLine()
-   Time = Main:AddLabel("Server Time")
 
-function UpdateTime()
-    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-    local Hour = math.floor(GameTime/(60^2))%24
-    local Minute = math.floor(GameTime/(60^1))%60
-    local Second = math.floor(GameTime/(60^0))%60
-    Time:Refresh("Hour : "..Hour.." Minute : "..Minute.." Second : "..Second)
-end
-
-spawn(function()
-    while true do
-        UpdateTime()
-        wait()
-    end
-end)
-
-Client = Main:AddLabel("User")
-
-function UpdateClient()
-    local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
-    local Fps = workspace:GetRealPhysicsFPS()
-    Client:Refresh("Fps : "..Fps.." Ping : "..Ping)
-end
-
-spawn(function()
-    while true do wait(.1)
-        UpdateClient()
-    end
-end)
 
 return RadientPaid
