@@ -1,50 +1,3 @@
-local Settings = {
-    InviteCode = "EAasK6nBMr" -- the code at the end of the invite here
-}
-
--- Objects
-local HttpService = game:GetService("HttpService")
-local RequestFunction
-
-if syn and syn.request then
-    RequestFunction = syn.request
-elseif request then
-    RequestFunction = request
-elseif http and http.request then
-    RequestFunction = http.request
-elseif http_request then
-    RequestFunction = http_request
-end
-
-local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
-
--- Start
-if not RequestFunction then
-    return print("Your executor does not support http requests.")
-end
-
-for i = 6453, 6464 do
-    local DiscordInviteRequest = function()
-        local Request = RequestFunction({
-            Url = string.format(DiscordApiUrl, tostring(i)),
-            Method = "POST",
-            Body = HttpService:JSONEncode({
-                nonce = HttpService:GenerateGUID(false),
-                args = {
-                    invite = {code = Settings.InviteCode},
-                    code = Settings.InviteCode
-                },
-                cmd = "INVITE_BROWSER"
-            }),
-            Headers = {
-                ["Origin"] = "https://discord.com",
-                ["Content-Type"] = "application/json"
-            }
-        })
-    end
-    spawn(DiscordInviteRequest)
-end
-
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "THUNDER Z",     
 Text = "Welcome to Thunder Z",
@@ -200,7 +153,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-	MainFrame.Size = UDim2.new(0.631,0, 0, 618,0)
+	MainFrame.Size = UDim2.new(0.631, 0, 0.618, 0)
 
 	local uitoggled = false
 	UserInputService.InputBegan:Connect(function(io, p)
@@ -213,7 +166,7 @@ function DiscordLib:Window(text,mainclr,cls)
 					uitoggled = true
 				else
 					Discord.Enabled = true
-					MainFrame:TweenSize(UDim2.new(0, 618, 0, 407), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
+					MainFrame:TweenSize(UDim2.new(0.631, 0, 0.618, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
 					uitoggled = false
 				end
 			end
@@ -380,7 +333,7 @@ function DiscordLib:Window(text,mainclr,cls)
 		NotificationHolderMain.BackgroundTransparency = 1
 		NotificationHolderMain.BorderSizePixel = 0
 		NotificationHolderMain.Position = UDim2.new(0, -1, 0.0460000017, 0)
-		NotificationHolderMain.Size = UDim2.new(0, 676, 0, 374)
+		NotificationHolderMain.Size = UDim2.new(0.610, 0, 0.750, 0)
 		TweenService:Create(
 			NotificationHolderMain,
 			TweenInfo.new(.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
@@ -3272,7 +3225,7 @@ end
     Toggle.Name = "Toggle"
     Toggle.Parent = ScreenGui
     Toggle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-    Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+    Toggle.Position = UDim2.new(0.19, 0, 0.30, 0)
     Toggle.Size = UDim2.new(0, 50, 0, 50)
     Toggle.Font = Enum.Font.Code
     Toggle.Text = "⚡"
@@ -3343,8 +3296,52 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
    DiscordLib:Notification("Thunder Z","Fikury#7140", "Okay")
    end)
    Main:AddButton("Discord",function()
-   DiscordLib:Notification("Thunder Z", "Discord Link Copied to Clipboard" , "Okay")
-   setclipboard("https://discord.gg/EAasK6nBMr")
+   local Settings = {
+    InviteCode = "EAasK6nBMr" -- the code at the end of the invite here
+}
+
+-- Objects
+local HttpService = game:GetService("HttpService")
+local RequestFunction
+
+if syn and syn.request then
+    RequestFunction = syn.request
+elseif request then
+    RequestFunction = request
+elseif http and http.request then
+    RequestFunction = http.request
+elseif http_request then
+    RequestFunction = http_request
+end
+
+local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
+
+-- Start
+if not RequestFunction then
+    return print("Your executor does not support http requests.")
+end
+
+for i = 6453, 6464 do
+    local DiscordInviteRequest = function()
+        local Request = RequestFunction({
+            Url = string.format(DiscordApiUrl, tostring(i)),
+            Method = "POST",
+            Body = HttpService:JSONEncode({
+                nonce = HttpService:GenerateGUID(false),
+                args = {
+                    invite = {code = Settings.InviteCode},
+                    code = Settings.InviteCode
+                },
+                cmd = "INVITE_BROWSER"
+            }),
+            Headers = {
+                ["Origin"] = "https://discord.com",
+                ["Content-Type"] = "application/json"
+            }
+        })
+    end
+    spawn(DiscordInviteRequest)
+end
    end)
    Main:AddLine()
    Time = Main:AddLabel("Server Time")
@@ -7762,7 +7759,7 @@ WeaponList = {}
     end)
     
     
-    
+    setclipboard("https://discord.gg/EAasK6nBMr")
    
 return DiscordLib
 
