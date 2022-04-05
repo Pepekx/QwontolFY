@@ -1,7 +1,3 @@
-if game.CoreGui:FindFirstChild("Ripple") then
-    game.CoreGui:FindFirstChild("Ripple"):Destroy()
-end
-
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -13,7 +9,6 @@ local pfp
 local user
 local tag
 local userinfo = {}
-
 
 pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
 user = userinfo["user"] or game.Players.LocalPlayer.DisplayName
@@ -90,14 +85,8 @@ local function RippleEffect(object)
 	end)
 end
 
-local DiscordLib = {}
-if game.CoreGui:FindFirstChild("Board") then
-    game.CoreGui:FindFirstChild("Board"):Destroy()
-end
-
-
 local Discord = Instance.new("ScreenGui")
-Discord.Name = "Ripple"
+Discord.Name = "MUKURO GUI"
 Discord.Parent = game:GetService("CoreGui")
 Discord.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -2120,7 +2109,6 @@ function DiscordLib:Window(text,mainclr,cls)
 	end
 	return ServerHold
 end
-
 
     if game.PlaceId == 2753915549 then
         World1 = true
