@@ -1,6 +1,4 @@
-if game.CoreGui:FindFirstChild("FluxLib") then
-    game.CoreGui:FindFirstChild("FluxLib"):Destroy()
-end
+
 
 
 local Flux = {RainbowColorValue = 0, HueSelectionPosition = 0}
@@ -17,6 +15,9 @@ if game.CoreGui:FindFirstChild("Board") then
     game.CoreGui:FindFirstChild("Board"):Destroy()
 end
 
+if game.CoreGui:FindFirstChild("FluxLib") then
+    game.CoreGui:FindFirstChild("FluxLib"):Destroy()
+end
 
 local FluxLib = Instance.new("ScreenGui")
 FluxLib.Name = "FluxLib"
