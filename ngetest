@@ -130,7 +130,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	MainFrame.BackgroundTransparency = 1
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
-	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	MainFrame.Position = UDim2.new(0, 32, 0, 37)
 	MainFrame.Size = UDim2.new(0, 618, 0, 407)
 
 	local uitoggled = false
