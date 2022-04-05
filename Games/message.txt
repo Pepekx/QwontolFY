@@ -2966,7 +2966,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
    --------------------------------------------------------------------
    Main:Line()
    Main:Label("Main")
-   Main:Label("Turn on first Magnet Mob before use Auto Farm")
+   Main:Note("Turn on first Bring Mob before use Auto Farm")
    Main:Line()
 
    Main:Toggle("Auto Set Spawn Points",function(value)
@@ -3010,22 +3010,10 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
        end
    end)
    
-   CheckQuest()
-        SelectToolWeapon = ""
-        function EquipWeapon(ToolSe)
-           if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
-              local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
-              wait(.4)
-              game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
-           end
-        end
 
    local AutoFarm = Main:Toggle("Auto Farm Level",function(value)
        _G.AutoFarm = value
        StopTween(_G.AutoFarm)
-       if SelectToolWeapon == "" and value then
-Blacklib:Notification("Select Weapon First") 
-end
    end)
    
    spawn(function()
