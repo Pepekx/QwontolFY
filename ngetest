@@ -200,7 +200,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.399526083, 0, 0.399241292, 0)
-	MainFrame.Size = UDim2.new(0, 610, 0, 400)
+	MainFrame.Size = UDim2.new(0, 589, 0, 378)
 
 	local uitoggled = false
 	UserInputService.InputBegan:Connect(function(io, p)
