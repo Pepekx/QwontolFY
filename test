@@ -127,7 +127,7 @@ function RadientPaid:Window(text,maincolor)
 	MainFrame.BackgroundTransparency = 1
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
-	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	MainFrame.Position = UDim2.new(0.3, 0, 0.9, 0)
 	MainFrame.Size = UDim2.new(0, 611, 0, 396)
 
 	Corner_1.CornerRadius = UDim.new(0, 7)
