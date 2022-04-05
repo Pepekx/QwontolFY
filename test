@@ -1115,6 +1115,45 @@ local ScreenGui = Instance.new("ScreenGui")
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
     end)
 
+local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
+	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
+	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+	CameraShakerR:Stop()
+	spawn(function()
+		game:GetService("RunService").Stepped:Connect(function()
+			pcall(function()
+				CombatFrameworkR.activeController.hitboxMagnitude = 55
+				if Usefastattack then
+					if fastattack then
+						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+							CombatFrameworkR.activeController.timeToNextAttack = 3
+						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
+							CombatFrameworkR.activeController.timeToNextAttack = 2
+						else
+							CombatFrameworkR.activeController.timeToNextAttack = 0
+						end
+						CombatFrameworkR.activeController.attacking = false
+						CombatFrameworkR.activeController.increment = 3
+						CombatFrameworkR.activeController.blocking = false
+						CombatFrameworkR.activeController.timeToNextBlock = 0
+						game.Players.LocalPlayer.Character.Humanoid.Sit = false	
+					end
+				end
+			end)
+		end)
+	end)
+	
+	spawn(function()
+		game:GetService("RunService").Stepped:Connect(function()
+			pcall(function()
+				if Usefastattack then
+					if fastattack then
+						Click()
+					end
+				end
+			end)
+		end)
+	end)
 
 local win = Flux:Window("THUNDER Z", "Blox Fruit", Color3.fromRGB(0,255,255), Enum.KeyCode.RightControl)
 --------------------------------------------------------------------
@@ -1129,3 +1168,43 @@ local win = Flux:Window("THUNDER Z", "Blox Fruit", Color3.fromRGB(0,255,255), En
 
     Flux:Notification("Discord Link Copied to Clipboard" , "Okay")
     setclipboard("https://discord.gg/EAasK6nBMr")
+    Main:Label("Credit")
+   Flux:Button("Credit",function()
+   DiscordLib:Notification("Thunder Z","Fikury#7140", "Okay")
+   end)
+   Flux:Button("Discord",function()
+   DiscordLib:Notification("Thunder Z", "Discord Link Copied to Clipboard" , "Okay")
+   setclipboard("https://discord.gg/EAasK6nBMr")
+   end)
+   Main:Line()
+   Time = Main:Label("Server Time")
+
+function UpdateTime()
+    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+    local Hour = math.floor(GameTime/(60^2))%24
+    local Minute = math.floor(GameTime/(60^1))%60
+    local Second = math.floor(GameTime/(60^0))%60
+    Time:Refresh("Hour : "..Hour.." Minute : "..Minute.." Second : "..Second)
+end
+
+spawn(function()
+    while true do
+        UpdateTime()
+        wait()
+    end
+end)
+
+Client = Main:Label("User")
+
+function UpdateClient()
+    local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+    local Fps = workspace:GetRealPhysicsFPS()
+    Client:Refresh("Fps : "..Fps.." Ping : "..Ping)
+end
+
+spawn(function()
+    while true do wait(.1)
+        UpdateClient()
+    end
+end)
+
