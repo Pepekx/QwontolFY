@@ -153,7 +153,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-	MainFrame.Size = UDim2.new(0.631, 0, 0.618, 0)
+	MainFrame.Size = UDim2.new(0.420, 0, 0.230, 0)
 
 	local uitoggled = false
 	UserInputService.InputBegan:Connect(function(io, p)
@@ -3216,26 +3216,6 @@ end
         game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     end)
     
-    local ScreenGui = Instance.new("ScreenGui")
-    local Toggle = Instance.new("TextButton")
-    
-    ScreenGui.Name = "ScreenGui"
-    ScreenGui.Parent = game.CoreGui
-    
-    Toggle.Name = "Toggle"
-    Toggle.Parent = ScreenGui
-    Toggle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-    Toggle.Position = UDim2.new(0.19, 0, 0.30, 0)
-    Toggle.Size = UDim2.new(0, 50, 0, 50)
-    Toggle.Font = Enum.Font.Code
-    Toggle.Text = "⚡"
-    Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
-    Toggle.TextScaled = true
-    Toggle.MouseButton1Down:connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-    end)
-
 local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
 	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
 	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
