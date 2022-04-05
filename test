@@ -269,7 +269,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.499526083, 0, 0.499241292, 0)
-	MainFrame.Size = UDim2.new(0, 618, 0, 407)
+	MainFrame.Size = UDim2.new(0, 600, 0, 350)
 
 	local uitoggled = false
 	UserInputService.InputBegan:Connect(function(io, p)
@@ -408,7 +408,7 @@ function DiscordLib:Window(text,mainclr,cls)
 	ServersHoldFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ServersHoldFrame.BackgroundTransparency = 1.000
 	ServersHoldFrame.BorderColor3 = PresetColor
-	ServersHoldFrame.Size = UDim2.new(0, 71, 0, 396)
+	ServersHoldFrame.Size = UDim2.new(0, 125, 0, 350)
 
 	ServersHold.Name = "ServersHold"
 	ServersHold.Parent = ServersHoldFrame
@@ -416,8 +416,8 @@ function DiscordLib:Window(text,mainclr,cls)
 	ServersHold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ServersHold.BackgroundTransparency = 1.000
 	ServersHold.BorderSizePixel = 0
-	ServersHold.Position = UDim2.new(-0.000359333731, 0, 0.0580808073, 0)
-	ServersHold.Size = UDim2.new(0, 71, 0, 373)
+	ServersHold.Position = UDim2.new(0.113333493, 0, 0, 0)
+	ServersHold.Size = UDim2.new(0, 125, 0, 350)
 	ServersHold.ScrollBarThickness = 1
 	ServersHold.ScrollBarImageTransparency = 1
 	ServersHold.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -7834,4 +7834,3 @@ WeaponList = {}
     
    
 return DiscordLib
-
