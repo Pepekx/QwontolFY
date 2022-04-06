@@ -1999,7 +1999,7 @@ _G.Color = Color3.fromRGB(0,225,225)
     spawn(function()
         pcall(function()
             while wait() do
-                if _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.Auto_Bone == true then
+                if _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.FastAtttk or _G.Auto_Bone or _G.FastAttack == true then
                     if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                         local Noclip = Instance.new("BodyVelocity")
                         Noclip.Name = "BodyClip"
@@ -2015,7 +2015,7 @@ _G.Color = Color3.fromRGB(0,225,225)
     spawn(function()
         pcall(function()
             game:GetService("RunService").Stepped:Connect(function()
-                if _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.Auto_Bone == true then
+                if _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.FastAtttk or _G.Auto_Bone or _G.FastAttack == true then
                     for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
                         if v:IsA("BasePart") then
                             v.CanCollide = false    
@@ -2028,7 +2028,7 @@ _G.Color = Color3.fromRGB(0,225,225)
     
     spawn(function()
         while wait() do
-            if _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.Auto_Bone == true then
+            if _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.FastAtttk or _G.Auto_Bone or _G.FastAttack == true then
                 pcall(function()
                     game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
                 end)
@@ -2158,16 +2158,29 @@ end)
         end)
     end)
     
+    Main:AddToggle("Fast Attack",true,function(value)
+        _G.FastAtttk = value
+    end)
+    
+    Main:AddToggle("Fast Attack 2",false,function(value)
+        _G.FastAttack = value
+    end)
+    
+     Main:AddButton("Remove Sound Effect",function()
+ 
+            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+                if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
+                v:Destroy() 
+                end
+           end
+      end)
+    
     Main:AddToggle("Bring Mob",true,function(value)
         _G.BringMonster = value
     end)
     
     
 
-	Main:AddToggle("Fast Attack", true,function(value)
-		fastattack = value
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/fastnyepong"))()
-	end)
     
     WeaponList = {}
     
@@ -4608,6 +4621,92 @@ end)
         end
     end)
     
+local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
+    local Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
+    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
+    local CameraShaker = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+    spawn(function()
+        game:GetService('RunService').Heartbeat:connect(function()
+            if _G.FastAtttk then
+                pcall(function()
+            RigC.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+            RigC.activeController.hitboxMagnitude = 100
+            RigC.activeController.attacking = false
+    		RigC.activeController.increment = 3
+    		RigC.activeController.humanoid.AutoRotate = true
+    		RigC.activeController.blocking = false
+    		Rig.activeController.focusStart = 0
+            kkii:Stop()
+            CameraShaker.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+                end)
+            end
+        end)
+    end)
+       
+   if _G.FastAtttk == false then
+	_G.FastAtttk = false
+else
+	_G.FastAtttk = false
+end
+
+local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+    local VirtualUser = game:GetService('VirtualUser')
+    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
+    local LocalPlayer = game.Players.LocalPlayer
+    local Framework = {
+        Combat = require(LocalPlayer.PlayerScripts.CombatFramework),
+        Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
+    }
+    local cd = 0.1
+    function Attack()
+        spawn(function()
+            while wait() do
+            pcall(function()
+                local Controller = Framework.Combat.activeController
+                if Controller and tick() >= cd then
+                    cd = tick() + 0.1
+                    spawn(function()
+                        Controller:attack()
+                    end)
+                    Controller.increment = 4
+                end
+            end)
+        end
+        end)
+    end
+
+    spawn(function()
+        for i = 1,9999999999999999999999999999999999999999999999999999 do game:GetService('RunService').Heartbeat:wait()
+        if _G.FastAtttk then
+        
+        end
+    end
+end)
+
+spawn(function()
+    game:GetService("RunService").Stepped:Connect(function()
+        if _G.FastAtttk == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+        wait(1)
+    end)
+end)
+
+spawn(function()
+    while wait() do
+        if sethiddenproperty then
+            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999)
+        end 
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)
+
+
     local plyserv = Combat:AddLabel("Players")
     
     spawn(function()
@@ -11553,3 +11652,131 @@ elseif game.PlaceId == 6329844902 then
         end
     end)
 end
+
+
+ ----------------------------------[End]----------------------------------
+        
+       
+
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+for i,v in pairs(getreg()) do
+    if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+        for x,y in pairs(debug.getupvalues(v)) do
+             if typeof(y) == "table" then
+                spawn(function()
+                    game:GetService("RunService").RenderStepped:Connect(function()
+                        if _G.FastAttack then
+                            pcall(function()
+                                CameraShaker:Stop()
+                                y.activeController.attacking = false
+                                y.activeController.increment = 3
+                                y.activeController.hitboxMagnitude = 80 
+                                y.activeController.blocking = false
+                                y.activeController:attack()
+                                y.activeController.timeToNextBlock = false
+                            end)
+                        end
+                    end)
+                end)
+            end
+        end
+    end
+end
+
+spawn(function()
+    game:GetService("RunService").Stepped:Connect(function()
+        if _G.FastAttack == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+        wait(1)
+    end)
+end)
+
+
+        
+    local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
+    local Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
+    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
+    local CameraShaker = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+    spawn(function()
+        game:GetService('RunService').Heartbeat:connect(function()
+            if _G.FastAttack then
+                pcall(function()
+            RigC.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+            RigC.activeController.hitboxMagnitude = 100
+            RigC.activeController.attacking = false
+    		RigC.activeController.increment = 3
+    		RigC.activeController.humanoid.AutoRotate = true
+    		RigC.activeController.blocking = false
+    		Rig.activeController.focusStart = 0
+            kkii:Stop()
+            CameraShaker.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+                end)
+            end
+        end)
+    end)
+       
+   if _G.FastAttack == false then
+	_G.FastAttack = false
+else
+	_G.FastAttack = false
+end
+
+local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+    local VirtualUser = game:GetService('VirtualUser')
+    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
+    local LocalPlayer = game.Players.LocalPlayer
+    local Framework = {
+        Combat = require(LocalPlayer.PlayerScripts.CombatFramework),
+        Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
+    }
+    local cd = 0.1
+    function Attack()
+        spawn(function()
+            while wait() do
+            pcall(function()
+                local Controller = Framework.Combat.activeController
+                if Controller and tick() >= cd then
+                    cd = tick() + 0.1
+                    spawn(function()
+                        Controller:attack()
+                    end)
+                    Controller.increment = 4
+                end
+            end)
+        end
+        end)
+    end
+
+    spawn(function()
+        for i = 1,9999999999999999999999999999999999999999999999999999 do game:GetService('RunService').Heartbeat:wait()
+        if _G.FastAttack then
+        
+        end
+    end
+end)
+
+spawn(function()
+    game:GetService("RunService").Stepped:Connect(function()
+        if _G.FastAttack == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+        wait(1)
+    end)
+end)
+
+spawn(function()
+    while wait() do
+        if sethiddenproperty then
+            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999)
+        end 
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)
