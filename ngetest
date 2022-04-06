@@ -2191,7 +2191,7 @@ end)
     end)
     
     
-    fastattack = true
+
 	Main:AddToggle("Fast Attack", true,function(value)
 		fastattack = value
 	end)
