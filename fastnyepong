@@ -7,7 +7,7 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
 			pcall(function()
 				CombatFrameworkR.activeController.hitboxMagnitude = 55
 				if Usefastattack then
-					if fastattack then
+					if _G.fastattack then
 						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
 							CombatFrameworkR.activeController.timeToNextAttack = 3
 						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
