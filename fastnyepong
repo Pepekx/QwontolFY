@@ -25,13 +25,4 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
 			end)
 		end)
 	end)
-    
-    local LocalPlayer = game:GetService'Players'.LocalPlayer
-    local originalstam = LocalPlayer.Character.Energy.Value
-    function infinitestam()
-        LocalPlayer.Character.Energy.Changed:connect(function()
-            if InfiniteEnergy then
-                LocalPlayer.Character.Energy.Value = originalstam
-            end 
-        end)
-    end
+
