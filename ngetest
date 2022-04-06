@@ -15,6 +15,11 @@ _G.Color = Color3.fromRGB(0,225,225)
         end
     end
     
+    local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
+	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
+	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+	CameraShakerR:Stop()
+    
     local UserInputService = game:GetService("UserInputService")
     local TweenService = game:GetService("TweenService")
     
@@ -2122,12 +2127,8 @@ end)
 	Main:AddToggle("Fast Attack", true,function(value)
 		fastattack = value
 	end)
-    
-    local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
-	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
-	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-	CameraShakerR:Stop()
-	spawn(function()
+	
+    spawn(function()
 		game:GetService("RunService").Stepped:Connect(function()
 			pcall(function()
 				CombatFrameworkR.activeController.hitboxMagnitude = 55
@@ -2151,17 +2152,6 @@ end)
 		end)
 	end)
 	
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-				if Usefastattack then
-					if fastattack then
-						Click()
-					end
-				end
-			end)
-		end)
-	end)
 
     
     WeaponList = {}
