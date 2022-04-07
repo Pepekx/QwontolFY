@@ -3408,13 +3408,25 @@ end)
 		fastattack = value
 	end)
     
+     Main:AddButton("Remove Sound Effect",function()
+ 
+            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+                if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
+                v:Destroy() 
+                end
+           end
+      end)
+    
     Main:AddLine()
     Main:AddLabel("== Main ==")
     Main:AddLine()
     local AutoFarm = Main:AddToggle("Auto Farm Level",_G.AutoFarm,function(value)
-
         _G.AutoFarm = value
+        if _G.SelectWeapon == "" then
+            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            else
         StopTween(_G.AutoFarm)
+        end
     end)
     
     spawn(function()
@@ -3497,6 +3509,7 @@ WeaponList = {}
         end
     end
     
+    _G.SelectWeapon = ""
     local SelectWeapona = Main:AddDropdown("Select Weapon",WeaponList,function(value)
         _G.SelectWeapon = value
     end)
@@ -7765,5 +7778,4 @@ WeaponList = {}
     
    
 return DiscordLib
-
 
