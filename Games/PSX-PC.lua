@@ -11,6 +11,15 @@ Duration = 10,
 Color = Success
 })
 
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "Discord Server",     
+Text = "Discord Server Link \nCopied to Clipboard",
+Icon = "rbxassetid://9295185892",
+Duration = 10,
+Color = Success
+})
+setclipboard("https://discord.gg/EAasK6nBMr")    
+
 if game.CoreGui:FindFirstChild("BlackTrap") then
    game.CoreGui:FindFirstChild("BlackTrap"):Destroy()
 end
@@ -1935,6 +1944,17 @@ local Chests = {
    "Giant Pixel Chest";
 }
 
+local CratesMasteryList = {"Town Crate"; "Forest Crate"; "Beach Crate"; "Mine Crate"; "Desert Crate"; "Volcano Crate"; "Winter Crate"; "Glacier Crate"; "Enchanted Forest Crate"; "Ancient Island Crate"; "Samurai Island Crate"; "Candy Island Crate"; "Haunted Island Crate"; "Hell Island Crate"; "Heaven Island Crate"; "Tech City Crate"; "Dark Tech Crate"; "Alien Forest Crate"; "Axolotl Ocean Crate"; "Pixel Forest Crate"; "Pixel Alps Crate";}
+
+local CoinsPilesMasteryList ={"Town Coins", "Town Large Coins", 'Town Tiny Coins', "Forest Coins", "Forest Large Coins", "Forest Tiny Coins", "Beach Coins", "Beach Large Coins", "Beach Tiny Coins", "Mine Coins", "Mine Large Coins", "Mine Tiny Coins", "Desert Coins", "Desert Large Coins", "Desert Tiny Coins", "Volcano Coins", "Volcano Large Coins", "Volcano Tiny Coins", "Winter Coins", "Winter Large Coins", "Winter Tiny Coins", "Glacier Coins", "Glacier Large Coins", "Glacier Tiny Coins", "Enchanted Forest Coins", "Enchanted Forest Large Coins", "Enchanted Forest Tiny Coins", "Ancient Island Coins", "Ancient Island Large Coins", "Ancient Island Tiny Coins", "Samurai Island Coins", "Samurai Island Large Coins", "Samurai Island Tiny Coins", "Candy Island Coins", "Candy Island Large Coins", "Candy Island Tiny Coins", "Haunted Island Coins", 'Haunted Island Large Coins', 'Haunted Island Tiny Coins', 'Heaven Island Coins', 'Heaven Island Large Coins', 'Heaven Island Tiny Coins', 'Tech City Coins', 'Tech City Large Coins', 'Tech City Tiny Coins', 'Dark Tech Coins', 'Dark Tech Large Coins', 'Dark Tech Tiny Coins', 'Steampunk Coins', 'Steampunk Large Coins', 'Steampunk Tiny Coins', 'Alien Lab Coins', 'Alien Lab Large Coins', 'Alien Lab Tiny Coins', 'Alien Forest Coins', 'Alien Forest Large Coins', 'Alien Forest Tiny Coins', 'Blue Glitched Coins', 'Blue Glitched Large Coins', 'Blue Glitched Tiny Coins', 'Pink Glitched Coins', 'Pink Glitched Large Coins', 'Pink Glitched Tiny Coins', 'Axolotl Ocean Coins', 'Axolotl Ocean Large Coins', 'Axolotl Ocean Tiny Coins', 'Pixel Forest Coins', 'Pixel Forest Large Coins', 'Pixel Forest Tiny Coins', 'Pixel Kyoto Coins', 'Pixel Kyoto Large Coins'}
+
+local ChestsMasteryList = {'Town Chest', "Forest Small Chest", "Forest Chest", "Beach Chest", "Beach Small Chest", "Mine Small Chest", "Mine Chest", "Desert Chest", "Desert Small Chest", "Winter Chest", "Winter Small Chest", "Glacier Chest", "Glacier Small Chest", "Enchanted Forest Chest", "Enchanted Forest Small Chest", "Samurai Island Chest", "Samurai Island Small Chest", "Candy Island Chest", "Candy Island Small Chest", "Hell Island Chest", 'Hell Island Small Chest', "Heaven Island Chest", 'Heaven Island Small Chest', "Axolotl Deep Ocean Chest", "Axolotl Deep Ocean Small Chest", "Pixel Forest Chest", 'Pixel Forest Small Chest', "Pixel Alps Chest", 'Pixel Alps Small Chest'}
+
+local PresentsMasteryList = {"Town Present", "Forest Present", "Beach Present", "Mine Present", "Desert Present", "Volcano Present", "Winter Present", "Glacier Present", "Enchanted Forest Present", "Ancient Island Present", "Samurai Island Present", "Candy Island Present", "Haunted Island Present", "Hell Island Present", "Heaven Island Present", "Tech City Present", "Dark Tech Present", "Alien Forest Present", "Blue Glitched Present", "Pink Glitched Present", "Axolotl Ocean Present", "Pixel Forest Present", "Pixel Kyoto Present", "Pixel Kyoto Large Present"}
+
+local VaultsSafesMasteryList = {"Forest Safe", "Forest Vault", "Beach Safe", "Beach Vault", "Mine Safe", "Mine Vault", "Desert Safe", "Desert Vault", "Volcano Safe", "Volcano Vault", "Winter Safe", "Winter Vault", "Glacier Safe", "Glacier Vault", "Enchanted Forest Safe", "Enchanted Forest Vault", "Ancient Island Vault", 'Ancient Island Safe', "Candy Island Vault", 'Candy Island Safe', "Haunted Island Vault", 'Haunted Island Safe', "Heaven Island Vault", 'Heaven Island Safe', "Tech City Vault", 'Tech City Safe', "Steampunk Vault", 'Steampunk Safe', "Alien Lab Vault", 'Alien Lab Safe', "Blue Glitched Vault", 'Blue Glitched Safe', "Pink Glitched Vault", 'Pink Glitched Safe', "Axolotl Deep Ocean Vault", 'Axolotl Deep Ocean Safe', "Pixel Forest Vault", 'Pixel Forest Safe', "Pixel Vault Safe", "Pixel Vault Vault"}
+
+local DiamondsMasteryList = {"Diamonds", "Tiny Diamonds"}
 
 workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "buy egg")
 workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "join coin")
@@ -1952,6 +1972,9 @@ workspace.__THINGS.__REMOTES.MAIN:FireServer("a", "toggle setting")
 workspace.__THINGS.__REMOTES.MAIN:FireServer("a", "activate boost")
 workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "use golden machine")
 workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "use rainbow machine")
+workspace.__THINGS.__REMOTES.MAIN:FireServer("a", "toggle setting")
+workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "fuse pets")
+workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "enchant pet")
 
 -------------------------------
 --Farms a coin. It seems to work. That's fun
@@ -2055,6 +2078,7 @@ end
 local Win = Blacklib:Window("Pet Simulator X")
 -- Tab --
 local FirstPage = Win:Tab("• Farming", "rbxassetid://9247749254")
+local Mastery = Win:Tab("• Mastery", "rbxassetid://9316370612")
 local Collect = Win:Tab("• Auto", "rbxassetid://9247881830")
 local Egg = Win:Tab("• Egg", "rbxassetid://9247822567")
 local Pets = Win:Tab("• Pet", "rbxassetid://9248110350")
@@ -2240,8 +2264,221 @@ for i,v in pairs(AllChests()) do
             end
 end
 end
-    end)
+end)
 
+
+Mastery:Line()
+Mastery:Label("== Mastery Section ==")
+Mastery:Line()
+local MasteryIndex = {"Coins Piles Mastery", "Crates Mastery", "Chests Mastery", "Presents Mastery", "Vaults & Safes Mastery", "Diamonds Mastery"}
+Mastery:Dropdown("Mastery List", MasteryIndex, function(selectmasteryfunc)
+    _G.MasteryList = selectmasteryfunc
+end)
+
+Mastery:Toggle("Enable Farm Mastery", function(masteryfunc)
+    _G.Mastery = masteryfunc
+   while task.wait() and _G.Mastery do
+        if _G.MasteryList == "Crates Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(CratesMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        elseif _G.MasteryList == "Coins Piles Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(CoinsPilesMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        elseif _G.MasteryList == "Chests Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(ChestsMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        elseif _G.MasteryList == "Presents Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(PresentsMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        elseif _G.MasteryList == "Vaults & Safes Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(VaultsSafesMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        elseif _G.MasteryList == "Diamonds Mastery" then
+            local CurrentFarmingPets = {}
+            local pethingy = GetMyPets()
+            for i,v in pairs(DiamondsMastery()) do
+                if v.index%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[v.index%#pethingy+1]] or CurrentFarmingPets[pethingy[v.index%#pethingy+1]] == nil then
+                    if game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(v.index) then
+                        pcall(function()
+                            CurrentFarmingPets[pethingy[v.index%#pethingy+1]] = 'Farming'
+                            FarmCoin(v.index, pethingy[v.index%#pethingy+1])
+                        end)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+function CratesMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(CratesMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(CratesMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
+
+function CoinsPilesMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(CoinsPilesMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(CoinsPilesMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
+
+function ChestsMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(ChestsMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(ChestsMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
+
+function PresentsMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(PresentsMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(PresentsMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
+
+function VaultsSafesMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(VaultsSafesMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(VaultsSafesMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
+
+function DiamondsMastery()
+    local returntable = {}
+    local ListCoins = game.workspace['__THINGS']['__REMOTES']["get coins"]:InvokeServer({})[1]
+    for i,v in pairs(ListCoins) do
+        local shit = v
+        shit["index"] = i
+        for aa,bb in pairs(DiamondsMasteryList) do
+            if string.find(v.n, bb) then
+                local thing = string.gsub(v.n, bb.." ", " ")
+                if table.find(DiamondsMasteryList, thing) then
+                    shit.n = thing
+                    table.insert(returntable, shit)
+                end
+            end
+        end
+    end
+    return returntable
+end
 -------------------------------
 Collect:Line()
 Collect:Label("== Collect Section ==")
@@ -2612,7 +2849,6 @@ _G.TripleEgg = false
 
 --Pets
 
-
 local GameLibrary = require(game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Library"))
 local IDToName = {}
 local NameToID = {}
@@ -2631,67 +2867,168 @@ for i,v in pairs(GameLibrary.Directory.Pets) do
     table.insert(PetNamesTable, v.name)
 end
 
+function GetPets()
+    local MyPets = {}
+    for i,v in pairs(Library.Save.Get().Pets) do
+        local ThingyThingyTempTypeThing = (v.g and 'Gold') or (v.r and 'Rainbow') or (v.dm and 'Dark Matter') or 'Normal'
+        local TempString = ThingyThingyTempTypeThing .. IDToName[v.id]
+        if MyPets[TempString] then
+            table.insert(MyPets[TempString], v.uid)
+        else
+            MyPets[TempString] = {}
+            table.insert(MyPets[TempString], v.uid)
+        end
+    end
+    return MyPets
+end
+
+-- Enchant
+local EnchantsList = {
+    'Magnet',
+    'Royalty',
+    'Glittering',
+    'Tech Coins',
+    'Fantasy Coins',
+    'Rainbow Coins',
+    'Coins',
+    'Teamwork',
+    'Diamonds',
+    'Strength',
+    'Chests',
+    'Presents',
+    'Agility',
+    'Charm'
+}
+
+local EnchantLevel = {1, 2, 3, 4, 5}
+Pets:Line()
+Pets:Label("== Auto Enchant ==")
+Pets:Note("Enchant Your Equipped Pets")
+Pets:Line()
+Pets:Dropdown("Enchant Type", EnchantsList, function(enchantlistfunc)
+    _G.EnchantType = enchantlistfunc
+end)
+
+Pets:Dropdown("Enchant Level", EnchantLevel, function(enchantlevelfunc)
+    _G.Enchantlevel = enchantlevelfunc
+end)
+
+local PettoRarity = {}
+local a = require(game:GetService("ReplicatedStorage").Framework.Modules["1 | Directory"].Pets["Grab All Pets"])
+for i, v in pairs(a) do
+    PettoRarity[i] = v.rarity
+end
+function GetPetTable(PetUID)
+    for i, v in pairs(Library.Save.Get().Pets) do
+        if v.uid == PetUID then
+            return v
+        end
+    end
+end
+Pets:Toggle("Enable Auto Enchant", function(enchantfunc)
+    _G.AutoEnchant = enchantfunc
+    local Wanted = {
+        [_G.EnchantType] = _G.Enchantlevel or 1;
+    }
+    while wait() and _G.AutoEnchant do
+        for i, v in pairs(Library.Save.Get().Pets) do
+            if v.e and PettoRarity[v.id] ~= 'Mythical' and _G.AutoEnchant then
+                local haspower = false
+                repeat
+                    if GetPetTable(v.uid).powers then
+                        for i2, v2 in pairs(GetPetTable(v.uid).powers) do
+                            warn(v2[1], v2[2])
+                            print(Wanted[v2[1]])
+                            if Wanted[v2[1]] ~= nil and not haspower then
+                                if Wanted[v2[1]] <= v2[2] then
+                                    haspower = true
+                                    warn("Pet", v.uid, "has", v2[1], v2[2])
+                                end
+                            end
+                        end
+                        if not haspower then
+                            print("Yea we kinda need new enchantments on", v.uid)
+                            workspace.__THINGS.__REMOTES["enchant pet"]:InvokeServer({[1] = v.uid})
+                        end
+                    else
+                        warn("taking", v.uid,'\'s enchanting virginity lol')
+                        workspace.__THINGS.__REMOTES["enchant pet"]:InvokeServer({[1] = v.uid})
+                    end
+                until haspower == true or Library.Save.Get().Diamonds < 10000 or _G.AutoEnchant == false
+            end
+        end
+    end
+end)
 
 --fuse
 --local PetsList = {'Vampire Bat', 'Werewolf'}
-Pets:Label("== Auto Fuse =")
 Pets:Line()
-Pets:Dropdown("Select pet", PetNamesTable, function(petfunc)
-    if petfunc then
-        _G.SelectedPet = petfunc
-        _G.FuseList = {
-            {
-                [_G.SelectedPet] = _G.PetCount or 3;
-            };
-        }
+Pets:Label("== Auto Fuse ==")
+Pets:Line()
+Pets:TextBox("Enter Pets Name", "Type Here", function(fusenamefunc)
+    _G.SelectedsPetss = fusenamefunc
+end)
+
+TypeListFuse = {"Normal"; "Gold"; "Rainbow"; "Dark Matter";}
+Pets:Dropdown("Pet Rarity Type of", TypeListFuse, function(fusetypefunc)
+    _G.TypePetsss = fusetypefunc
+end)
+
+Countlist = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+Pets:Dropdown('Amount Pets', Countlist, function(fuseamount)
+    _G.AmountedPetss = fuseamount
+end)
+
+Pets:Toggle("Auto Fuse", function(fusefunc)
+    _G.Autofuse = fusefunc
+    while task.wait() and _G.Autofuse do
+        petId = -1
+        for i,v in pairs(Library.Directory.Pets) do
+            if (string.lower(v["name"]) == string.lower(_G.SelectedsPetss)) then
+                petId = i
+            end
+        end
+        if (petId == -1) then
+            spawn(function()
+                Blacklib:Notification("Auto Fuse", "Please check again the name of pets.")
+            end)
+            _G.Autofuse = false
+        end
+        local Pets = Library.Save.Get().Pets
+        local selectedPets = {}
+        for i,v in ipairs(Pets) do
+            local petRarityTable = Library.PetCmds.Get(v.uid)
+            if not (#selectedPets == _G.AmountedPetss) then
+                if (v.id == (tostring(petId))) then
+                    if (_G.TypePetsss == "Normal") and not (petRarityTable.r) and not (petRarityTable.g) and not (petRarityTable.dm) then
+                        table.insert(selectedPets, v.uid)
+                    end
+                    if (_G.TypePetsss == "Gold") and (petRarityTable.g) then
+                        table.insert(selectedPets, v.uid)
+                    end
+                    if (_G.TypePetsss == "Rainbow") and (petRarityTable.r) then
+                        table.insert(selectedPets, v.uid)
+                    end
+                    if (_G.TypePetsss == "Dark Matter") and (petRarityTable.dm) then
+                        table.insert(selectedPets, v.uid)
+                    end
+                end
+            end
+        end
+        if (#selectedPets == _G.AmountedPetss) then
+            workspace.__THINGS.__REMOTES["fuse pets"]:InvokeServer({selectedPets})
+        end
     end
-    print("Selected pet: ",  _G.SelectedPet)
 end)
-------------------------------------------
-local TypeList = {'Normal', 'Gold', 'Rainbow'}
-Pets:Dropdown("Select pet type", TypeList, function(typefunc)
-if typefunc then
-    _G.Type = typefunc
-end
-print("Selected type: ", _G.Type)
-end)
-------------------------------------------
-Pets:Slider("Select pet amount", 3, 12, 3, function(countfusefunc)
-if countfusefunc then
-    _G.PetCount = countfusefunc
-    _G.FuseList = {
-        {
-            [_G.SelectedPet] = _G.PetCount or 3;
-        };
-    }end
---print("Selected Count: ", _G.PetCount)
-end)
-------------------------------------------
-Pets:Toggle("Enable automated fuse",  function(autofusefunc)
-if autofusefunc == true then
-    _G.Enabled = true
-    print("_G.Enabled: ", _G.Enabled)
-    print("Selected count: ", _G.PetCount)
-    print("Selected type: ", _G.Type)
-    print("Selected pet: ", _G.SelectedPet)
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/inceldom/skid/main/fuzefart.lua'))() -- runs script as I use while wait and _G.enabled so loop ends when _G.enabled is false
-elseif autofusefunc == false then
-    _G.Enabled = false
-    print("_G.Enabled: ", _G.Enabled)
-end
---Set globals so script doesn't error--
-_G.Enabled = false
-_G.Type = "Rainbow"
-_G.FuseList = {{}}
-end)
+
 ---------------------------------------
 
-
+local PetCount = {1, 2, 3, 4, 5, 6}
 --auto gold/rainbow
 Pets:Line()
 Pets:Label("== Auto Golden And Rainbow ==")
 Pets:Line()
-Pets:Slider("Select Pet Amount", 0, 6, 1, function(countcombinefunc)
+Pets:Dropdown("Amount Pets", PetCount, function(countcombinefunc)
     if countcombinefunc then
         _G.CountCombineFunc1 = countcombinefunc
     end
@@ -2768,6 +3105,57 @@ Pets:Line()
 Pets:Label("== Auto Dark Matter ==")
 Pets:Line()
 
+Pets:TextBox("Enter Pets Name", "Type Here", function(dmnamefunc)
+    _G.NameOfPet = dmnamefunc
+end)
+
+Pets:Dropdown("Amount Pets", PetCount, function(dmvalfunc)
+    _G.CountDarkMatterFunc1 = dmvalfunc
+end)
+
+Pets:Toggle("Enable Automated Dark Matter", function(dmfunc)
+    _G.AutoMakeDarkMatter = dmfunc
+    while task.wait() and _G.AutoMakeDarkMatter do
+        local Save = Library.Save.Get()
+        local Slots = Save.DarkMatterSlots
+        local Queued = 0
+        for a, b in pairs(Save.DarkMatterQueue) do
+            Queued = Queued + 1 
+        end
+        local Slots = Slots - Queued
+        for count = 1, Slots do
+            if Slots - count >= 0 then
+                local PetList = {}
+                for i,v in pairs(Library.Save.Get().Pets) do
+                    if #PetList < _G.CountDarkMatterFunc1 and v.r and IDToName[v.id] == _G.NameOfPet then
+                        table.insert(PetList, v.uid)
+                    end
+                end
+                if #PetList >= _G.CountDarkMatterFunc1 then
+                    local tablething = {[1] = {}}
+                    for eeek = 1, _G.CountDarkMatterFunc1 do
+                        tablething[1][eeek] = PetList[eeek]
+                    end
+                    workspace.__THINGS.__REMOTES["convert to dark matter"]:InvokeServer(tablething)
+                end
+            end 
+        end
+        task.wait()
+    end
+end)
+
+Pets:Toggle("Auto Claim Dark Matters", function(dmclaimfunc)
+    _G.AutoClaimDarkMatter = dmclaimfunc
+    while task.wait() and _G.AutoClaimDarkMatter do
+        for i,v in pairs(Library.Save.Get().DarkMatterQueue) do
+            if math.floor(v.readyTime - os.time()) < 0 then
+                workspace.__THINGS.__REMOTES["redeem dark matter pet"]:InvokeServer({[1] = i})
+            end
+            task.wait()
+        end
+    end
+end)
+
 Pets:Button("Remaining Time Check", function()
 local PetList = {}
 for i,v in pairs(GameLibrary.Directory.Pets) do
@@ -2787,85 +3175,6 @@ require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Messa
 end)
 
 
--------------------------------
-
-Pets:TextBox("Type Pet to Dark Matter", "Enter Name", PetNamesTable, function(value)
-
-if value then
-_G.NameOfPet = value
-end
-print("dark matter enabled", value)
-end)
-
--------------------------------
-Pets:Slider("Select Amount Pet" , 1,6,4 , function(countdarkmatterfunc)
-if countdarkmatterfunc then
-_G.CountDarkMatterFunc1 = countdarkmatterfunc
-end
---print("Selected Dark Matter Count: ", _G.CountDarkMatterFunc1)
-end)
-
-
--------------------------------
-
-Pets:Toggle("Enable Auto-Making Dark Matter Pets", function(automakedarkmatters)
-
-if automakedarkmatters == true then
-_G.AutoMakeDarkMatter = true
-elseif automakedarkmatters == false then
-_G.AutoMakeDarkMatter = false
-end
-
-
-while task.wait() and _G.AutoMakeDarkMatter do
-local Save = GameLibrary.Save.Get()
-local Slots = Save.DarkMatterSlots
-local Queued = 0
-for a, b in pairs(Save.DarkMatterQueue) do
-    Queued = Queued + 1 
-end
-local Slots = Slots - Queued
-for count = 1, Slots do
-    if Slots - count >= 0 then
-        local PetList = {}
-        for i,v in pairs(GameLibrary.Save.Get().Pets) do
-            if #PetList < _G.CountDarkMatterFunc1 and v.r and IDToName[v.id] == _G.NameOfPet then
-                table.insert(PetList, v.uid)
-            end
-        end
-        if #PetList >= _G.CountDarkMatterFunc1 then
-            local tablething = {[1] = {}}
-            for eeek = 1, _G.CountDarkMatterFunc1 do
-                tablething[1][eeek] = PetList[eeek]
-            end
-            workspace.__THINGS.__REMOTES["convert to dark matter"]:InvokeServer(tablething)
-        end
-    end 
-end
-task.wait(15)
-end
-end)
-
--------------------------------
-Pets:Toggle("Enable Auto Claiming Dark Matter Pets", function(autoclaimdark)
-
-if autoclaimdark == true then
-_G.AutoClaimDarkMatter = true
-elseif autoclaimdark == false then
-_G.AutoClaimDarkMatter = false
-end
-
-spawn(function()
-while task.wait() and _G.AutoClaimDarkMatter do
-for i,v in pairs(GameLibrary.Save.Get().DarkMatterQueue) do
-    if math.floor(v.readyTime - os.time()) < 0 then
-        workspace.__THINGS.__REMOTES["redeem dark matter pet"]:InvokeServer({[1] = i})
-    end
-    end
-task.wait(15)
-end
-end)
-end)
 
 Misc:Label("== Player Section ==")
 Misc:Slider("Walkspeed", 16, 500, 20, function(Value)
