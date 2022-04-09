@@ -38,7 +38,7 @@ if err then
     print(err)
 end
 succ, err = pcall(function()
-    menus.Coins.LayoutOrder = 1000000
+    menus["Coins"].LayoutOrder = 999970
 end)
 if err then
     print(err)
