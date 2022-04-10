@@ -2975,33 +2975,7 @@ end
     
   
 
-local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
-	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
-	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-	CameraShakerR:Stop()
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-				CombatFrameworkR.activeController.hitboxMagnitude = 55
-				if Usefastattack then
-					if fastattack then
-						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-							CombatFrameworkR.activeController.timeToNextAttack = 3
-						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
-							CombatFrameworkR.activeController.timeToNextAttack = 2
-						else
-							CombatFrameworkR.activeController.timeToNextAttack = 0
-						end
-						CombatFrameworkR.activeController.attacking = false
-						CombatFrameworkR.activeController.increment = 3
-						CombatFrameworkR.activeController.blocking = false
-						CombatFrameworkR.activeController.timeToNextBlock = 0
-						game.Players.LocalPlayer.Character.Humanoid.Sit = false	
-					end
-				end
-			end)
-		end)
-	end)
+
 	
 
     --------------------------------------------------------------------
@@ -3090,6 +3064,16 @@ end)
 	Farm:AddToggle("Fast Attack", true,function(value)
 		fastattack = value
 	end)
+	
+	Farm:AddButton("Remove Sound Effect",function()
+ 
+            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+                if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
+                v:Destroy() 
+                end
+           end
+      end)
+	
 	Farm:AddLine()
     local MainFarm = Main:NewSection("== Main Farm Section ==")
     MainFarm:AddLine()
@@ -7400,4 +7384,32 @@ end)
 
 
 
-return Blacklib
+
+
+local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
+	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
+	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+	CameraShakerR:Stop()
+	spawn(function()
+		game:GetService("RunService").Stepped:Connect(function()
+			pcall(function()
+				CombatFrameworkR.activeController.hitboxMagnitude = 55
+				if Usefastattack then
+					if fastattack then
+						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+							CombatFrameworkR.activeController.timeToNextAttack = 3
+						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
+							CombatFrameworkR.activeController.timeToNextAttack = 2
+						else
+							CombatFrameworkR.activeController.timeToNextAttack = 0
+						end
+						CombatFrameworkR.activeController.attacking = false
+						CombatFrameworkR.activeController.increment = 3
+						CombatFrameworkR.activeController.blocking = false
+						CombatFrameworkR.activeController.timeToNextBlock = 0
+						game.Players.LocalPlayer.Character.Humanoid.Sit = false	
+					end
+				end
+			end)
+		end)
+	end)
