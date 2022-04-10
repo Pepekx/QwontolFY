@@ -3311,17 +3311,6 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
 		end)
 	end)
 	
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-				if Usefastattack then
-					if fastattack then
-						Click()
-					end
-				end
-			end)
-		end)
-	end)
 
     --------------------------------------------------------------------
    local win = DiscordLib:Window("Blox Fruit")
@@ -3340,7 +3329,7 @@ local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.Playe
    DiscordLib:Notification("Thunder Z" , "Discord Link Copied to Clipboard" , "Okay")
    Main:AddLabel("Credit")
    Main:AddButton("Credit",function()
-   DiscordLib:Notification("Thunder Z","Fikury#7140", "Okay")
+   DiscordLib:Notification("Thunder Z","===== Script By ===== \n/</ Fikury#7140 />/ \n===== =====", "Okay")
    end)
    Main:AddButton("Discord",function()
    DiscordLib:Notification("Thunder Z", "Discord Link Copied to Clipboard" , "Okay")
@@ -3421,10 +3410,10 @@ end)
     Main:AddLabel("== Main ==")
     Main:AddLine()
     local AutoFarm = Main:AddToggle("Auto Farm Level",_G.AutoFarm,function(value)
-        _G.AutoFarm = value
         if _G.SelectWeapon == "" then
             DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
             else
+        _G.AutoFarm = value
         StopTween(_G.AutoFarm)
         end
     end)
@@ -3634,8 +3623,12 @@ WeaponList = {}
     
     if World2 then
         Main:AddToggle("Auto Farm Factory",_G.AutoFactory,function(value)
+            if _G.SelectWeapon == "" then
+            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            else
             _G.AutoFactory = value
             StopTween(_G.AutoFactory)
+            end
         end)
     
         spawn(function()
@@ -3661,22 +3654,22 @@ WeaponList = {}
                 end)
             end
         end)
-    elseif World3 then
-        Main:AddToggle("Auto Mystic Island",_G.AutoMysticIsland,function(value)
-            _G.AutoMysticIsland = value
-        end)
+   -- elseif World3 then
+      --  Main:AddToggle("Auto Mystic Island",_G.AutoMysticIsland,function(value)
+   --         _G.AutoMysticIsland = value
+ --       end)
     
-        spawn(function()
-            while wait() do
-                if _G.AutoMysticIsland then
-                    pcall(function()
-                        if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                            topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
-                        end
-                    end)
-                end
-            end
-        end)
+      --  spawn(function()
+      --      while wait() do
+           --     if _G.AutoMysticIsland then
+        --            pcall(function()
+        --                if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+            --                topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+      --                  end
+                --    end)
+          --      end
+        --    end
+        --end)
     end
     Main:AddLine()
     Main:AddLabel("== Auto Fighting Style ==")
@@ -4325,8 +4318,12 @@ WeaponList = {}
     
     Main:AddToggle("Auto Farm Boss",_G.AutoFarmBoss,function(value)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+        if _G.SelectWeapon == "" then
+            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            else
         _G.AutoFarmBoss = value
         StopTween(_G.AutoFarmBoss)
+        end
     end)
     
     spawn(function()
@@ -4362,8 +4359,12 @@ WeaponList = {}
     end)
     
     Main:AddToggle("Auto Farm All Boss",_G.AutoAllBoss,function(value)
+        if _G.SelectWeapon == "" then
+            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            else
         _G.AutoAllBoss = value
         StopTween(_G.AutoAllBoss)
+        end
     end)
     
     Main:AddToggle("Auto Farm All Boss Hop",_G.AutoAllBossHop,function(value)
@@ -4422,8 +4423,12 @@ WeaponList = {}
     end)
     
     Main:AddToggle("Auto Dought Boss",_G.AutoDoughtBoss,function(value)
+        if _G.SelectWeapon == "" then
+            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            else
         _G.AutoDoughtBoss = value
         StopTween(_G.AutoDoughtBoss)
+        end
     end)
     
     spawn(function()
@@ -4833,69 +4838,69 @@ WeaponList = {}
             end
         end)
     end)
-    Main:AddLine()
-    Main:AddLabel("Bone")
-    Main:AddLine()
-    local BoneFarm = Main:AddToggle("Auto Farm Bone",_G.Auto_Bone,function(value)
-        _G.Auto_Bone = value
-        StopTween(_G.Auto_Bone)
-    end)
+    --Main:AddLine()
+ --   Main:AddLabel("Bone")
+  --  Main:AddLine()
+--    local BoneFarm = Main:AddToggle("Auto Farm Bone",_G.Auto_Bone,function(value)
+      --  _G.Auto_Bone = value
+    --    StopTween(_G.Auto_Bone)
+  --  end)
     
-    spawn(function()
-        while wait() do 
-            if _G.Auto_Bone and World3 then
-                pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton [Lv. 1975]") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Demonic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat task.wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.Head.CanCollide = false 
-                                        StartMagnetBoneMon = true
-                                        PosMonBone = v.HumanoidRootPart.CFrame
-                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                                        game:GetService("VirtualUser"):CaptureController()
-                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                        StartMagnetBoneMon = false
-                        for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
-                            if v.Name == "Reborn Skeleton [Lv. 1975]" then
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                            elseif v.Name == "Living Zombie [Lv. 2000]" then
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                            elseif v.Name == "Demonic Soul [Lv. 2025]" then
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                            elseif v.Name == "Posessed Mummy [Lv. 2050]" then
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)
+  --  spawn(function()
+ --       while wait() do 
+   --         if _G.Auto_Bone and World3 then
+     --           pcall(function()
+     --               if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton [Lv. 1975]") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Demonic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
+                     --   for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                --            if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
+                     --           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                        --            repeat task.wait()
+              --                          AutoHaki()
+                   --                     EquipWeapon(_G.SelectWeapon)
+                  --                      v.HumanoidRootPart.CanCollide = false
+            --                            v.Humanoid.WalkSpeed = 0
+                --                        v.Head.CanCollide = false 
+        --                                StartMagnetBoneMon = true
+          --                              PosMonBone = v.HumanoidRootPart.CFrame
+             --                           topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+             --                           game:GetService("VirtualUser"):CaptureController()
+                                     --  game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                              --      until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
+                           --     end
+                         --   end
+                       -- end
+                  --  else
+                     --   StartMagnetBoneMon = false
+                       -- for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
+                       --     if v.Name == "Reborn Skeleton [Lv. 1975]" then
+                       --         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                       --     elseif v.Name == "Living Zombie [Lv. 2000]" then
+                       --         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                       --     elseif v.Name == "Demonic Soul [Lv. 2025]" then
+                       --         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                          --  elseif v.Name == "Posessed Mummy [Lv. 2050]" then
+                         --       topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                      --      end
+                    --    end
+                  --  end
+               -- end)
+           -- end
+       -- end
+   -- end)
     
-    Main:AddToggle("Auto Random Surprise",_G.Auto_Random_Bone,function(value)
-        _G.Auto_Random_Bone = value
-    end)
+    --Main:AddToggle("Auto Random Surprise",_G.Auto_Random_Bone,function(value)
+       -- _G.Auto_Random_Bone = value
+  --  end)
     
-    spawn(function()
-        pcall(function()
-            while wait(.1) do
-                if _G.Auto_Random_Bone then    
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
-                end
-            end
-        end)
-    end)
+  --  spawn(function()
+      --  pcall(function()
+       --     while wait(.1) do
+          --      if _G.Auto_Random_Bone then    
+               --     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+         --       end
+         --   end
+        --end)
+   -- end)
     Main:AddLine()
     Main:AddLabel("Observation")
     Main:AddLine()
@@ -6418,71 +6423,6 @@ WeaponList = {}
         end
     end)
    
-    Stats:AddLine()
-    Stats:AddLabel("Fake Stats ( Visual )")
-    Stats:AddLine()
-    Stats:AddToggle("Enabled Fake",_G.EnabledStat,function(value)
-        _G.EnabledStat = value
-    end)
-    
-    Stats:AddTextbox("Level","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Level.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Exp ","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Exp.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Beli","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Beli.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Fragments","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["Localplayer"].Data.Fragments.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Melee","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Stats.Melee.Level.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Defense","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Stats.Defense.Level.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Sword","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Stats.Sword.Level.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Gun","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Stats.Gun.Level.Value = tonumber(value)
-        end
-    end)
-    Stats:AddTextbox("Fruit","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].Data.Stats["Demon Fruit"].Level.Value = tonumber(value)
-        end
-    end)
-    
-    Stats:AddTextbox("Bounty","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("Players")["LocalPlayer"].leaderstats["Bounty/Honor"].Value = tonumber(value)
-        end
-    end)
     Teleport:AddLine()
     Teleport:AddLabel("World - Monster")
     Teleport:AddLine()
@@ -7076,156 +7016,156 @@ WeaponList = {}
     Shop:AddLine()
     Shop:AddLabel("Abilities")
     Shop:AddLine()
-    Shop:AddButton("Buy Geppo",function()
+    Shop:AddButton("Buy Sky Jumps (Geppo) $10,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
     end)
     
-    Shop:AddButton("Buy Buso Haki",function()
+    Shop:AddButton("Buy Enchancement (Buso) $25,000 ",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
     end)
     
-    Shop:AddButton("Buy Soru",function()
+    Shop:AddButton("Buy Flash Step (Soru) $100,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
     end)
     
-    Shop:AddButton("Buy Observation(Ken) Haki",function()
+    Shop:AddButton("Buy Observation(Ken) $750,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
     end)
     Shop:AddLine()
     Shop:AddLabel("Fighting Style")
     Shop:AddLine()
-    Shop:AddButton("Buy Black Leg",function()
+    Shop:AddButton("Buy Dark Leg $150,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
     end)
     
-    Shop:AddButton("Buy Electro",function()
+    Shop:AddButton("Buy Electric $500,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
     end)
     
-    Shop:AddButton("Buy Fishman Karate",function()
+    Shop:AddButton("Buy Water Kung Fu $750,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
     end)
     
-    Shop:AddButton("Buy Dragon Claw",function()
+    Shop:AddButton("Buy Dragon Breath ₣1,500",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
     end)
     
-    Shop:AddButton("Buy Superhuman",function()
+    Shop:AddButton("Buy Superhuman $3,000,000" ,function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
     end)
     
-    Shop:AddButton("Buy Death Step",function()
+    Shop:AddButton("Buy Death Step $2,500,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
     end)
     
-    Shop:AddButton("Buy Sharkman Karate",function()
+    Shop:AddButton("Buy Sharkman Karate $2,500,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
     end)
     
-    Shop:AddButton("Buy Electric Claw",function()
+    Shop:AddButton("Buy Electric Claw $3,000,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
     end)
     
-    Shop:AddButton("Buy Dragon Talon",function()
+    Shop:AddButton("Buy Dragon Talon $3,000,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
     end)
     -----Shop----------------
     Shop:AddLine()
     Shop:AddLabel("Accessory")
     Shop:AddLine()
-    Shop:AddButton("Tomoe Ring",function()
+    Shop:AddButton("Tomoe Ring $500,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Tomoe Ring")
     end)
     
-    Shop:AddButton("Black Cape",function()
+    Shop:AddButton("Black Cape $50,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Black Cape")
     end)
     
-    Shop:AddButton("Swordsman Hat",function()
+    Shop:AddButton("Swordsman Hat $150,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Swordsman Hat")
     end)
     Shop:AddLine()
     Shop:AddLabel("Sword")
     Shop:AddLine()
-    Shop:AddButton("Cutlass",function()
+    Shop:AddButton("Cutlass $1,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
     end)
     
-    Shop:AddButton("Katana",function()
+    Shop:AddButton("Katana $1,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
     end)
     
-    Shop:AddButton("Iron Mace",function()
+    Shop:AddButton("Iron Mace $25,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
     end)
     
-    Shop:AddButton("Duel Katana",function()
+    Shop:AddButton("Duel Katana $12,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
     end)
     
-    Shop:AddButton("Triple Katana", function()
+    Shop:AddButton("Triple Katana $60,000", function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
     end)
     
-    Shop:AddButton("Pipe",function()
+    Shop:AddButton("Pipe $100,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
     end)
     
-    Shop:AddButton("Dual Headed Blade",function()
+    Shop:AddButton("Dual Headed Blade $400,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
     end)
     
-    Shop:AddButton("Bisento",function()
+    Shop:AddButton("Bisento $1,000,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
     end)
     
-    Shop:AddButton("Soul Cane",function()
+    Shop:AddButton("Soul Cane $750,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
     end)
     Shop:AddLine()
     Shop:AddLabel("Gun")
     Shop:AddLine()
-    Shop:AddButton("Slingshot",function()
+    Shop:AddButton("Slingshot $5,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
     end)
     
-    Shop:AddButton("Musket",function()
+    Shop:AddButton("Musket $8,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Musket")
     end)
     
-    Shop:AddButton("Flintlock",function()
+    Shop:AddButton("Flintlock $10,500",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Flintlock")
     end)
     
-    Shop:AddButton("Refined Flintlock",function()
+    Shop:AddButton("Refined Flintlock $30,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Refined Flintlock")
     end)
     
-    Shop:AddButton("Cannon",function()
+    Shop:AddButton("Cannon $65,000",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cannon")
     end)
     
-    Shop:AddButton("Kabucha",function()
+    Shop:AddButton("Kabucha ₣1,500",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
     end)
     ------------Bone------------------
-    Shop:AddLine()
-    Shop:AddLabel("Bones")
-    Shop:AddLine()
-    Shop:AddButton("Buy Surprise",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
-    end)
+    --Shop:AddLine()
+    --Shop:AddLabel("Bones")
+   -- Shop:AddLine()
+   -- Shop:AddButton("Buy Surprise",function()
+    --    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+  --  end)
     
-    Shop:AddButton("Stat Refund",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,2)
-    end)
+   -- Shop:AddButton("Stat Refund",function()
+     --   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,2)
+ --   end)
         
-    Shop:AddButton("Race Reroll",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,3)
-    end)
+   -- Shop:AddButton("Race Reroll",function()
+    --    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,3)
+   -- end)
     Misc:AddLine()
     Misc:AddLabel("Server")
     Misc:AddLine()
@@ -7778,4 +7718,3 @@ WeaponList = {}
     
    
 return DiscordLib
-
