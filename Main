@@ -1,6 +1,6 @@
 
 local player = {
-    "KenzuPlayzSec"
+    "KenzuPlayzSec" and gabriel_gemer111 and ROGER78015 and Huesca_7u7 and FzlB1 and goten_solo4real and 1_lghdeer and tahasaif11 and FearEddy5 and FearEddy5 and 
 } 
 
 if game.Players.LocalPlayer.Name == unpack(player) then
