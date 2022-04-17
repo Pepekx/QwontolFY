@@ -1,50 +1,3 @@
-local Settings = {
-    InviteCode = "EAasK6nBMr" -- the code at the end of the invite here
-}
-
--- Objects
-local HttpService = game:GetService("HttpService")
-local RequestFunction
-
-if syn and syn.request then
-    RequestFunction = syn.request
-elseif request then
-    RequestFunction = request
-elseif http and http.request then
-    RequestFunction = http.request
-elseif http_request then
-    RequestFunction = http_request
-end
-
-local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
-
--- Start
-if not RequestFunction then
-    return print("Your executor does not support http requests.")
-end
-
-for i = 6453, 6464 do
-    local DiscordInviteRequest = function()
-        local Request = RequestFunction({
-            Url = string.format(DiscordApiUrl, tostring(i)),
-            Method = "POST",
-            Body = HttpService:JSONEncode({
-                nonce = HttpService:GenerateGUID(false),
-                args = {
-                    invite = {code = Settings.InviteCode},
-                    code = Settings.InviteCode
-                },
-                cmd = "INVITE_BROWSER"
-            }),
-            Headers = {
-                ["Origin"] = "https://discord.com",
-                ["Content-Type"] = "application/json"
-            }
-        })
-    end
-    spawn(DiscordInviteRequest)
-end
-
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "THUNDER Z",     
 Text = "Welcome to Thunder Z",
@@ -4599,13 +4552,13 @@ WeaponList = {}
         while wait() do
             pcall(function()
                 if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41))
                 elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40))
                 elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
                 else
-                    MobKilled:Set("Boss Is Spawning")
+                    MobKilled:Refresh("Boss Is Spawning")
                 end
             end)
         end
@@ -4802,14 +4755,14 @@ WeaponList = {}
         end
     end)
     Main:AddLine()
-    Main:AddLabel("Elite")
+    Main:AddLabel("Elite Hunter")
     Main:AddLine()
     local EliteProgress = Main:AddLabel("")
     
     spawn(function()
         pcall(function()
             while wait() do
-                EliteProgress:Set("Elite Progress : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
+                EliteProgress:Refresh("Elite Progress : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
             end
         end)
     end)
@@ -5098,7 +5051,7 @@ WeaponList = {}
     spawn(function()
         while wait() do
             pcall(function()
-                ObservationRange:Set("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
+                ObservationRange:Refresh("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
             end)
         end
     end)
@@ -6063,11 +6016,11 @@ WeaponList = {}
             pcall(function()
                 for i,v in pairs(game:GetService("Players"):GetPlayers()) do
                     if i == 12 then
-                        plyserv:Set("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
+                        plyserv:Refresh("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
                     elseif i == 1 then
-                        plyserv:Set("Player :".." "..i.." ".."/".." ".."12")
+                        plyserv:Refresh("Player :".." "..i.." ".."/".." ".."12")
                     else
-                        plyserv:Set("Players :".." "..i.." ".."/".." ".."12")
+                        plyserv:Refresh("Players :".." "..i.." ".."/".." ".."12")
                     end
                 end
             end)
@@ -6302,7 +6255,7 @@ WeaponList = {}
                 elseif len(Earned) <= 3 then
                     Earned1 = Earned
                 end
-                Earn:Set("Earned : "..tonumber(Earned1))
+                Earn:Refresh("Earned : "..tonumber(Earned1))
             end)
         end
     end)
@@ -6522,7 +6475,7 @@ WeaponList = {}
     spawn(function()
         while wait() do
             pcall(function()
-                Pointstat:Set("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
+                Pointstat:Refresh("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
             end)
         end
     end)
@@ -6990,9 +6943,9 @@ end
         pcall(function()
             while wait() do
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Visible == true then
-                    TimeRaid:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
+                    TimeRaid:Refresh(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
                 else
-                    TimeRaid:Set("Wait For Dungeon")
+                    TimeRaid:Refresh("Wait For Dungeon")
                 end
             end
         end)
