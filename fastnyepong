@@ -3134,12 +3134,17 @@ end)
         _G.BringMonster = value
     end)
     
-        fastattack = true
-	Farm:AddToggle("Fast Attack", true,function(value)
-		fastattack = value
+        
+	Farm:AddToggle("Fast Attack", false,function(value)
+		_G.FastAttack = value
+		for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+                if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
+                v:Destroy() 
+                end
+           end
 	end)
 
-      Farm:AddToggle("Auto Observation Haki", false, function(vu)
+      Farm:AddToggle("Auto Observation Haki", true, function(vu)
 	_G.Kentot = vu
 end)   
 
@@ -4267,13 +4272,13 @@ spawn(function()
         while wait() do
             pcall(function()
                 if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41))
                 elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40))
                 elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
-                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
+                    MobKilled:Refresh("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
                 else
-                    MobKilled:Set("Boss Is Spawning")
+                    MobKilled:Refresh("Boss Is Spawning")
                 end
             end)
         end
@@ -4467,14 +4472,13 @@ spawn(function()
         end
     end)
     kuntul:AddLine()
-    kuntul:AddLabel("Elite")
-    kuntul:AddLine()
+    kuntul:AddLabel("Elite Hunter")
     local EliteProgress = kuntul:AddLabel("")
     
     spawn(function()
         pcall(function()
             while wait() do
-                EliteProgress:Set("Elite Progress : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
+                EliteProgress:Refresh("Elite Progress : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
             end
         end)
     end)
@@ -4763,7 +4767,7 @@ spawn(function()
     spawn(function()
         while wait() do
             pcall(function()
-                ObservationRange:Set("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
+                ObservationRange:Refresh("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
             end)
         end
     end)
@@ -5943,9 +5947,9 @@ spawn(function()
                     Bounty1 = Bounty
                 end
                 if tonumber(Bounty) == 25000000 then
-                    Current:Set("Current Bounties : "..Bounty1.." [ Max ]")
+                    Current:Refresh("Current Bounties : "..Bounty1.." [ Max ]")
                 elseif tonumber(Bounty) < 25000000 then
-                    Current:Set("Current Bounties : "..Bounty1)
+                    Current:Refresh("Current Bounties : "..Bounty1)
                 end
             end)
         end
@@ -5973,7 +5977,7 @@ spawn(function()
                 elseif len(Earned) <= 3 then
                     Earned1 = Earned
                 end
-                Earn:Set("Earned : "..tonumber(Earned1))
+                Earn:Refresh("Earned : "..tonumber(Earned1))
             end)
         end
     end)
@@ -6193,7 +6197,7 @@ spawn(function()
     spawn(function()
         while wait() do
             pcall(function()
-                Pointstat:Set("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
+                Pointstat:Refresh("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
             end)
         end
     end)
@@ -6660,7 +6664,7 @@ end
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Visible == true then
                     TimeRaid:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
                 else
-                    TimeRaid:Set("Wait For Dungeon")
+                    TimeRaid:Refresh("Wait For Dungeon")
                 end
             end
         end)
@@ -7804,10 +7808,7 @@ end
         _G.NOCLIP = value
     end)
     
-    
-    
-
-local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+    local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 for i,v in pairs(getreg()) do
     if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
         for x,y in pairs(debug.getupvalues(v)) do
@@ -7817,8 +7818,8 @@ for i,v in pairs(getreg()) do
                         if _G.FastAttack then
                             pcall(function()
                                 CameraShaker:Stop()
-                                y.activeController.attacking = false
-                                y.activeController.increment = 3
+                                y.activeController.attacking = true
+                                y.activeController.increment = 12
                                 y.activeController.hitboxMagnitude = 80 
                                 y.activeController.blocking = false
                                 y.activeController:attack()
@@ -7835,129 +7836,21 @@ end
 spawn(function()
     game:GetService("RunService").Stepped:Connect(function()
         if _G.FastAttack == true then
-            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Stun.Value = 1
             game.Players.LocalPlayer.Character.Humanoid.Sit = false
             game.Players.LocalPlayer.Character.Busy.Value = false        
+            else 
+                game.Players.LocalPlayer.Character.Stun.Value = false
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false
         end
         wait(1)
     end)
 end)
-
-
         
-    local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
-    local Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
-    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
-    local CameraShaker = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-    spawn(function()
-        game:GetService('RunService').Heartbeat:connect(function()
-            if _G.FastAttack then
-                pcall(function()
-            RigC.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-            RigC.activeController.hitboxMagnitude = 100
-            RigC.activeController.attacking = false
-    		RigC.activeController.increment = 3
-    		RigC.activeController.humanoid.AutoRotate = true
-    		RigC.activeController.blocking = false
-    		Rig.activeController.focusStart = 0
-            kkii:Stop()
-            CameraShaker.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
-                end)
-            end
-        end)
-    end)
-       
-   if _G.FastAttack == false then
+if _G.FastAttack == false then
 	_G.FastAttack = false
 else
 	_G.FastAttack = false
 end
 
-local RigC = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-    local VirtualUser = game:GetService('VirtualUser')
-    local kkii = require(game.ReplicatedStorage.Util.CameraShaker)
-    local LocalPlayer = game.Players.LocalPlayer
-    local Framework = {
-        Combat = require(LocalPlayer.PlayerScripts.CombatFramework),
-        Rig = require(LocalPlayer.PlayerScripts.CombatFramework.RigController)
-    }
-    local cd = 0.1
-    function Attack()
-        spawn(function()
-            while wait() do
-            pcall(function()
-                local Controller = Framework.Combat.activeController
-                if Controller and tick() >= cd then
-                    cd = tick() + 0.1
-                    spawn(function()
-                        Controller:attack()
-                    end)
-                    Controller.increment = 4
-                end
-            end)
-        end
-        end)
-    end
-
-    spawn(function()
-        for i = 1,9999999999999999999999999999999999999999999999999999 do game:GetService('RunService').Heartbeat:wait()
-        if _G.FastAttack then
-        
-        end
-    end
-end)
-
-spawn(function()
-    game:GetService("RunService").Stepped:Connect(function()
-        if _G.FastAttack == true then
-            game.Players.LocalPlayer.Character.Stun.Value = 0
-            game.Players.LocalPlayer.Character.Humanoid.Sit = false
-            game.Players.LocalPlayer.Character.Busy.Value = false        
-        end
-        wait(1)
-    end)
-end)
-
-spawn(function()
-    while wait() do
-        if sethiddenproperty then
-            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999)
-        end 
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)
-
-
-
-
-
-local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
-	local CombatFrameworkR = getupvalues(CombatFrameworkROld)[2]
-	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-	CameraShakerR:Stop()
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-				CombatFrameworkR.activeController.hitboxMagnitude = 55
-				if Usefastattack then
-					if fastattack then
-						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-							CombatFrameworkR.activeController.timeToNextAttack = 3
-						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
-							CombatFrameworkR.activeController.timeToNextAttack = 4
-						else
-							CombatFrameworkR.activeController.timeToNextAttack = 4
-						end
-						CombatFrameworkR.activeController.attacking = false
-						CombatFrameworkR.activeController.increment = 5
-						CombatFrameworkR.activeController.blocking = false
-						CombatFrameworkR.activeController.timeToNextBlock = 4
-						game.Players.LocalPlayer.Character.Humanoid.Sit = false	
-					end
-				end
-			end)
-		end)
-	end)
