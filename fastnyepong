@@ -1909,72 +1909,84 @@ end
                 NameQuest = "BanditQuest1"
                 NameMon = "Bandit"
                 CFrameQuest = CFrame.new(1059.37195, 15.4495068, 1550.4231, 0.939700544, -0, -0.341998369, 0, 1, -0, 0.341998369, 0, 0.939700544)
+                CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
             elseif MyLevel == 10 or MyLevel <= 14 or SelectMonster == "Monkey [Lv. 14]" then
                 Mon = "Monkey [Lv. 14]"
                 LevelQuest = 1
                 NameQuest = "JungleQuest"
                 NameMon = "Monkey"
                 CFrameQuest = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+                CFrameMon = CFrame.new(-1448.1446533203, 50.851993560791, 63.60718536377)
             elseif MyLevel == 15 or MyLevel <= 29 or SelectMonster == "Gorilla [Lv. 20]" then
                 Mon = "Gorilla [Lv. 20]"
                 LevelQuest = 2
                 NameQuest = "JungleQuest"
                 NameMon = "Gorilla"
                 CFrameQuest = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+                CFrameMon = CFrame.new(-1142.6488037109, 40.462348937988, -515.39227294922)
             elseif MyLevel == 30 or MyLevel <= 39 or SelectMonster == "Pirate [Lv. 35]" then
                 Mon = "Pirate [Lv. 35]"
                 LevelQuest = 1
                 NameQuest = "BuggyQuest1"
                 NameMon = "Pirate"
                 CFrameQuest = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
+                CFrameMon = CFrame.new(-1201.0881347656, 40.628940582275, 3857.5966796875)
             elseif MyLevel == 40 or MyLevel <= 59 or SelectMonster == "Brute [Lv. 45]" then
                 Mon = "Brute [Lv. 45]"
                 LevelQuest = 2
                 NameQuest = "BuggyQuest1"
                 NameMon = "Brute"
                 CFrameQuest = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
+                CFrameMon = CFrame.new(-1387.5324707031, 24.592035293579, 4100.9575195313)
             elseif MyLevel == 60 or MyLevel <= 74 or SelectMonster == "Desert Bandit [Lv. 60]" then
                 Mon = "Desert Bandit [Lv. 60]"
                 LevelQuest = 1
                 NameQuest = "DesertQuest"
                 NameMon = "Desert Bandit"
                 CFrameQuest = CFrame.new(894.488647, 5.14000702, 4392.43359, 0.819155693, -0, -0.573571265, 0, 1, -0, 0.573571265, 0, 0.819155693)
+                CFrameMon = CFrame.new(984.99896240234, 16.109552383423, 4417.91015625)
             elseif MyLevel == 75 or MyLevel <= 89 or SelectMonster == "Desert Officer [Lv. 70]" then
                 Mon = "Desert Officer [Lv. 70]"
                 LevelQuest = 2
                 NameQuest = "DesertQuest"
                 NameMon = "Desert Officer"
                 CFrameQuest = CFrame.new(894.488647, 5.14000702, 4392.43359, 0.819155693, -0, -0.573571265, 0, 1, -0, 0.573571265, 0, 0.819155693)
+                CFrameMon = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688)
             elseif MyLevel == 90 or MyLevel <= 99 or SelectMonster == "Snow Bandit [Lv. 90]" then
                 Mon = "Snow Bandit [Lv. 90]"
                 LevelQuest = 1
                 NameQuest = "SnowQuest"
                 NameMon = "Snow Bandit"
                 CFrameQuest = CFrame.new(1389.74451, 88.1519318, -1298.90796, -0.342042685, 0, 0.939684391, 0, 1, 0, -0.939684391, 0, -0.342042685)
+                CFrameMon = CFrame.new(1356.3028564453, 105.76865386963, -1328.2418212891)
             elseif MyLevel == 100 or MyLevel <= 119 or SelectMonster == "Snowman [Lv. 100]" then
                 Mon = "Snowman [Lv. 100]"
                 LevelQuest = 2
                 NameQuest = "SnowQuest"
                 NameMon = "Snowman"
                 CFrameQuest = CFrame.new(1389.74451, 88.1519318, -1298.90796, -0.342042685, 0, 0.939684391, 0, 1, 0, -0.939684391, 0, -0.342042685)
+                CFrameMon = CFrame.new(1218.7956542969, 138.01184082031, -1488.0262451172)
             elseif MyLevel == 120 or MyLevel <= 149 or SelectMonster == "Chief Petty Officer [Lv. 120]" then
                 Mon = "Chief Petty Officer [Lv. 120]"
                 LevelQuest = 1
                 NameQuest = "MarineQuest2"
                 NameMon = "Chief Petty Officer"
                 CFrameQuest = CFrame.new(-5039.58643, 27.3500385, 4324.68018, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-4931.1552734375, 65.793113708496, 4121.8393554688)
             elseif MyLevel == 150 or MyLevel <= 174 or SelectMonster == "Sky Bandit [Lv. 150]" then
                 Mon = "Sky Bandit [Lv. 150]"
                 LevelQuest = 1
                 NameQuest = "SkyQuest"
                 NameMon = "Sky Bandit"
                 CFrameQuest = CFrame.new(-4839.53027, 716.368591, -2619.44165, 0.866007268, 0, 0.500031412, 0, 1, 0, -0.500031412, 0, 0.866007268)
+                CFrameMon = CFrame.new(-4955.6411132813, 365.46365356445, -2908.1865234375)
             elseif MyLevel == 175 or MyLevel <= 189 or SelectMonster == "Dark Master [Lv. 175]" then
                 Mon = "Dark Master [Lv. 175]"
                 LevelQuest = 2
                 NameQuest = "SkyQuest"
                 NameMon = "Dark Master"
                 CFrameQuest = CFrame.new(-4839.53027, 716.368591, -2619.44165, 0.866007268, 0, 0.500031412, 0, 1, 0, -0.500031412, 0, 0.866007268)
+                CFrameMon = CFrame.new(-5148.1650390625, 439.04571533203, -2332.9611816406)
             elseif MyLevel == 190 or MyLevel <= 209 or SelectMonster == "Prisoner [Lv. 190]" then
                 Mon = "Prisoner [Lv. 190]"
                 LevelQuest = 1
@@ -1993,30 +2005,35 @@ end
                 NameQuest = "ColosseumQuest"
                 NameMon = "Toga Warrior"
                 CFrameQuest = CFrame.new(-1580.04663, 6.35000277, -2986.47534, -0.515037298, 0, -0.857167721, 0, 1, 0, 0.857167721, 0, -0.515037298)
+                CFrameMon = CFrame.new(-1872.5166015625, 49.080215454102, -2913.810546875)
             elseif MyLevel == 275 or MyLevel <= 299 or SelectMonster == "Gladiator [Lv. 275]" then
                 Mon = "Gladiator [Lv. 275]"
                 LevelQuest = 2
                 NameQuest = "ColosseumQuest"
                 NameMon = "Gladiator"
                 CFrameQuest = CFrame.new(-1580.04663, 6.35000277, -2986.47534, -0.515037298, 0, -0.857167721, 0, 1, 0, 0.857167721, 0, -0.515037298)
+                CFrameMon = CFrame.new(-1521.3740234375, 81.203170776367, -3066.3139648438)
             elseif MyLevel == 300 or MyLevel <= 324 or SelectMonster == "Military Soldier [Lv. 300]" then
                 Mon = "Military Soldier [Lv. 300]"
                 LevelQuest = 1
                 NameQuest = "MagmaQuest"
                 NameMon = "Military Soldier"
                 CFrameQuest = CFrame.new(-5313.37012, 10.9500084, 8515.29395, -0.499959469, 0, 0.866048813, 0, 1, 0, -0.866048813, 0, -0.499959469)
+                CFrameMon = CFrame.new(-5369.0004882813, 61.24352645874, 8556.4921875)
             elseif MyLevel == 325 or MyLevel <= 374 or SelectMonster == "Military Spy [Lv. 325]" then
                 Mon = "Military Spy [Lv. 325]"
                 LevelQuest = 2
                 NameQuest = "MagmaQuest"
                 NameMon = "Military Spy"
                 CFrameQuest = CFrame.new(-5313.37012, 10.9500084, 8515.29395, -0.499959469, 0, 0.866048813, 0, 1, 0, -0.866048813, 0, -0.499959469)
+                CFrameMon = CFrame.new(-5984.0532226563, 82.14656829834, 8753.326171875)
             elseif MyLevel == 375 or MyLevel <= 399 or SelectMonster == "Fishman Warrior [Lv. 375]" then
                 Mon = "Fishman Warrior [Lv. 375]"
                 LevelQuest = 1
                 NameQuest = "FishmanQuest"
                 NameMon = "Fishman Warrior"
                 CFrameQuest = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
+                CFrameMon = CFrame.new(60844.10546875, 98.462875366211, 1298.3985595703)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
                 end
@@ -2026,6 +2043,7 @@ end
                 NameQuest = "FishmanQuest"
                 NameMon = "Fishman Commando"
                 CFrameQuest = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
+                CFrameMon = CFrame.new(61738.3984375, 64.207321166992, 1433.8375244141)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
                 end
@@ -2035,6 +2053,7 @@ end
                 NameQuest = "SkyExp1Quest"
                 NameMon = "God's Guard"
                 CFrameQuest = CFrame.new(-4721.88867, 843.874695, -1949.96643, 0.996191859, -0, -0.0871884301, 0, 1, -0, 0.0871884301, 0, 0.996191859)
+                CFrameMon = CFrame.new(-4628.0498046875, 866.92877197266, -1931.2352294922)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
                 end
@@ -2044,6 +2063,7 @@ end
                 NameQuest = "SkyExp1Quest"
                 NameMon = "Shanda"
                 CFrameQuest = CFrame.new(-7859.09814, 5544.19043, -381.476196, -0.422592998, 0, 0.906319618, 0, 1, 0, -0.906319618, 0, -0.422592998)
+                CFrameMon = CFrame.new(-7685.1474609375, 5601.0751953125, -441.38876342773)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
                 end
@@ -2053,24 +2073,28 @@ end
                 NameQuest = "SkyExp2Quest"
                 NameMon = "Royal Squad"
                 CFrameQuest = CFrame.new(-7906.81592, 5634.6626, -1411.99194, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-7654.2514648438, 5637.1079101563, -1407.7550048828)
             elseif MyLevel == 550 or MyLevel <= 624 or SelectMonster == "Royal Soldier [Lv. 550]" then
                 Mon = "Royal Soldier [Lv. 550]"
                 LevelQuest = 2
                 NameQuest = "SkyExp2Quest"
                 NameMon = "Royal Soldier"
                 CFrameQuest = CFrame.new(-7906.81592, 5634.6626, -1411.99194, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-7760.4106445313, 5679.9077148438, -1884.8112792969)
             elseif MyLevel == 625 or MyLevel <= 649 or SelectMonster == "Galley Pirate [Lv. 625]" then
                 Mon = "Galley Pirate [Lv. 625]"
                 LevelQuest = 1
                 NameQuest = "FountainQuest"
                 NameMon = "Galley Pirate"
                 CFrameQuest = CFrame.new(5259.81982, 37.3500175, 4050.0293, 0.087131381, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, 0.087131381)
+                CFrameMon = CFrame.new(5557.1684570313, 152.32717895508, 3998.7758789063)
             elseif MyLevel >= 650 or SelectMonster == "Galley Captain [Lv. 650]" then
                 Mon = "Galley Captain [Lv. 650]"
                 LevelQuest = 2
                 NameQuest = "FountainQuest"
                 NameMon = "Galley Captain"
                 CFrameQuest = CFrame.new(5259.81982, 37.3500175, 4050.0293, 0.087131381, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, 0.087131381)
+                CFrameMon = CFrame.new(5677.6772460938, 92.786109924316, 4966.6323242188)
             end
         elseif World2 then
             if MyLevel == 700 or MyLevel <= 724 or SelectMonster == "Raider [Lv. 700]" then
@@ -2079,90 +2103,105 @@ end
                 NameQuest = "Area1Quest"
                 NameMon = "Raider"
                 CFrameQuest = CFrame.new(-429.543518, 71.7699966, 1836.18188, -0.22495985, 0, -0.974368095, 0, 1, 0, 0.974368095, 0, -0.22495985)
+                CFrameMon = CFrame.new(68.874565124512, 93.635643005371, 2429.6752929688)
             elseif MyLevel == 725 or MyLevel <= 774 or SelectMonster == "Mercenary [Lv. 725]" then
                 Mon = "Mercenary [Lv. 725]"
                 LevelQuest = 2
                 NameQuest = "Area1Quest"
                 NameMon = "Mercenary"
                 CFrameQuest = CFrame.new(-429.543518, 71.7699966, 1836.18188, -0.22495985, 0, -0.974368095, 0, 1, 0, 0.974368095, 0, -0.22495985)
+                CFrameMon = CFrame.new(-864.85009765625, 122.47104644775, 1453.1505126953)
             elseif MyLevel == 775 or MyLevel <= 799 or SelectMonster == "Swan Pirate [Lv. 775]" then
                 Mon = "Swan Pirate [Lv. 775]"
                 LevelQuest = 1
                 NameQuest = "Area2Quest"
                 NameMon = "Swan Pirate"
                 CFrameQuest = CFrame.new(638.43811, 71.769989, 918.282898, 0.139203906, 0, 0.99026376, 0, 1, 0, -0.99026376, 0, 0.139203906)
+                CFrameMon = CFrame.new(1065.3669433594, 137.64012145996, 1324.3798828125)
             elseif MyLevel == 800 or MyLevel <= 874 or SelectMonster == "Factory Staff [Lv. 800]" then
                 Mon = "Factory Staff [Lv. 800]"
                 NameQuest = "Area2Quest"
                 LevelQuest = 2
                 NameMon = "Factory Staff"
                 CFrameQuest = CFrame.new(632.698608, 73.1055908, 918.666321, -0.0319722369, 8.96074881e-10, -0.999488771, 1.36326533e-10, 1, 8.92172336e-10, 0.999488771, -1.07732087e-10, -0.0319722369)
+                CFrameMon = CFrame.new(533.22045898438, 128.46876525879, 355.62615966797)
             elseif MyLevel == 875 or MyLevel <= 899 or SelectMonster == "Marine Lieutenant [Lv. 875]" then
                 Mon = "Marine Lieutenant [Lv. 875]"
                 LevelQuest = 1
                 NameQuest = "MarineQuest3"
                 NameMon = "Marine Lieutenant"
                 CFrameQuest = CFrame.new(-2440.79639, 71.7140732, -3216.06812, 0.866007268, 0, 0.500031412, 0, 1, 0, -0.500031412, 0, 0.866007268)
+                CFrameMon = CFrame.new(-2489.2622070313, 84.613594055176, -3151.8830566406)
             elseif MyLevel == 900 or MyLevel <= 949 or SelectMonster == "Marine Captain [Lv. 900]" then
                 Mon = "Marine Captain [Lv. 900]"
                 LevelQuest = 2
                 NameQuest = "MarineQuest3"
                 NameMon = "Marine Captain"
                 CFrameQuest = CFrame.new(-2440.79639, 71.7140732, -3216.06812, 0.866007268, 0, 0.500031412, 0, 1, 0, -0.500031412, 0, 0.866007268)
+                CFrameMon = CFrame.new(-2335.2026367188, 79.786659240723, -3245.8674316406)
             elseif MyLevel == 950 or MyLevel <= 974 or SelectMonster == "Zombie [Lv. 950]" then
                 Mon = "Zombie [Lv. 950]"
                 LevelQuest = 1
                 NameQuest = "ZombieQuest"
                 NameMon = "Zombie"
                 CFrameQuest = CFrame.new(-5497.06152, 47.5923004, -795.237061, -0.29242146, 0, -0.95628953, 0, 1, 0, 0.95628953, 0, -0.29242146)
+                CFrameMon = CFrame.new(-5536.4970703125, 101.08577728271, -835.59075927734)
             elseif MyLevel == 975 or MyLevel <= 999 or SelectMonster == "Vampire [Lv. 975]" then
                 Mon = "Vampire [Lv. 975]"
                 LevelQuest = 2
                 NameQuest = "ZombieQuest"
                 NameMon = "Vampire"
                 CFrameQuest = CFrame.new(-5497.06152, 47.5923004, -795.237061, -0.29242146, 0, -0.95628953, 0, 1, 0, 0.95628953, 0, -0.29242146)
+                CFrameMon = CFrame.new(-5806.1098632813, 16.722528457642, -1164.4384765625)
             elseif MyLevel == 1000 or MyLevel <= 1049 or SelectMonster == "Snow Trooper [Lv. 1000]" then
                 Mon = "Snow Trooper [Lv. 1000]"
                 LevelQuest = 1
                 NameQuest = "SnowMountainQuest"
                 NameMon = "Snow Trooper"
                 CFrameQuest = CFrame.new(609.858826, 400.119904, -5372.25928, -0.374604106, 0, 0.92718488, 0, 1, 0, -0.92718488, 0, -0.374604106)
+                CFrameMon = CFrame.new(535.21051025391, 432.74209594727, -5484.9165039063)
             elseif MyLevel == 1050 or MyLevel <= 1099 or SelectMonster == "Winter Warrior [Lv. 1050]" then
                 Mon = "Winter Warrior [Lv. 1050]"
                 LevelQuest = 2
                 NameQuest = "SnowMountainQuest"
                 NameMon = "Winter Warrior"
                 CFrameQuest = CFrame.new(609.858826, 400.119904, -5372.25928, -0.374604106, 0, 0.92718488, 0, 1, 0, -0.92718488, 0, -0.374604106)
+                CFrameMon = CFrame.new(1234.4449462891, 456.95419311523, -5174.130859375)
             elseif MyLevel == 1100 or MyLevel <= 1124 or SelectMonster == "Lab Subordinate [Lv. 1100]" then
                 Mon = "Lab Subordinate [Lv. 1100]"
                 LevelQuest = 1
                 NameQuest = "IceSideQuest"
                 NameMon = "Lab Subordinate"
                 CFrameQuest = CFrame.new(-6064.06885, 15.2422857, -4902.97852, 0.453972578, -0, -0.891015649, 0, 1, -0, 0.891015649, 0, 0.453972578)
+                CFrameMon = CFrame.new(-5720.5576171875, 63.309471130371, -4784.6103515625)
             elseif MyLevel == 1125 or MyLevel <= 1174 or SelectMonster == "Horned Warrior [Lv. 1125]" then
                 Mon = "Horned Warrior [Lv. 1125]"
                 LevelQuest = 2
                 NameQuest = "IceSideQuest"
                 NameMon = "Horned Warrior"
                 CFrameQuest = CFrame.new(-6064.06885, 15.2422857, -4902.97852, 0.453972578, -0, -0.891015649, 0, 1, -0, 0.891015649, 0, 0.453972578)
+                CFrameMon = CFrame.new(-6292.751953125, 91.181983947754, -5502.6499023438)
             elseif MyLevel == 1175 or MyLevel <= 1199 or SelectMonster == "Magma Ninja [Lv. 1175]" then
                 Mon = "Magma Ninja [Lv. 1175]"
                 LevelQuest = 1
                 NameQuest = "FireSideQuest"
                 NameMon = "Magma Ninja"
                 CFrameQuest = CFrame.new(-5428.03174, 15.0622921, -5299.43457, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)
+                CFrameMon = CFrame.new(-5461.8388671875, 130.36347961426, -5836.4702148438)
             elseif MyLevel == 1200 or MyLevel <= 1249 or SelectMonster == "Lava Pirate [Lv. 1200]" then
                 Mon = "Lava Pirate [Lv. 1200]"
                 LevelQuest = 2
                 NameQuest = "FireSideQuest"
                 NameMon = "Lava Pirate"
                 CFrameQuest = CFrame.new(-5428.03174, 15.0622921, -5299.43457, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)
+                CFrameMon = CFrame.new(-5251.1889648438, 55.164535522461, -4774.4096679688)
             elseif MyLevel == 1250 or MyLevel <= 1274 or SelectMonster == "Ship Deckhand [Lv. 1250]" then
                 Mon = "Ship Deckhand [Lv. 1250]"
                 LevelQuest = 1
                 NameQuest = "ShipQuest1"
                 NameMon = "Ship Deckhand"
                 CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016)         
+                CFrameMon = CFrame.new(921.12365722656, 125.9839553833, 33088.328125)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
                 end
@@ -2172,6 +2211,7 @@ end
                 NameQuest = "ShipQuest1"
                 NameMon = "Ship Engineer"
                 CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016)   
+                CFrameMon = CFrame.new(886.28179931641, 40.47790145874, 32800.83203125)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
                 end             
@@ -2181,6 +2221,7 @@ end
                 NameQuest = "ShipQuest2"
                 NameMon = "Ship Steward"
                 CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125)         
+                CFrameMon = CFrame.new(943.85504150391, 129.58183288574, 33444.3671875)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
                 end
@@ -2190,6 +2231,7 @@ end
                 NameQuest = "ShipQuest2"
                 NameMon = "Ship Officer"
                 CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125)
+                CFrameMon = CFrame.new(955.38458251953, 181.08335876465, 33331.890625)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
                 end
@@ -2199,6 +2241,7 @@ end
                 NameQuest = "FrostQuest"
                 NameMon = "Arctic Warrior"
                 CFrameQuest = CFrame.new(5667.6582, 26.7997818, -6486.08984, -0.933587909, 0, -0.358349502, 0, 1, 0, 0.358349502, 0, -0.933587909)
+                CFrameMon = CFrame.new(5935.4541015625, 77.26016998291, -6472.7568359375)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-6508.5581054688, 5000.034996032715, -132.83953857422))
                 end
@@ -2208,18 +2251,21 @@ end
                 NameQuest = "FrostQuest"
                 NameMon = "Snow Lurker"
                 CFrameQuest = CFrame.new(5667.6582, 26.7997818, -6486.08984, -0.933587909, 0, -0.358349502, 0, 1, 0, 0.358349502, 0, -0.933587909)
+                CFrameMon = CFrame.new(5628.482421875, 57.574996948242, -6618.3481445313)
             elseif MyLevel == 1425 or MyLevel <= 1449 or SelectMonster == "Sea Soldier [Lv. 1425]" then
                 Mon = "Sea Soldier [Lv. 1425]"
                 LevelQuest = 1
                 NameQuest = "ForgottenQuest"
                 NameMon = "Sea Soldier"
                 CFrameQuest = CFrame.new(-3054.44458, 235.544281, -10142.8193, 0.990270376, -0, -0.13915664, 0, 1, -0, 0.13915664, 0, 0.990270376)
+                CFrameMon = CFrame.new(-3185.0153808594, 58.789089202881, -9663.6064453125)
             elseif MyLevel >= 1450 or SelectMonster == "Water Fighter [Lv. 1450]" then
                 Mon = "Water Fighter [Lv. 1450]"
                 LevelQuest = 2
                 NameQuest = "ForgottenQuest"
                 NameMon = "Water Fighter"
                 CFrameQuest = CFrame.new(-3054.44458, 235.544281, -10142.8193, 0.990270376, -0, -0.13915664, 0, 1, -0, 0.13915664, 0, 0.990270376)
+                CFrameMon = CFrame.new(-3262.9301757813, 298.69036865234, -10552.529296875)
             end
         elseif World3 then
             if MyLevel == 1500 or MyLevel <= 1524 or SelectMonster == "Pirate Millionaire [Lv. 1500]" then
@@ -2228,89 +2274,104 @@ end
                 NameQuest = "PiratePortQuest"
                 NameMon = "Pirate Millionaire"
                 CFrameQuest = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
+                CFrameMon = CFrame.new(-435.68109130859, 189.69866943359, 5551.0756835938)
             elseif MyLevel == 1525 or MyLevel <= 1574 or SelectMonster == "Pistol Billionaire [Lv. 1525]" then
                 Mon = "Pistol Billionaire [Lv. 1525]"
                 LevelQuest = 2
                 NameQuest = "PiratePortQuest"
                 NameMon = "Pistol Billionaire"
                 CFrameQuest = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
+                CFrameMon = CFrame.new(-236.53652954102, 217.46676635742, 6006.0883789063)
             elseif MyLevel == 1575 or MyLevel <= 1599 or SelectMonster == "Dragon Crew Warrior [Lv. 1575]" then
                 Mon = "Dragon Crew Warrior [Lv. 1575]"
                 LevelQuest = 1
                 NameQuest = "AmazonQuest"
                 NameMon = "Dragon Crew Warrior"
                 CFrameQuest = CFrame.new(5832.83594, 51.6806107, -1101.51563, 0.898790359, -0, -0.438378751, 0, 1, -0, 0.438378751, 0, 0.898790359)
+                CFrameMon = CFrame.new(6301.9975585938, 104.77153015137, -1082.6075439453)
             elseif MyLevel == 1600 or MyLevel <= 1624 or SelectMonster == "Dragon Crew Archer [Lv. 1600]" then 
                 Mon = "Dragon Crew Archer [Lv. 1600]"
                 NameQuest = "AmazonQuest"
                 LevelQuest = 2
                 NameMon = "Dragon Crew Archer"
                 CFrameQuest = CFrame.new(5833.1147460938, 51.60498046875, -1103.0693359375)
+                CFrameMon = CFrame.new(6831.1171875, 441.76708984375, 446.58615112305)
             elseif MyLevel == 1625 or MyLevel <= 1649 or SelectMonster == "Female Islander [Lv. 1625]" then
                 Mon = "Female Islander [Lv. 1625]"
                 NameQuest = "AmazonQuest2"
                 LevelQuest = 1
                 NameMon = "Female Islander"
                 CFrameQuest = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422)
+                CFrameMon = CFrame.new(5792.5166015625, 848.14392089844, 1084.1818847656)
             elseif MyLevel == 1650 or MyLevel <= 1699 or SelectMonster == "Giant Islander [Lv. 1650]" then 
                 Mon = "Giant Islander [Lv. 1650]"
                 NameQuest = "AmazonQuest2"
                 LevelQuest = 2
                 NameMon = "Giant Islander"
                 CFrameQuest = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422)
+                CFrameMon = CFrame.new(5009.5068359375, 664.11071777344, -40.960144042969)
             elseif MyLevel == 1700 or MyLevel <= 1724 or SelectMonster == "Marine Commodore [Lv. 1700]" then
                 Mon = "Marine Commodore [Lv. 1700]"
                 LevelQuest = 1
                 NameQuest = "MarineTreeIsland"
                 NameMon = "Marine Commodore"
                 CFrameQuest = CFrame.new(2180.54126, 27.8156815, -6741.5498, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747)
+                CFrameMon = CFrame.new(2198.0063476563, 128.71075439453, -7109.5043945313)
             elseif MyLevel == 1725 or MyLevel <= 1774 or SelectMonster == "Marine Rear Admiral [Lv. 1725]" then
                 Mon = "Marine Rear Admiral [Lv. 1725]"
                 NameMon = "Marine Rear Admiral"
                 NameQuest = "MarineTreeIsland"
                 LevelQuest = 2
                 CFrameQuest = CFrame.new(2179.98828125, 28.731239318848, -6740.0551757813)
+                CFrameMon = CFrame.new(3294.3142089844, 385.41125488281, -7048.6342773438)
             elseif MyLevel == 1775 or MyLevel <= 1799 or SelectMonster == "Fishman Raider [Lv. 1775]" then
                 Mon = "Fishman Raider [Lv. 1775]"
                 LevelQuest = 1
                 NameQuest = "DeepForestIsland3"
                 NameMon = "Fishman Raider"
                 CFrameQuest = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)   
+                CFrameMon = CFrame.new(-10553.268554688, 521.38439941406, -8176.9458007813)
             elseif MyLevel == 1800 or MyLevel <= 1824 or SelectMonster == "Fishman Captain [Lv. 1800]" then
                 Mon = "Fishman Captain [Lv. 1800]"
                 LevelQuest = 2
                 NameQuest = "DeepForestIsland3"
                 NameMon = "Fishman Captain"
-                CFrameQuest = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)   
+                CFrameQuest = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)  
+                CFrameMon = CFrame.new(-10789.401367188, 427.18637084961, -9131.4423828125) 
             elseif MyLevel == 1825 or MyLevel <= 1849 or SelectMonster == "Forest Pirate [Lv. 1825]" then
                 Mon = "Forest Pirate [Lv. 1825]"
                 LevelQuest = 1
                 NameQuest = "DeepForestIsland"
                 NameMon = "Forest Pirate"
                 CFrameQuest = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247)
+                CFrameMon = CFrame.new(-13489.397460938, 400.30349731445, -7770.251953125)
             elseif MyLevel == 1850 or MyLevel <= 1899 or SelectMonster == "Mythological Pirate [Lv. 1850]" then
                 Mon = "Mythological Pirate [Lv. 1850]"
                 LevelQuest = 2
                 NameQuest = "DeepForestIsland"
                 NameMon = "Mythological Pirate"
-                CFrameQuest = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247)   
+                CFrameQuest = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247)
+                CFrameMon = CFrame.new(-13508.616210938, 582.46228027344, -6985.3037109375)   
             elseif MyLevel == 1900 or MyLevel <= 1924 or SelectMonster == "Jungle Pirate [Lv. 1900]" then
                 Mon = "Jungle Pirate [Lv. 1900]"
                 LevelQuest = 1
                 NameQuest = "DeepForestIsland2"
                 NameMon = "Jungle Pirate"
                 CFrameQuest = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, -0.0871315002)
+                CFrameMon = CFrame.new(-12267.103515625, 459.75262451172, -10277.200195313)
             elseif MyLevel == 1925 or MyLevel <= 1974 or SelectMonster == "Musketeer Pirate [Lv. 1925]" then
                 Mon = "Musketeer Pirate [Lv. 1925]"
                 LevelQuest = 2
                 NameQuest = "DeepForestIsland2"
                 NameMon = "Musketeer Pirate"
                 CFrameQuest = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, -0.0871315002)
+                CFrameMon = CFrame.new(-13291.5078125, 520.47338867188, -9904.638671875)
             elseif MyLevel == 1975 or MyLevel <= 1999 or SelectMonster == "Reborn Skeleton [Lv. 1975]" then
                 Mon = "Reborn Skeleton [Lv. 1975]"
                 LevelQuest = 1
                 NameQuest = "HauntedQuest1"
                 NameMon = "Reborn Skeleton"
+                CFrameMon = CFrame.new(-8761.77148, 183.431747, 6168.33301, 0.978073597, -1.3950732e-05, -0.208259016, -1.08073925e-06, 1, -7.20630269e-05, 0.208259016, 7.07080399e-05, 0.978073597)
                 CFrameQuest = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0)
             elseif MyLevel == 2000 or MyLevel <= 2024 or SelectMonster == "Living Zombie [Lv. 2000]" then
                 Mon = "Living Zombie [Lv. 2000]"
@@ -2318,66 +2379,77 @@ end
                 NameQuest = "HauntedQuest1"
                 NameMon = "Living Zombie"
                 CFrameQuest = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+                CFrameMon = CFrame.new(-10103.7529, 238.565979, 6179.75977, 0.999474227, 2.77547141e-08, 0.0324240364, -2.58006327e-08, 1, -6.06848474e-08, -0.0324240364, 5.98163865e-08, 0.999474227)	
             elseif MyLevel == 2025 or MyLevel <= 2049 or SelectMonster == "Demonic Soul [Lv. 2025]" then
                 Mon = "Demonic Soul [Lv. 2025]"
                 LevelQuest = 1
                 NameQuest = "HauntedQuest2"
                 NameMon = "Demonic Soul"
                 CFrameQuest = CFrame.new(-9516.99316, 172.017181, 6078.46533, 0, 0, -1, 0, 1, 0, 1, 0, 0) 
+                CFrameMon = CFrame.new(-9709.30762, 204.695892, 6044.04688, -0.845798075, -3.4587876e-07, -0.533503294, -4.46235369e-08, 1, -5.77571257e-07, 0.533503294, -4.64701827e-07, -0.845798075)
             elseif MyLevel == 2050 or MyLevel <= 2074 or SelectMonster == "Posessed Mummy [Lv. 2050]" then
                 Mon = "Posessed Mummy [Lv. 2050]"
                 LevelQuest = 2
                 NameQuest = "HauntedQuest2"
                 NameMon = "Posessed Mummy"
                 CFrameQuest = CFrame.new(-9516.99316, 172.017181, 6078.46533, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-9554.11035, 65.6141663, 6041.73584, -0.877069294, 5.33355795e-08, -0.480364174, 2.06420765e-08, 1, 7.33423562e-08, 0.480364174, 5.44105987e-08, -0.877069294)
             elseif MyLevel == 2075 or MyLevel <= 2099 or SelectMonster == "Peanut Scout [Lv. 2075]" then
                 Mon = "Peanut Scout [Lv. 2075]"
                 LevelQuest = 1
                 NameQuest = "NutsIslandQuest"
                 NameMon = "Peanut Scout"
                 CFrameQuest = CFrame.new(-2104.3908691406, 38.104167938232, -10194.21875, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)
             elseif MyLevel == 2100 or MyLevel <= 2124 or SelectMonster == "Peanut President [Lv. 2100]" then
                 Mon = "Peanut President [Lv. 2100]"
                 LevelQuest = 2
                 NameQuest = "NutsIslandQuest"
                 NameMon = "Peanut President"
                 CFrameQuest = CFrame.new(-2104.3908691406, 38.104167938232, -10194.21875, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)
             elseif MyLevel == 2125 or MyLevel <= 2149 or SelectMonster == "Ice Cream Chef [Lv. 2125]" then
                 Mon = "Ice Cream Chef [Lv. 2125]"
                 LevelQuest = 1
                 NameQuest = "IceCreamIslandQuest"
                 NameMon = "Ice Cream Chef"
                 CFrameQuest = CFrame.new(-820.64825439453, 65.819526672363, -10965.795898438, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)
             elseif MyLevel == 2150 or MyLevel <= 2199 or SelectMonster == "Ice Cream Commander [Lv. 2150]" then
                 Mon = "Ice Cream Commander [Lv. 2150]"
                 LevelQuest = 2
                 NameQuest = "IceCreamIslandQuest"
                 NameMon = "Ice Cream Commander"
                 CFrameQuest = CFrame.new(-820.64825439453, 65.819526672363, -10965.795898438, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                CFrameMon = CFrame.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)
             elseif MyLevel == 2200 or MyLevel <= 2224 or SelectMonster == "Cookie Crafter [Lv. 2200]" then
                 Mon = "Cookie Crafter [Lv. 2200]"
                 LevelQuest = 1
                 NameQuest = "CakeQuest1"
                 NameMon = "Cookie Crafter"
                 CFrameQuest = CFrame.new(-2021.32007, 37.7982254, -12028.7295, 0.957576931, -8.80302053e-08, 0.288177818, 6.9301187e-08, 1, 7.51931211e-08, -0.288177818, -5.2032135e-08, 0.957576931)
+                CFrameMon = CFrame.new(-2321.71216, 36.699482, -12216.7871, -0.780074954, 0, 0.625686109, 0, 1, 0, -0.625686109, 0, -0.780074954)
             elseif MyLevel == 2225 or MyLevel <= 2249 or SelectMonster == "Cake Guard [Lv. 2225]" then
                 Mon = "Cake Guard [Lv. 2225]"
                 LevelQuest = 2
                 NameQuest = "CakeQuest1"
                 NameMon = "Cake Guard"
                 CFrameQuest = CFrame.new(-2021.32007, 37.7982254, -12028.7295, 0.957576931, -8.80302053e-08, 0.288177818, 6.9301187e-08, 1, 7.51931211e-08, -0.288177818, -5.2032135e-08, 0.957576931)
+                CFrameMon = CFrame.new(-1418.11011, 36.6718941, -12255.7324, 0.0677844882, 0, 0.997700036, 0, 1, 0, -0.997700036, 0, 0.0677844882)
             elseif MyLevel == 2250 or MyLevel <= 2274 or SelectMonster == "Baking Staff [Lv. 2250]" then
                 Mon = "Baking Staff [Lv. 2250]"
                 LevelQuest = 1
                 NameQuest = "CakeQuest2"
                 NameMon = "Baking Staff"
                 CFrameQuest = CFrame.new(-1927.91602, 37.7981339, -12842.5391, -0.96804446, 4.22142143e-08, 0.250778586, 4.74911062e-08, 1, 1.49904711e-08, -0.250778586, 2.64211941e-08, -0.96804446)
+                CFrameMon = CFrame.new(-1980.43848, 36.6716766, -12983.8418, -0.254443765, 0, -0.967087567, 0, 1, 0, 0.967087567, 0, -0.254443765)
             elseif MyLevel >= 2275 or SelectMonster == "Head Baker [Lv. 2275]" then 
                 Mon = "Head Baker [Lv. 2275]"
                 LevelQuest = 2
                 NameQuest = "CakeQuest2"
                 NameMon = "Head Baker"
                 CFrameQuest = CFrame.new(-1927.91602, 37.7981339, -12842.5391, -0.96804446, 4.22142143e-08, 0.250778586, 4.74911062e-08, 1, 1.49904711e-08, -0.250778586, 2.64211941e-08, -0.96804446)
+                CFrameMon = CFrame.new(-2288.795166015625, 106.9419174194336, -12811.111328125)
             end
         end
     end
@@ -3067,6 +3139,24 @@ end)
 		fastattack = value
 	end)
 
+      Farm:AddToggle("Auto Observation Haki", false, function(vu)
+	_G.Kentot = vu
+end)   
+
+      spawn(function()
+	while wait() do
+		if _G.Kentot then
+			if not game.Players.LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
+				wait(1)
+				game:GetService('VirtualUser'):CaptureController()
+				game:GetService('VirtualUser'):SetKeyDown('0x65')
+			   	wait(2)
+			   	game:GetService('VirtualUser'):SetKeyUp('0x65')
+			end
+		end
+	end
+end)
+      
 	Farm:AddButton("Remove Sound Effect",function()
  
             for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
@@ -3112,77 +3202,75 @@ end)
         end
     end)
     
-    spawn(function()
-        while wait() do
-            if _G.AutoFarm then
-                pcall(function()
-                    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
-                    if not string.find(QuestTitle, NameMon) then
-                        Usefastattack = false 
-                        StartMagnet = false
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-                    end
-                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-                        Usefastattack = false
-                        StartMagnet = false
-                        CheckQuest()
-                        repeat wait() topos(CFrameQuest) until (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoFarm
-                        if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+ spawn(function()
+	while wait() do
+		if _G.AutoFarm then
+		    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+            if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+				Usefastattack = false 
+                 StartMagnet = false
+				CheckQuest()
+				topos(CFrameQuest)
+				if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 4 then
+					wait(1.1)
+					CheckQuest()
+					if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
                             wait(1.2)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
                             wait(0.5)
-                        end
-                    elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                        CheckQuest()
-                        if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
-                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                    if v.Name == Mon then
-                                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-                                            repeat task.wait()
-                                                EquipWeapon(_G.SelectWeapon)
-                                                AutoHaki()                                            
-                                                PosMon = v.HumanoidRootPart.CFrame
-                                                topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                                                v.HumanoidRootPart.CanCollide = false
-                                                v.Humanoid.WalkSpeed = 0
-                                                v.Head.CanCollide = false
-                                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                                Usefastattack = true
+                        
+					else
+						topos(CFrameQuest)
+					end
+				end
+			elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+				pcall(function()
+					CheckQuest()
+					if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
+						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+							if v.Name == Mon and v:FindFirstChild("Humanoid") then
+								if v.Humanoid.Health > 0 then
+									repeat game:GetService("RunService").Heartbeat:wait()
+										if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
+											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+												EquipWeapon(_G.SelectWeapon)
+												AutoHaki()
+												topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+												v.HumanoidRootPart.CanCollide = false
+												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+												game:GetService("VirtualUser"):CaptureController()
+												game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670),workspace.CurrentCamera.CFrame)
+												PosMon = v.HumanoidRootPart.CFrame
+												Usefastattack = true 
                                                 StartMagnet = true
-                                                game:GetService'VirtualUser':CaptureController()
-                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-                                            until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
-                                        else
-                                            Usefastattack = false
-                                            StartMagnet = false
-                                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-                                        end
-                                    end
-                                end
-                            end
-                        else
-                            Usefastattack = false
-                            StartMagnet = false
-                            if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
-                                topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                            else
-                                if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
-                                    if PosMon ~= nil then
-                                        topos(PosMon * CFrame.new(5,10,7))
-                                    else
-                                        if OldPos ~= nil then
-                                            topos(OldPos.Position)
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)
+											else
+												Usefastattack = false 
+                                                StartMagnet = false  
+												game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+											end
+										else
+											Usefastattack = false 
+                                                StartMagnet = false
+											CheckQuest()
+											topos(CFrameMon)
+										end
+									until not v.Parent or v.Humanoid.Health <= 0 or Auto_Farm == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
+								end
+							end
+						end
+					else
+						Usefastattack = false 
+                        StartMagnet = false
+						CheckQuest()
+						topos(CFrameMon)
+					end
+				end)
+			end
+		end
+	end
+end)
+
+    
     
    if World1 then
 	tableMon = {"Bandit [Lv. 5]","Monkey [Lv. 14]","Gorilla [Lv. 20]","Pirate [Lv. 35]","Brute [Lv. 45]","Desert Bandit [Lv. 60]","Desert Officer [Lv. 70]","Snow Bandit [Lv. 90]","Snowman [Lv. 100]","Chief Petty Officer [Lv. 120]","Sky Bandit [Lv. 150]","Dark Master [Lv. 175]","Toga Warrior [Lv. 225]","Gladiator [Lv. 275]","Military Soldier [Lv. 300]","Military Spy [Lv. 330]","Fishman Warrior [Lv. 375]","Fishman Commando [Lv. 400]","God's Guard [Lv. 450]","Shanda [Lv. 475]","Royal Squad [Lv. 525]","Royal Soldier [Lv. 550]","Galley Pirate [Lv. 625]","Galley Captain [Lv. 650]"}
