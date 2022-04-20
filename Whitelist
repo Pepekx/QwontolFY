@@ -1,24 +1,26 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "Thunder Z Keys",     
-Text = "Keys Copied to Your Clipboard",
+Text = "Link Keys Copied to Your Clipboard",
 Icon = "rbxassetid://9247714199",
 Duration = 10,
 Color = Success
 })
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "Thunder Z Keys [ID]",     
-Text = "Kunci Disalin ke Papan Klip Anda",
+Text = "Link Kunci Disalin ke Papan Klip Anda",
 Icon = "rbxassetid://9247714199",
 Duration = 10,
 Color = Success
 })
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "Thunder Z Keys [PH]",     
-Text = "Mga Key na Kinopya sa Iyong Clipboard",
+Text = "Link Mga Key na Kinopya sa Iyong Clipboard",
 Icon = "rbxassetid://9247714199",
 Duration = 10,
 Color = Success
 })
+
+setclipboard("https://linkvertise.com/436782/thunder-z-key/1")
 -- Instances:
 
 local UI = Instance.new("ScreenGui")
@@ -300,7 +302,7 @@ Desc.Position = UDim2.new(0.5, 0, 0.5, 0)
 Desc.Size = UDim2.new(1, 0, 0.0599999987, 0)
 Desc.ZIndex = 4
 Desc.Font = Enum.Font.SourceSansLight
-Desc.Text = "Keys Copied to Your Clipboard."
+Desc.Text = "Link Keys Copied to Your Clipboard."
 Desc.TextColor3 = Color3.fromRGB(255, 255, 255)
 Desc.TextScaled = true
 Desc.TextSize = 14.000
