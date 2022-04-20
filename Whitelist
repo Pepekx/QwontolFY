@@ -377,7 +377,7 @@ Confirm_2.AutoButtonColor = false
 Confirm_2.Font = Enum.Font.SourceSansBold
 Confirm_2.Text = "Confirm"
 Confirm_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Confirm_2.TextSize = 28.000
+Confirm_2.TextSize = 18.000
 Confirm_2.TextWrapped = true
 
 UICorner_34.Parent = Confirm_2
@@ -394,7 +394,7 @@ Exit.AutoButtonColor = false
 Exit.Font = Enum.Font.SourceSansBold
 Exit.Text = "Exit"
 Exit.TextColor3 = Color3.fromRGB(0, 225, 225)
-Exit.TextSize = 28.000
+Exit.TextSize = 18.000
 Exit.TextWrapped = true
 
 Frame.Parent = Exit
