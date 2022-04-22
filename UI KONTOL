@@ -1879,3 +1879,5 @@ function Blacklib:Window()
     end
     return Tabs
 end
+
+return Blacklib
