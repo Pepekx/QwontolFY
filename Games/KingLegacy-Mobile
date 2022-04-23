@@ -1,58 +1,3 @@
---getgenv().Settings = {
---	["Auto Farm Level"] = false,
---	["Auto Haki"] = true,
---	["Grab Fruit"] = false,
---	["Select Weapon"] = nil,
---	["Select Mode Farm"] = "Above + Behind",
---	["Auto Skill"] = false,
---	["Distance"] = 3,
---	-- Stats
---	["Auto Defense"] = false,
---	["Auto Melee"] = false,
---	["Auto Sword"] = false,
---	["Auto Power Fruit"] = false,
---	["Select Point Stats"] = 4000
---}
-
-
-function Load()
-	if readfile and writefile and isfile and isfolder then
-		if isfolder("ThunderZ") == false then
-			makefolder("ThunderZ")
-		end
-		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
-			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(getgenv().Settings))
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
-			for i,v in pairs(Decode) do
-				getgenv().Settings[i] = v
-			end
-		end
-	else
-		warn("Failed Load")
-		return false
-	end
-end
-function Save()
-	if readfile and writefile and isfile then
-		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
-			Load()
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
-			local Array = {}
-			for i,v in pairs(getgenv().Settings) do
-				Array[i] = v
-			end
-			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(Array))
-		end
-	else
-		warn("Failed Save")
-		return false
-	end
-end
-
-Load()
-Save()
 repeat wait()
 if game.PlaceId == 4520749081 or game.PlaceId == 6381829480 then
 
@@ -2106,6 +2051,26 @@ end
 
 Main:AddLine()
 
+
+getgenv().Settings = {
+	["Auto Farm Level"] = false,
+	["Auto Haki"] = true,
+	["Grab Fruit"] = false,
+	["Select Weapon"] = nil,
+	["Select Mode Farm"] = "Above + Behind",
+	["Auto Skill"] = false,
+	["Distance"] = 3,
+	-- Stats
+	["Auto Defense"] = false,
+	["Auto Melee"] = false,
+	["Auto Sword"] = false,
+	["Auto Power Fruit"] = false,
+	["Select Point Stats"] = 4000
+}
+
+
+
+
 if getgenv().Settings["Select Mode Farm"] == nil then
 	Select_Tood = "Select Mode Farm"
 else
@@ -2569,6 +2534,9 @@ Teleport:AddButton("Teleport To Selected Island",function ()
         end
     end
 end)
+
+
+
 
 end
 until game:IsLoaded()
