@@ -1,135 +1,3 @@
-getgenv().Settings = {
-	["Auto Farm Level"] = false,
-	["Auto Haki"] = true,
-	["Grab Fruit"] = false,
-	["Select Weapon"] = nil,
-	["Select Mode Farm"] = "Above + Behind",
-	["Auto Skill"] = false,
-	["Distance"] = 3,
-	-- Stats
-	["Auto Defense"] = false,
-	["Auto Melee"] = false,
-	["Auto Sword"] = false,
-	["Auto Power Fruit"] = false,
-	["Select Point Stats"] = 4000
-}
-
-
-function Load()
-	if readfile and writefile and isfile and isfolder then
-		if isfolder("ThunderZ") == false then
-			makefolder("ThunderZ")
-		end
-		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
-			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(getgenv().Settings))
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
-			for i,v in pairs(Decode) do
-				getgenv().Settings[i] = v
-			end
-		end
-	else
-		warn("Failed Load")
-		return false
-	end
-end
-function Save()
-	if readfile and writefile and isfile then
-		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
-			Load()
-		else
-			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
-			local Array = {}
-			for i,v in pairs(getgenv().Settings) do
-				Array[i] = v
-			end
-			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(Array))
-		end
-	else
-		warn("Failed Save")
-		return false
-	end
-end
-
-Load()
-Save()
-repeat wait()
-if game.PlaceId == 4520749081 or game.PlaceId == 6381829480 then
-
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-	game:GetService'VirtualUser':Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-	wait(1)
-	game:GetService'VirtualUser':Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
-
-local PlaceIDD = game.PlaceId
-local AllIDs = {}
-local foundAnything = ""
-local actualHour = os.date("!*t").hour
-local Deleted = false
-function TPReturner()
-	local Site;
-	if foundAnything == "" then
-		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceIDD .. '/servers/Public?sortOrder=Asc&limit=100'))
-	else
-		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceIDD .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-	end
-	local ID = ""
-	if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-		foundAnything = Site.nextPageCursor
-	end
-	local num = 0;
-	for i,v in pairs(Site.data) do
-		local Possible = true
-		ID = tostring(v.id)
-		if tonumber(v.maxPlayers) > tonumber(v.playing) then
-			for _,Existing in pairs(AllIDs) do
-				if num ~= 0 then
-					if ID == tostring(Existing) then
-						Possible = false
-					end
-				else
-					if tonumber(actualHour) ~= tonumber(Existing) then
-						local delFile = pcall(function()
-							-- delfile("NotSameServers.json")
-							AllIDs = {}
-							table.insert(AllIDs, actualHour)
-						end)
-					end
-				end
-				num = num + 1
-			end
-			if Possible == true then
-				table.insert(AllIDs, ID)
-				wait()
-				pcall(function()
-					-- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-					wait()
-					game:GetService("StarterGui"):SetCore("SendNotification",
-					{
-						Title = "Server",
-						Text = "Teleport Working..."
-					}
-				)
-					wait(1)
-					game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceIDD, ID, game.Players.LocalPlayer)
-				end)
-				wait(.1)
-			end
-		end
-	end
-end
-function Teleport() 
-	while wait() do
-		pcall(function()
-			TPReturner()
-			if foundAnything ~= "" then
-				TPReturner()
-			end
-		end)
-	end
-end
-
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "THUNDER Z",     
 Text = "Welcome to Thunder Z",
@@ -2015,6 +1883,139 @@ function Blacklib:Window()
         return Section
     end
     return Tabs
+end
+
+
+getgenv().Settings = {
+	["Auto Farm Level"] = false,
+	["Auto Haki"] = true,
+	["Grab Fruit"] = false,
+	["Select Weapon"] = nil,
+	["Select Mode Farm"] = "Above + Behind",
+	["Auto Skill"] = false,
+	["Distance"] = 3,
+	-- Stats
+	["Auto Defense"] = false,
+	["Auto Melee"] = false,
+	["Auto Sword"] = false,
+	["Auto Power Fruit"] = false,
+	["Select Point Stats"] = 4000
+}
+
+
+function Load()
+	if readfile and writefile and isfile and isfolder then
+		if isfolder("ThunderZ") == false then
+			makefolder("ThunderZ")
+		end
+		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
+			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(getgenv().Settings))
+		else
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
+			for i,v in pairs(Decode) do
+				getgenv().Settings[i] = v
+			end
+		end
+	else
+		warn("Failed Load")
+		return false
+	end
+end
+function Save()
+	if readfile and writefile and isfile then
+		if isfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json") == false then
+			Load()
+		else
+			local Decode = game:GetService("HttpService"):JSONDecode(readfile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json"))
+			local Array = {}
+			for i,v in pairs(getgenv().Settings) do
+				Array[i] = v
+			end
+			writefile("/ThunderZ/KingLegacy_" .. game.Players.LocalPlayer.DisplayName .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+		end
+	else
+		warn("Failed Save")
+		return false
+	end
+end
+
+Load()
+Save()
+repeat wait()
+if game.PlaceId == 4520749081 or game.PlaceId == 6381829480 then
+
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+	game:GetService'VirtualUser':Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	wait(1)
+	game:GetService'VirtualUser':Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+local PlaceIDD = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+function TPReturner()
+	local Site;
+	if foundAnything == "" then
+		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceIDD .. '/servers/Public?sortOrder=Asc&limit=100'))
+	else
+		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceIDD .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+	end
+	local ID = ""
+	if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+		foundAnything = Site.nextPageCursor
+	end
+	local num = 0;
+	for i,v in pairs(Site.data) do
+		local Possible = true
+		ID = tostring(v.id)
+		if tonumber(v.maxPlayers) > tonumber(v.playing) then
+			for _,Existing in pairs(AllIDs) do
+				if num ~= 0 then
+					if ID == tostring(Existing) then
+						Possible = false
+					end
+				else
+					if tonumber(actualHour) ~= tonumber(Existing) then
+						local delFile = pcall(function()
+							-- delfile("NotSameServers.json")
+							AllIDs = {}
+							table.insert(AllIDs, actualHour)
+						end)
+					end
+				end
+				num = num + 1
+			end
+			if Possible == true then
+				table.insert(AllIDs, ID)
+				wait()
+				pcall(function()
+					-- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+					wait()
+					game:GetService("StarterGui"):SetCore("SendNotification",
+					{
+						Title = "Server",
+						Text = "Teleport Working..."
+					}
+				)
+					wait(1)
+					game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceIDD, ID, game.Players.LocalPlayer)
+				end)
+				wait(.1)
+			end
+		end
+	end
+end
+function Teleport() 
+	while wait() do
+		pcall(function()
+			TPReturner()
+			if foundAnything ~= "" then
+				TPReturner()
+			end
+		end)
+	end
 end
 
 local Win = Blacklib:Window()
