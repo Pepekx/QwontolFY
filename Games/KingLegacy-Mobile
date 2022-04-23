@@ -1,1 +1,1 @@
-
+game:GetService("Players").LocalPlayer:Kick("Soon Daddy.")
