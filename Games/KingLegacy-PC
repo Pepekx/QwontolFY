@@ -2447,7 +2447,7 @@ end
 
 Defense = Stats:AddLabel("")
 function Defensee()
-	if game:GetService("Players")["LocalPlayer"].PlayerStats.Defense.Value >= 4000 then
+	if game:GetService("Players")["LocalPlayer"].PlayerStats.Defense.Value >= 4250 then
 		Defenses = "MAX"
 	else
 		Defenses = game:GetService("Players")["LocalPlayer"].PlayerStats.Defense.Value
@@ -2467,7 +2467,7 @@ end
 
 Sword = Stats:AddLabel("")
 function Swordd()
-	if game:GetService("Players")["LocalPlayer"].PlayerStats.sword.Value >= 4000 then
+	if game:GetService("Players")["LocalPlayer"].PlayerStats.sword.Value >= 4250 then
 		Swords = "MAX"
 	else
 		Swords = game:GetService("Players")["LocalPlayer"].PlayerStats.sword.Value
@@ -2477,7 +2477,7 @@ end
 
 Fruit = Stats:AddLabel("")
 function Fruits()
-	if game:GetService("Players")["LocalPlayer"].PlayerStats.DF.Value >= 4000 then
+	if game:GetService("Players")["LocalPlayer"].PlayerStats.DF.Value >= 4250 then
 		PowerFruits = "MAX"
 	else
 		PowerFruits = game:GetService("Players")["LocalPlayer"].PlayerStats.DF.Value
