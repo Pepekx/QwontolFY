@@ -2518,7 +2518,7 @@ end)
 Stats:AddLine()
 
 Stats:AddToggle("Auto Sword", getgenv().Settings["Auto Sword"], function(Value)
-	getgenv().Settings["Auto Sword"] = Value
+	getgenv().Settings().Settingstings["Auto Sword"] = Value
 	Save()
 end)
 
