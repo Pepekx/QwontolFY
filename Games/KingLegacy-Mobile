@@ -1886,21 +1886,6 @@ function Blacklib:Window()
 end
 
 
-getgenv().Settings = {
-	["Auto Farm Level"] = false,
-	["Auto Haki"] = true,
-	["Grab Fruit"] = false,
-	["Select Weapon"] = nil,
-	["Select Mode Farm"] = "Above + Behind",
-	["Auto Skill"] = false,
-	["Distance"] = 3,
-	-- Stats
-	["Auto Defense"] = false,
-	["Auto Melee"] = false,
-	["Auto Sword"] = false,
-	["Auto Power Fruit"] = false,
-	["Select Point Stats"] = 4000
-}
 
 repeat wait()
 if game.PlaceId == 4520749081 or game.PlaceId == 6381829480 then
