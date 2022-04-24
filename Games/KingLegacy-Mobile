@@ -1971,6 +1971,8 @@ local Statss = Win:Tab("Stats","http://www.roblox.com/asset/?id=7040410130")
 
 local Teleports = Win:Tab("Teleport" , "http://www.roblox.com/asset/?id=6035190846")
 
+local Combat = Win:Tab("Combat" , "http://www.roblox.com/asset/?id=7251993295")
+
 --local Misc = serv:Channel("Misc","http://www.roblox.com/asset/?id=6034509993")
 
 local Main = Mains:NewSection("Main Section")
@@ -2057,9 +2059,9 @@ getgenv().Settings = {
 	["Auto Haki"] = true,
 	["Grab Fruit"] = false,
 	["Select Weapon"] = nil,
-	["Select Mode Farm"] = "Above + Behind",
+	["Select Mode Farm"] = "Behind",
 	["Auto Skill"] = false,
-	["Distance"] = 3,
+	--["Distance"] = 3,
 	-- Stats
 	["Auto Defense"] = false,
 	["Auto Melee"] = false,
@@ -2077,15 +2079,15 @@ else
 	Select_Tood = getgenv().Settings["Select Mode Farm"]
 end
 
-Main:AddDropdown(Select_Tood,{"Above","Behind","Above + Behind"}, function(Value)
+Main:AddDropdown(Select_Tood,{"Above","Behind","Under"}, function(Value)
 	getgenv().Settings["Select Mode Farm"] = Value
 	Save()
 end)
 
-Main:AddSlider("Distance", 0, 5, getgenv().Settings["Distance"], function(Value)
-	getgenv().Settings["Distance"] = Value
-	Save()
-end)
+--Main:AddSlider("Distance", 0, 5, getgenv().Settings["Distance"], function(Value)
+	--getgenv().Settings["Distance"] = Value
+--	Save()
+--end)
 
 
 Main:AddToggle("Auto Farm Level", getgenv().Settings["Auto Farm Level"], function(Value)
@@ -2273,11 +2275,14 @@ end)
 spawn(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
 		if getgenv().Settings["Select Mode Farm"] == "Above" then
-			Farm_Mode = CFrame.new(0, getgenv().Settings["Distance"], 0)
+			Farm_Mode = CFrame.new(0,7,5)
+			Angle_Mode = CFrame.Angles(math.rad(-90),0,0)
 		elseif getgenv().Settings["Select Mode Farm"] == "Behind" then
-			Farm_Mode = CFrame.new(0, 0, getgenv().Settings["Distance"])
-		elseif getgenv().Settings["Select Mode Farm"] == "Above + Behind" then
-			Farm_Mode = CFrame.new(0, getgenv().Settings["Distance"], getgenv().Settings["Distance"])
+			Farm_Mode =  CFrame.new(0,0,3)
+			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
+		elseif getgenv().Settings["Select Mode Farm"] == "Under" then
+			Farm_Mode = CFrame.new(0,-6,3)
+			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
 		end
 	end)
 end)
@@ -2392,6 +2397,16 @@ local function UseSkill(Value)
 	game:GetService("VirtualInputManager"):SendKeyEvent(false, Value, false, game)
 end
 
+spawn(function()
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") and getgenv().Settings["Auto Farm Level"] and getgenv().Settings["Select Mode Farm"] then
+            setfflag("HumanoidParallelRemoveNoPhysics", "False")
+            setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+            game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+        end
+    end)
+end)
+
 spawn(function ()
     while true do
         if getgenv().Settings["Auto Farm Level"] then
@@ -2414,7 +2429,7 @@ spawn(function ()
                                     Mob = v
                                     repeat wait()
 										EquipWeapon(getgenv().Settings["Select Weapon"])
-										plr.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Farm_Mode
+										game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Angle_Mode * Farm_Mode
 										if getgenv().Settings["Auto Skill"] == false then 
 										game:GetService('VirtualUser'):CaptureController()
 										game:GetService('VirtualUser'):Button1Down(Vector2.new(1280, 672))
@@ -2535,7 +2550,120 @@ Teleport:AddButton("Teleport To Selected Island",function ()
     end
 end)
 
+spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PlayerCharacters[Select].HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+            end
+        end)
+       end)
+end)
 
+spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+            game:GetService'VirtualUser':CaptureController()
+            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+            end
+        end)
+       end)
+    end)
+    
+    spawn(function()
+        game:GetService("RunService").Heartbeat:Connect(function()
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") and _G.AF then
+                setfflag("HumanoidParallelRemoveNoPhysics", "False")
+                setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+                game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+            end
+        end)
+    end)
+    
+    spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+    if game.Players.LocalPlayer.Character.Haki.Value == 0 then
+        game.Players.LocalPlayer.Character.Haki.Value = 1
+    	game:GetService("Players").LocalPlayer.Character.Services.Client.Armament:FireServer()
+    			 end
+            end
+    			end)
+    			end)
+    		end)
+
+
+local Combats = Combat:NewSection("Combat Section")
+Combats:AddToggle("Spectate Players", " ", function(bool)
+                                        Sp = bool
+                                        local plr1 = game.Players.LocalPlayer.Character.Humanoid
+                                        local plr2 = game.Players:FindFirstChild(Select)
+                                        repeat wait(.1)
+                                            game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
+                                        until Sp == false 
+                                        game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+    end)
+    
+    Combats:AddToggle("Kill Player", _G.AF, function(abc)
+    _G.AF = abc
+    end)
+    
+    players = {}
+     
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+       table.insert(players,v.Name)
+    end
+     
+    Combats:AddDropdown("Select Players", players, function(abc)
+        Select = abc
+    end)
+     
+     
+    Combats:AddButton("Refresh", function()
+        table.clear(players)
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+       table.insert(players,v.Name)
+    end
+    end)
+     
+    Combats:AddButton("Teleport Players", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PlayerCharacters[Select].HumanoidRootPart.CFrame
+    end)
+    
+    local Weaponlist2 = {}
+    local Weapon2 = nil
+    
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        table.insert(Weaponlist2,v.Name)
+    end
+    
+    Combats:AddDropdown("Select Weapon", Weaponlist2, function(abcd)
+        Weapon2 = abcd
+    end)
+    
+    Combats:AddButton("Refresh", function()
+            table.clear(Weaponlist2)
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+       table.insert(Weaponlist2,v.Name)
+    end
+    end)
+    
+    Combats:AddToggle("Auto Equip", _G.Equip2, function(value)
+    _G.Equip2 = value
+    end)
+    
+     spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.Equip2 then
+            wait(0.5)
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon2))
+            end
+        end)
+       end)
+    end)
 
 
 end
