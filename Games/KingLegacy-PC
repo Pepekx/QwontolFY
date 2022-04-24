@@ -2812,6 +2812,49 @@ Teleport:AddButton("Teleport To Selected Island",function ()
     end
 end)
 
+spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PlayerCharacters[Select].HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+            end
+        end)
+       end)
+end)
+
+spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+            game:GetService'VirtualUser':CaptureController()
+            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+            end
+        end)
+       end)
+    end)
+    
+    spawn(function()
+        game:GetService("RunService").Heartbeat:Connect(function()
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") and _G.AF then
+                setfflag("HumanoidParallelRemoveNoPhysics", "False")
+                setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+                game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+            end
+        end)
+    end)
+    
+    spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.AF then
+    if game.Players.LocalPlayer.Character.Haki.Value == 0 then
+        game.Players.LocalPlayer.Character.Haki.Value = 1
+    	game:GetService("Players").LocalPlayer.Character.Services.Client.Armament:FireServer()
+    			 end
+            end
+    			end)
+    			end)
+    		end)
 
 Combats:AddToggle("Spectate Players", " ", function(bool)
                                         Sp = bool
@@ -2823,7 +2866,7 @@ Combats:AddToggle("Spectate Players", " ", function(bool)
                                         game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
     end)
     
-    Combats:AddToggle("Auto Farm", _G.AF, function(abc)
+    Combats:AddToggle("Kill Player", _G.AF, function(abc)
     _G.AF = abc
     end)
     
@@ -2869,6 +2912,17 @@ Combats:AddToggle("Spectate Players", " ", function(bool)
     
     Combats:AddToggle("Auto Equip", _G.Equip2, function(value)
     _G.Equip2 = value
+    end)
+
+spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.Equip2 then
+            wait(0.5)
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon2))
+            end
+        end)
+       end)
     end)
 
 end
