@@ -185,7 +185,7 @@ end)
 Egg:AddToggle("Open Egg", false, function(value)
 _G.Egg = value
 while _G.Egg do task.wait()
-local args = {[1] = tostring(eggopen),[2] = "Single"}
+local args = {[1] = tostring(_G.SelectEgg),[2] = "Single"}
 game:GetService("ReplicatedStorage").Functions.Unbox:InvokeServer(unpack(args))
    end
 end)
@@ -193,11 +193,10 @@ end)
 Egg:AddToggle("Open Egg Triple", false, function(value)
 _G.Triple = value
 while _G.Triple do task.wait()
-local args = {[1] = tostring(eggopen),[2] = "Triple"}
+local args = {[1] = tostring(_G.SelectEgg),[2] = "Triple"}
 game:GetService("ReplicatedStorage").Functions.Unbox:InvokeServer(unpack(args))
    end
 end)
-
 
 
 
