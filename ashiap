@@ -3906,53 +3906,6 @@ spawn(function()
                                 wait(2)
                                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
                             end
-			    
-			    elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Soul-Soul") then   
-                            if _G.SkillZ then
-                                local args = {
-                                    [1] = PosMonMasteryFruit.Position
-                                }
-                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))                        
-                                --while wait() do
-                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
-                                wait()
-                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
-                                
-                        end
-                            if _G.SkillX then        
-                                local args = {
-                                    [1] = PosMonMasteryFruit.Position
-                                }
-                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))               
-                               -- while wait() do
-                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
-                                wait()
-                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
-                                
-                        end
-                            if _G.SkillC then 
-                                local args = {
-                                    [1] = PosMonMasteryFruit.Position
-                                }
-                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))                          
-                                --while wait() do
-                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
-                                wait()
-                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
-                            
-                            end
-                            if _G.SkillV then
-                                local args = {
-                                    [1] = PosMonMasteryFruit.Position
-                                }
-                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
-                               -- while wait() do
-                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
-                                wait()
-                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
-                            
-                        end
-			    
                         elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Venom-Venom") then   
                             if _G.SkillZ then
                                 local args = {
