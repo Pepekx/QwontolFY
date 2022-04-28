@@ -5,7 +5,7 @@ getgenv().Settings = {
 	["Select Weapon"] = "Sword",
 	["Select Mode Farm"] = "Behind",
 	["Auto Skill"] = false,
-	--["Distance"] = 3,
+	["DistanceMob"] = 6,
 	-- Stats
 	["Auto Defense"] = false,
 	["Auto Melee"] = false,
@@ -2347,10 +2347,11 @@ Main:AddDropdown(Select_Tood,{"Above","Behind","Under"}, function(Value)
 	Save()
 end)
 
---Main:AddSlider("Distance", 0, 5, getgenv().Settings["Distance"], function(Value)
-	--getgenv().Settings["Distance"] = Value
-	--Save()
---end)
+DistanceMob = 6
+Main:AddSlider("Distance", 1, 15, getgenv().Settings["DistanceMob"], function(Value)
+	getgenv().Settings["DistanceMob"] = Value
+	Save()
+end)
 
 
 Main:AddToggle("Auto Farm Level", getgenv().Settings["Auto Farm Level"], function(Value)
@@ -2535,20 +2536,20 @@ spawn(function()
 end)
 
 
-spawn(function()
-	game:GetService("RunService").Heartbeat:Connect(function()
-		if getgenv().Settings["Select Mode Farm"] == "Above" then
-			Farm_Mode = CFrame.new(0,7,5)
-			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
-		elseif getgenv().Settings["Select Mode Farm"] == "Behind" then
-			Farm_Mode =  CFrame.new(0,0,3)
-			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
-		elseif getgenv().Settings["Select Mode Farm"] == "Under" then
-			Farm_Mode = CFrame.new(0,-6,3)
-			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
-		end
-	end)
-end)
+--spawn(function()
+--	game:GetService("RunService").Heartbeat:Connect(function()
+		--if getgenv().Settings["Select Mode Farm"] == "Above" then
+		--	Farm_Mode = CFrame.new(0,7,5)
+		--	Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
+	--	elseif getgenv().Settings["Select Mode Farm"] == "Behind" then
+		--	Farm_Mode =  CFrame.new(0,0,3)
+		--	Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
+	--	elseif getgenv().Settings["Select Mode Farm"] == "Under" then
+		--	Farm_Mode = CFrame.new(0,-6,3)
+		--	Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
+	--	end
+--	end)
+--end)
 
 spawn(function()
 	while wait(.1) do
@@ -2692,7 +2693,15 @@ spawn(function ()
                                     Mob = v
                                     repeat wait()
 										EquipWeapon(getgenv().Settings["Select Weapon"])
-										game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Angle_Mode * Farm_Mode
+										VirtualUser:CaptureController()
+												VirtualUser:ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
+												if getgenv().Settings["Select Mode Farm"] == "Under" then
+													game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90), 0, 0) - Vector3.new(0,getgenv().Settings["DistanceMob"],0)
+												elseif getgenv().Settings["Select Mode Farm"] == "Above" then
+													game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-90), 0, 0) * CFrame.new(0,0,getgenv().Settings["DistanceMob"])
+												elseif getgenv().Settings["Select Mode Farm"] == "Behind" then 
+													game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,getgenv().Settings["DistanceMob"])
+												end
 										if getgenv().Settings["Auto Skill"] == false then 
 										game:GetService('VirtualUser'):CaptureController()
 										game:GetService('VirtualUser'):Button1Down(Vector2.new(1280, 672))
