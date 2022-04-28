@@ -3829,6 +3829,7 @@ spawn(function()
                                                 else           
                                                     UseSkill = false 
                                                     AutoHaki()
+                                                    Usefastattack = true
                                                     EquipWeapon(_G.SelectWeapon)
                                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                                     v.HumanoidRootPart.CanCollide = false
@@ -3906,6 +3907,53 @@ spawn(function()
                                 wait(2)
                                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
                             end
+                            
+                            elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Soul-Soul") then   
+                            if _G.SkillZ then
+                                local args = {
+                                    [1] = PosMonMasteryFruit.Position
+                                }
+                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))                        
+                                --while wait() do
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
+                                wait()
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+                                
+                        end
+                            if _G.SkillX then        
+                                local args = {
+                                    [1] = PosMonMasteryFruit.Position
+                                }
+                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))               
+                               -- while wait() do
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
+                                wait()
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+                                
+                        end
+                            if _G.SkillC then 
+                                local args = {
+                                    [1] = PosMonMasteryFruit.Position
+                                }
+                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))                          
+                                --while wait() do
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
+                                wait()
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
+                            
+                            end
+                            if _G.SkillV then
+                                local args = {
+                                    [1] = PosMonMasteryFruit.Position
+                                }
+                                game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
+                               -- while wait() do
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
+                                wait()
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
+                            
+                        end
+                    
                         elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Venom-Venom") then   
                             if _G.SkillZ then
                                 local args = {
@@ -4196,6 +4244,7 @@ spawn(function()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
+                                        Usefastattack = true
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
@@ -4241,6 +4290,7 @@ spawn(function()
                                     v.Humanoid.WalkSpeed = 0
                                     v.HumanoidRootPart.CanCollide = false
                                     v.Head.CanCollide = false
+                                    Usefastattack = true
                                     v.HumanoidRootPart.Size = Vector3.new(80,80,80)
                                     topos(v.HumanoidRootPart.CFrame*CFrame.new(5,10,7))
                                     game:GetService'VirtualUser':CaptureController()
@@ -4310,6 +4360,7 @@ spawn(function()
                                         AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
+                                        Usefastattack = true
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
@@ -4340,6 +4391,7 @@ spawn(function()
                                                     v.Head.CanCollide = false 
                                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                     MagnetDought = true
+                                                    Usefastattack = true
                                                     PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
                                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                                     game:GetService("VirtualUser"):CaptureController()
@@ -4444,6 +4496,7 @@ spawn(function()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
+                                        Usefastattack = true
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
@@ -4509,6 +4562,7 @@ spawn(function()
                                                 EquipWeapon(_G.SelectWeapon)
                                                 v.HumanoidRootPart.CanCollide = false
                                                 v.Humanoid.WalkSpeed = 0
+                                                Usefastattack = true
                                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                                 game:GetService("VirtualUser"):CaptureController()
@@ -4565,6 +4619,7 @@ spawn(function()
                                 repeat task.wait()
                                     EquipWeapon(_G.SelectWeapon)
                                     AutoHaki()
+                                    Usefastattack = true
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     topos(v.HumanoidRootPart.CFrame*CFrame.new(5,10,7))
                                     game:GetService("VirtualUser"):CaptureController()
@@ -4609,6 +4664,7 @@ spawn(function()
                                     pcall(function()
                                         AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
+                                        Usefastattack = true
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
@@ -4659,6 +4715,7 @@ spawn(function()
                                         AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
+                                        Usefastattack = true
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
@@ -4713,12 +4770,13 @@ spawn(function()
                                        v.HumanoidRootPart.CanCollide = false
                                        v.Humanoid.WalkSpeed = 0
                                         v.Head.CanCollide = false 
+                                        Usefastattack = true
                                        StartMagnetBoneMon = true
                                        PosMonBone = v.HumanoidRootPart.CFrame
                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.Auto_Bone or not v.Parent or v.Humanoid.Health <= 0
                               end
                         end
                         end
@@ -7836,10 +7894,12 @@ end
 
  workspace.DescendantAdded:Connect(
    function()
+       while wait() do
       -- game:GetService("Workspace").["_WorldOrigin"]SlashHit:Destroy()
        game:GetService("Workspace")._WorldOrigin["SlashHit"]:Destroy()
        game:GetService("Workspace")._WorldOrigin["CurvedRing"]:Destroy()
        game:GetService("Workspace")._WorldOrigin["SwordSlash"]:Destroy()
+       end
            end
 )
 
