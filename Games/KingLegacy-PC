@@ -2539,7 +2539,7 @@ spawn(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
 		if getgenv().Settings["Select Mode Farm"] == "Above" then
 			Farm_Mode = CFrame.new(0,7,5)
-			Angle_Mode = CFrame.Angles(math.rad(-90),0,0)
+			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
 		elseif getgenv().Settings["Select Mode Farm"] == "Behind" then
 			Farm_Mode =  CFrame.new(0,0,3)
 			Angle_Mode = CFrame.Angles(math.rad(0), 0, 0)
