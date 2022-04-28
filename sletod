@@ -4483,6 +4483,7 @@ WeaponList = {}
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
+                                        Usefastattack = true
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
@@ -4526,6 +4527,7 @@ WeaponList = {}
                                     AutoHaki()
                                     EquipWeapon(_G.SelectWeapon)
                                     v.Humanoid.WalkSpeed = 0
+                                    Usefastattack = true
                                     v.HumanoidRootPart.CanCollide = false
                                     v.Head.CanCollide = false
                                     v.HumanoidRootPart.Size = Vector3.new(80,80,80)
@@ -4856,6 +4858,7 @@ WeaponList = {}
                                 repeat task.wait()
                                     EquipWeapon(_G.SelectWeapon)
                                     AutoHaki()
+                                    Usefastattack = true
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     topos(v.HumanoidRootPart.CFrame*CFrame.new(5,10,7))
                                     game:GetService("VirtualUser"):CaptureController()
@@ -5002,6 +5005,7 @@ WeaponList = {}
                                        AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
                                        v.HumanoidRootPart.CanCollide = false
+                                       Usefastattack = true
                                         v.Humanoid.WalkSpeed = 0
                                         v.Head.CanCollide = false 
                                        StartMagnetBoneMon = true
@@ -5009,7 +5013,7 @@ WeaponList = {}
                                       topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                        game:GetService("VirtualUser"):CaptureController()
                                       game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.Auto_Bone or not v.Parent or v.Humanoid.Health <= 0
                                end
                             end
                        end
