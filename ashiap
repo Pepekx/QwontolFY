@@ -3493,7 +3493,8 @@ spawn(function()
                                 if v.Name == "Core" and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()         
-                                        EquipWeapon(_G.SelectWeapon)           
+                                        EquipWeapon(_G.SelectWeapon)  
+                                        Usefastattack = true
                                         topos(CFrame.new(448.46756, 199.356781, -441.389252))                                  
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
@@ -3829,6 +3830,7 @@ spawn(function()
                                                 else           
                                                     UseSkill = false 
                                                     AutoHaki()
+                                                    Usefastattack = true
                                                     EquipWeapon(_G.SelectWeapon)
                                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                                     v.HumanoidRootPart.CanCollide = false
@@ -3844,6 +3846,7 @@ spawn(function()
                                         else
                                             UseSkill = false
                                             StartMasteryFruitMagnet = false
+                                            Usefastattack = false
                                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                                         end
                                     end
@@ -3852,6 +3855,7 @@ spawn(function()
                         else
                             StartMasteryFruitMagnet = false   
                             UseSkill = false 
+                            Usefastattack = false
                             local Mob = game:GetService("ReplicatedStorage"):FindFirstChild(Mon) 
                             if Mob then
                                 topos(Mob.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
@@ -4195,6 +4199,7 @@ spawn(function()
                                         AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
+                                        Usefastattack = true
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
@@ -4238,6 +4243,7 @@ spawn(function()
                                 repeat task.wait()
                                     AutoHaki()
                                     EquipWeapon(_G.SelectWeapon)
+                                    Usefastattack = true
                                     v.Humanoid.WalkSpeed = 0
                                     v.HumanoidRootPart.CanCollide = false
                                     v.Head.CanCollide = false
@@ -4310,6 +4316,7 @@ spawn(function()
                                         AutoHaki()
                                         EquipWeapon(_G.SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
+                                        Usefastattack = true
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
@@ -4340,6 +4347,7 @@ spawn(function()
                                                     v.Head.CanCollide = false 
                                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                     MagnetDought = true
+                                                    Usefastattack = true
                                                     PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
                                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                                     game:GetService("VirtualUser"):CaptureController()
@@ -4349,6 +4357,7 @@ spawn(function()
                                         end
                                     end
                                 else
+                                    Usefastattack = true
                                     MagnetDought = false
                                     if game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter [Lv. 2200]") then
                                         topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter [Lv. 2200]").HumanoidRootPart.CFrame * CFrame.new(5,10,7)) 
@@ -4507,6 +4516,7 @@ spawn(function()
                                             repeat task.wait()
                                                 AutoHaki()
                                                 EquipWeapon(_G.SelectWeapon)
+                                                Usefastattack = true
                                                 v.HumanoidRootPart.CanCollide = false
                                                 v.Humanoid.WalkSpeed = 0
                                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -4714,16 +4724,18 @@ spawn(function()
                                        v.Humanoid.WalkSpeed = 0
                                         v.Head.CanCollide = false 
                                        StartMagnetBoneMon = true
+                                       Usefastattack = true
                                        PosMonBone = v.HumanoidRootPart.CFrame
                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.Auto_Bone or not v.Parent or v.Humanoid.Health <= 0
                               end
                         end
                         end
                     else
                        StartMagnetBoneMon = false
+                       Usefastattack = true
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
                            if v.Name == "Reborn Skeleton [Lv. 1975]" then
                               topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
