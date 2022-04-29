@@ -7864,18 +7864,3 @@ for i,v in pairs(getreg()) do
         end
     end
 end
-
- workspace.DescendantAdded:Connect(
-   function()
-      -- game:GetService("Workspace").["_WorldOrigin"]SlashHit:Destroy()
-       game:GetService("Workspace")._WorldOrigin["SlashHit"]:Destroy()
-       game:GetService("Workspace")._WorldOrigin["CurvedRing"]:Destroy()
-       game:GetService("Workspace")._WorldOrigin["SwordSlash"]:Destroy()
-           end
-)
-
-for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-                if v.Name == "Sounds" then
-                v:Destroy() 
-                end
-           end
