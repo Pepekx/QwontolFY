@@ -3139,7 +3139,26 @@ end)
 		fastattack = value
 	end)
 
-      Farm:AddToggle("Auto Observation Haki", true, function(vu)
+      Farm:AddToggle("Remove Effect",true,function(value)
+ _G.SFX = value
+ spawn(function()
+    game:GetService('RunService').Stepped:Connect(function()
+        if _G.SFX then
+            
+        --if Usefastattack then
+           -- if fastattack then
+            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+                if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "Sounds" or v.Name == "SlashHit" then
+                    v:Destroy() 
+                end
+            --end
+            end
+        end
+    end)
+end)
+      end)
+     
+      Farm:AddToggle("Auto Observation Haki", false, function(vu)
 	_G.Kentot = vu
 end)   
 
