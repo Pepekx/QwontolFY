@@ -4961,7 +4961,7 @@ end)
                                       topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                                        game:GetService("VirtualUser"):CaptureController()
                                       game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                    until not _G.Auto_Farm_Bone or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.Auto_Bone or not v.Parent or v.Humanoid.Health <= 0
                                end
                             end
                        end
