@@ -4579,6 +4579,7 @@ end)
                                                     v.HumanoidRootPart.CanCollide = false
                                                     v.Humanoid.WalkSpeed = 0
                                                     v.Head.CanCollide = false 
+                                                    Usefastattack = true
                                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                     MagnetDought = true
                                                     PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
