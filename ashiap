@@ -4108,31 +4108,30 @@ spawn(function()
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
                         end
                     elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                        CheckQuest()
-                        if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
-                            pcall(function()
-                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                    if v.Name == Mon then
-                                        repeat task.wait()
-                                            if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-                                                HealthMin = v.Humanoid.MaxHealth * _G.Kill_At/100
-                                                if v.Humanoid.Health <= HealthMin then                                                
-                                                    EquipWeapon(SelectWeaponGun)
-                                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
-                                                    v.Humanoid.WalkSpeed = 0
-                                                    v.HumanoidRootPart.CanCollide = false
-                                                    v.HumanoidRootPart.Size = Vector3.new(2,2,1)
-                                                    v.Head.CanCollide = false                                                
-                                                    local args = {
-                                                        [1] = v.HumanoidRootPart.Position,
-                                                        [2] = v.HumanoidRootPart
-                                                    }
-                                                    game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+                       CheckQuest()
+				if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
+					pcall(function()
+						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+							if v.Name == Mon then
+								repeat game:GetService("RunService").Heartbeat:wait()
+									if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+										HealthMin = v.Humanoid.MaxHealth * _G.Kill_At/100
+										if v.Humanoid.Health <= HealthMin then
+											EquipWeapon(SelectWeaponGun)
+											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
+											local args = {
+												[1] = v.HumanoidRootPart.Position,
+												[2] = v.HumanoidRootPart
+											}
+											game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+											game:GetService'VirtualUser':CaptureController()
+											game:GetService'VirtualUser':Button1Down(Vector2.new())
                                                 else
                                                     AutoHaki()
                                                     EquipWeapon(_G.SelectWeapon)
                                                     v.Humanoid.WalkSpeed = 0
                                                     v.HumanoidRootPart.CanCollide = false
+                                                    Usefastattack = true
                                                     v.Head.CanCollide = false               
                                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
