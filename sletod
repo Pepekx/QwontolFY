@@ -3427,19 +3427,28 @@ end)
     
     Main:AddToggle("Remove Effect",true,function(value)
  _G.SFX = value
+ 
+ 
  spawn(function()
     game:GetService('RunService').Stepped:Connect(function()
         if _G.SFX then
             
         --if Usefastattack then
            -- if fastattack then
+            for i, v in pairs(game.Workspace["_WorldOrigin"].Sounds:GetChildren()) do
+                if v.Name == "ProxySound" then
+                    v:Destroy() 
+                
+            
             for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-                if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "Sounds" or v.Name == "SlashHit" or v.Name == "DamageCounter" then
+                if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "SlashHit" or v.Name == "DamageCounter" then
                     v:Destroy() 
                 end
             --end
             end
-        end
+                end
+            end
+end
     end)
 end)
       end)
