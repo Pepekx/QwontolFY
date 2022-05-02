@@ -3160,22 +3160,22 @@ end)
 		fastattack = value
 	end)
 
-Farm:AddToggle("Remove Music",false,function(value)
- _G.MusicSFX = value
- spawn(function()
-    game:GetService('RunService').Stepped:Connect(function()
-        if _G.MusicSFX then
+--Farm:AddToggle("Remove Music",false,function(value)
+ --_G.MusicSFX = value
+ --spawn(function()
+   -- game:GetService('RunService').Stepped:Connect(function()
+     --   if _G.MusicSFX then
         --if Usefastattack then
            -- if fastattack then
-            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-                if v.Name == "Sounds"then
-                    v:Destroy() 
-                end
-            end
-        end
-    end)
-end)
-      end)
+          --  for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+             --   if v.Name == "Sounds"then
+                --    v:Destroy() 
+               -- end
+           -- end
+      --  end
+   -- end)
+--end)
+     -- end)
 
       Farm:AddToggle("Remove Effect",true,function(value)
  _G.SFX = value
