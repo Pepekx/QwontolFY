@@ -3176,6 +3176,7 @@ end)
    -- end)
 --end)
      -- end)
+     
 
       Farm:AddToggle("Remove Effect",true,function(value)
  _G.SFX = value
@@ -3185,18 +3186,20 @@ end)
             
         --if Usefastattack then
            -- if fastattack then
-           for i, v in pairs(game.Workspace["_WorldOrigin"].Sounds:GetChildren()) do
-                if v.Name == "ProxySound" then
-                    v:Destroy() 
-           
+           --for i, v in pairs(game.Workspace["_WorldOrigin"].Sounds:GetChildren()) do
+               -- if v.Name == "ProxySound" or v.Name == "Thunder" then
+                 --   v:Destroy() 
+                --end
+                --end
+                    
             for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-                if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "SlashHit" or v.Name == "DamageCounter" then
+                if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "Sounds" then
                     v:Destroy() 
                 end
             end
-            end
-            end
-        end
+                end
+        --end
+        --end
     end)
 end)
       end)
@@ -3219,14 +3222,14 @@ end)
 	end
 end)
       
-	Farm:AddButton("Remove Sound Effect",function()
+--	Farm:AddButton("Remove Sound Effect",function()
  
-            for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-                if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
-                v:Destroy() 
-                end
-           end
-      end)
+           -- for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+              --  if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
+               -- v:Destroy() 
+               -- end
+          -- end
+      --end)
 	
 	Farm:AddLine()
     local MainFarm = Main:NewSection("== Main Farm Section ==")
