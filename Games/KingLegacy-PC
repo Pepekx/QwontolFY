@@ -2373,7 +2373,16 @@ Main:AddDropdown(SelectPOOOOONsssssssssssssssssssssssssssssss,Wapon, function(Va
 	getgenv().Settings["Select Weapon"] = Value
 	Save()
 end)
-
+Main:AddToggle("Auto Attack (Enable when dont want Attack)",false, function(value)
+        _G.AutoAttack = value
+	end)
+spawn(function()
+   while wait(.1) do
+           if _G.AutoAttack then
+	   Click()
+	   end
+   end
+ end)
 spawn(function()
 	while wait(.1) do
 		if getgenv().Settings["Select Weapon"] == "Power Fruits" then
