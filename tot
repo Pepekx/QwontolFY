@@ -7941,7 +7941,6 @@ for i,v in pairs(getreg()) do
                                y.activeController.blocking = false
                                 y.activeController.timeToNextBlock = 0
                                 game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                                wait()
                                 if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
 							y.activeController.timeToNextAttack = 3
 						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
