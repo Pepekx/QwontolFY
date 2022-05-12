@@ -7937,11 +7937,11 @@ for i,v in pairs(getreg()) do
                                 CameraShaker:Stop()
                                 y.activeController.attacking = false
                                 y.activeController.increment = 3
-                                y.activeController.hitboxMagnitude = 80 
-                                y.activeController.blocking = false
-                                --y.activeController.timeToNextBlock = 0
-                                --game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                               -- wait()
+                                y.activeController.hitboxMagnitude = 35 
+                               y.activeController.blocking = false
+                                y.activeController.timeToNextBlock = 0
+                                game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                                wait()
                                 if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
 							y.activeController.timeToNextAttack = 3
 						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
