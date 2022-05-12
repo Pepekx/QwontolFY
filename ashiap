@@ -4349,7 +4349,7 @@ spawn(function()
 					for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
 						if v.Name:find("Chest") then
 							if game:GetService("Workspace"):FindFirstChild(v.Name) then
-								if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000 then --+_G.MagnitudeAdd then
+								if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 7000 then --+_G.MagnitudeAdd then
 									repeat wait()
 										if game:GetService("Workspace"):FindFirstChild(v.Name) then
 											topos(v.CFrame)
