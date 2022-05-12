@@ -3159,7 +3159,11 @@ end)
 	Farm:AddToggle("Fast Attack", true,function(value)
 		fastattack = value
 	end)
-
+   
+--    Farm:AddToggle("No Animation Attack" , true , function(value)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/AttackNoAnim"))()
+          --  end)
+    
 --Farm:AddToggle("Remove Music",false,function(value)
  --_G.MusicSFX = value
  --spawn(function()
@@ -7932,7 +7936,7 @@ for i,v in pairs(getreg()) do
                             pcall(function()
                                 CameraShaker:Stop()
                                 y.activeController.attacking = false
-                                --y.activeController.increment = 3
+                                y.activeController.increment = 3
                                 y.activeController.hitboxMagnitude = 80 
                                 y.activeController.blocking = false
                                 --y.activeController.timeToNextBlock = 0
