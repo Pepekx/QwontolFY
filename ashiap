@@ -2638,15 +2638,18 @@ end
                                 name.TextYAlignment = 'Top'
                                 name.BackgroundTransparency = 1
                                 name.TextStrokeTransparency = 0.5
-                                name.TextColor3 = Color3.fromRGB(0, 255, 250)
+                                --name.TextColor3 = Color3.fromRGB(0, 255, 255)
                             if v.Name == "Chest1" then
-                                name.Text = ("Chest 1" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                                name.Text = ("Silver Chest" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                                name.TextColor3 = Color3.fromRGB(192, 192, 192)  
                             end
                             if v.Name == "Chest2" then
-                                name.Text = ("Chest 2" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                                name.Text = ("Gold Chest" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                                name.TextColor3 = Color3.fromRGB(255,215,0)
                             end
                         if v.Name == "Chest3" then
-                            name.Text = ("Chest 3" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                            name.Text = ("Platinum Chest" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                            name.TextColor3 = Color3.fromRGB(0, 170, 204)
                         end
                         else
                             v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
@@ -4338,7 +4341,7 @@ spawn(function()
         _G.ChestHop = value
     end)
     
-    _G.MagnitudeAdd = 0
+    --_G.MagnitudeAdd = 0
     spawn(function()
 		while wait() do 
 			pcall(function()
@@ -4346,13 +4349,13 @@ spawn(function()
 					for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
 						if v.Name:find("Chest") then
 							if game:GetService("Workspace"):FindFirstChild(v.Name) then
-								if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
+								if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000 then --+_G.MagnitudeAdd then
 									repeat wait()
 										if game:GetService("Workspace"):FindFirstChild(v.Name) then
 											topos(v.CFrame)
 										end
 									until _G.ChestFarm == false or not v.Parent
-									_G.MagnitudeAdd = _G.MagnitudeAdd+1500
+									--_G.MagnitudeAdd = _G.MagnitudeAdd+1500
 								end
 								else
 								    if _G.ChestHop then
