@@ -3180,6 +3180,7 @@ end)
 --end)
      -- end)
      
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/AttackNoAnim"))()
 
       Farm:AddToggle("Remove Effect",true,function(value)
  _G.SFX = value
@@ -7934,12 +7935,17 @@ for i,v in pairs(getreg()) do
                                 CameraShaker:Stop()
                                 y.activeController.attacking = false
                                 y.activeController.increment = 3
-                                y.activeController.hitboxMagnitude = 80 
-                                y.activeController.blocking = false
+                                y.activeController.hitboxMagnitude = 35 
+                               y.activeController.blocking = false
                                 y.activeController.timeToNextBlock = 0
                                 game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                                wait(0.7)
-                                y.activeController:attack()
+                                if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+							y.activeController.timeToNextAttack = 3
+						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
+							y.activeController.timeToNextAttack = 2
+						else
+							y.activeController.timeToNextAttack = 0
+						end
                                
                             end)
                             end
