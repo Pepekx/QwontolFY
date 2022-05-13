@@ -4518,7 +4518,7 @@ end)
         StopTween(_G.ChestFarm)
     end)
 
-     Main:AddToggle("Instant Teleport To Chest (Very Risk) , false , function(value)
+     Main:AddToggle("Instant Teleport To Chest (Very Risk)", false , function(value)
         _G.InstantChest = value
 end)
      
