@@ -1,20 +1,3 @@
-local req =  http_request or request or HttpPost or syn.request
-	if req then
-		req({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = game:GetService("HttpService"):JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = game:GetService("HttpService"):GenerateGUID(false),
-				args = {code = 'EAasK6nBMr'}
-			})
-		})
-	end
-
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "THUNDER Z",     
 Text = "Welcome to Thunder Z",
