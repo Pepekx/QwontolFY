@@ -4519,6 +4519,10 @@ end)
         _G.ChestFarm = value
         StopTween(_G.ChestFarm)
     end)
+    Main:AddToggle("Instant Teleport To Chest ( Very Risk )" , false , function(value)
+        _G.InstantChest = value
+    end)
+    
     Main:AddToggle("Auto Farm Chest Hop" , false , function(value)
         _G.ChestHop = value
     end)
@@ -4550,6 +4554,27 @@ end)
 			end)
 		end
 	end)
+    
+    spawn(function()
+        while wait() do
+    if _G.InstantChest then
+wait()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+    if string.find(v.Name, "Chest") then
+        print(v.Name)
+        wait(0.20)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+    end
+end
+
+else
+    
+								    if _G.ChestHop then
+								        Hop()
+    end
+    end
+end
+end)
     
     Main:AddLine()
     Main:AddLabel("Dought")
