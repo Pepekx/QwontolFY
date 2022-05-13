@@ -4338,6 +4338,12 @@ spawn(function()
         _G.ChestFarm = value
         StopTween(_G.ChestFarm)
     end)
+    Bozz:AddToggle("Instant Teleport Farm Chest (Very Risk)" , false , function(value)
+        _G.InstantChest = value
+    end)
+    
+    --end)
+    
     Bozz:AddToggle("Auto Farm Chest Hop" , false , function(value)
         _G.ChestHop = value
     end)
@@ -4370,6 +4376,37 @@ spawn(function()
 		end
 	end)
     
+    spawn(function()
+        while wait() do
+            pcall(function()
+    if _G.InstantChest then
+wait()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+    if string.find(v.Name, "Chest") then
+        print(v.Name)
+        wait(0.20)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+    end
+end
+wait(5)
+game.Players.LocalPlayer.Character.Head:Destroy()
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "THUNDER Z",     
+Text = "Waiting Chest Spawn . . .",
+Icon = "rbxassetid://9254918057",
+--Duration = 10,
+Color = Success
+})
+else
+    
+								    if _G.ChestHop then
+								        Hop()
+    end
+    end
+    end)
+end
+end)
+
     Bozz:AddLine()
     Bozz:AddLabel("Dought Boss")
     local MobKilled = Bozz:AddLabel("Killed")
