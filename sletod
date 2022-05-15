@@ -8087,7 +8087,7 @@ end)
         _G.WalkWater = value
     end)
     
-    spawn(function()
+   spawn(function()
         pcall(function()
             while wait() do
                 if _G.WalkWater then
@@ -8098,7 +8098,7 @@ end)
                             Water.Size = Vector3.new(15,0.5,15)
                             Water.Anchored = true
                             Water.Material = "Neon"
-                            Water.Color = _G.Color
+                            
                             game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
                         else
                             game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
