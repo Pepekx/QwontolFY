@@ -3439,10 +3439,7 @@ end)
         if _G.SFX then
             
         --if Usefastattack then
-           -- if fastattack then
-            for i, v in pairs(game.Workspace["_WorldOrigin"].Sounds:GetChildren()) do
-                if v.Name == "ProxySound" then
-                    v:Destroy() 
+           -- if fastattack the
                 
             
             for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
@@ -3452,11 +3449,23 @@ end)
             --end
             end
                 end
-            end
-end
+           
+
     end)
 end)
       end)
+    
+    spawn(function()
+    game:GetService('RunService').Stepped:Connect(function()
+        if _G.SFX then
+    for i, v in pairs(game.Workspace["_WorldOrigin"].Sounds:GetChildren()) do
+                if v.Name == "ProxySound" then
+                    v:Destroy() 
+                end
+    end
+        end
+        end)
+    end)
     
     Main:AddToggle("Auto Observation Haki", false, function(vu)
 	_G.Kentot = vu
@@ -3482,10 +3491,14 @@ end)
     Main:AddLine()
     local AutoFarm = Main:AddToggle("Auto Farm Level",_G.AutoFarm,function(value)
         if _G.SelectWeapon == "" then
-            DiscordLib:Notification("Thunder Z", "Select Weapon First", "Okay")
+            DiscordLib:Notification("Thunder Z" , "Select Weapon First" ,"Okay")
             else
-        _G.AutoFarm = value
+		_G.AutoFarm = value
+		SelectMonster = ""
+        if value == false
+        then
         StopTween(_G.AutoFarm)
+        end
         end
     end)
     
@@ -5871,6 +5884,15 @@ end)
                                 sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRadius", math.huge)
                             end
                         end
+                        if _G.AutoFarmSelectMonster then
+					if v.Name == Mon and (v.HumanoidRootPart.Position - PosMonSelectMonster.Position).Magnitude <= 400 then
+						v.Head.CanCollide = false
+						v.HumanoidRootPart.CanCollide = false
+						v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+						v.HumanoidRootPart.CFrame = PosMonSelectMonster
+						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+					end
+					end
                         if _G.AutoRengoku and StartRengokuMagnet then
                             if (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and (v.HumanoidRootPart.Position - RengokuMon.Position).Magnitude <= 250 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
