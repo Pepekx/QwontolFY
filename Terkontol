@@ -1,0 +1,52 @@
+_G.Team = nil
+
+if game.PlaceId == 2753915549 then
+        Laut1 = true
+    elseif game.PlaceId == 4442272183 then
+        Laut2 = true
+    elseif game.PlaceId == 7449423635 then
+        Laut3 = true
+    end
+    
+if Laut1 or Laut2 or Laut3 then
+if _G.Team == nil then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+        v.Function()
+        end
+end
+elseif
+    _G.Team == "Pirate" then
+    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+        v.Function()
+        end
+if
+    _G.Team == "Marine" then
+        for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+        v.Function()
+          end
+       end
+    end
+
+
+repeat wait() until game:IsLoaded()
+local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/loader.lua"))()
+local SET_UP = CustomLoader("Thunder Z | Loader", "json",{
+   URL = "https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Fikury.json";
+})
+
+local req =  http_request or request or HttpPost or syn.request
+	if req then
+		req({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = game:GetService("HttpService"):JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = game:GetService("HttpService"):GenerateGUID(false),
+				args = {code = 'EAasK6nBMr'}
+			})
+		})
+	end
