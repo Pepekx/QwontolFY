@@ -1,5 +1,7 @@
 repeat wait() until game:IsLoaded()
 local req =  http_request or request or HttpPost or syn.request
+local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
+queueteleport("repeat wait() until game:IsLoaded() print('Monkey') loadstring(game:HttpGet('https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Terkontol'))()")
 local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/loader.lua"))()
 local SET_UP = CustomLoader("Thunder Z | Loader", "json",{
    URL = "https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Fikury.json";
@@ -21,4 +23,3 @@ local req =  http_request or request or HttpPost or syn.request
 			})
 		})
 	end
-queueteleport("repeat wait() until game:IsLoaded() print('Monkey') loadstring(game:HttpGet('https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Terkontol'))()")
