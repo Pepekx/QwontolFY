@@ -6,26 +6,11 @@ if game.PlaceId == 2753915549 then
         Laut3 = true
     end
     
-if Laut1 or Laut2 or Laut3 then
-_G.Team = nil
-if _G.Team == nil then
+if 2753915549 or 4442272183 or 7449423635 then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
         v.Function()
         end
 end
-elseif
-    _G.Team == "Pirate" then
-    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
-        v.Function()
-        end
-if
-    _G.Team == "Marine" then
-        for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
-        v.Function()
-          end
-       end
-    end
-
 
 repeat wait() until game:IsLoaded()
 local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/loader.lua"))()
